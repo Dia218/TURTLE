@@ -1,0 +1,9 @@
+package user;
+
+public class Player {
+
+	public int healPoint = 100;
+	public int starvePoint = 200;
+	
+	
+}

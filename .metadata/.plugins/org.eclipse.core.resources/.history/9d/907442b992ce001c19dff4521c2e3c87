@@ -1,0 +1,10 @@
+package user;
+
+public class System {
+
+	
+	publis static void main(String[] args) {
+		
+		
+	}
+}
