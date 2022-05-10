@@ -1,4 +1,4 @@
-package element;
+package world;
 
 public class Monster {
 	String Mon_name;

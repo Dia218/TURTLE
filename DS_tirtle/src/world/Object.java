@@ -1,4 +1,4 @@
-package element;
+package world;
 
 abstract public class Object {
 	String Obj_Name;

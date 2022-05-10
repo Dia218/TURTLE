@@ -1,4 +1,4 @@
-package elements;
+package item;
 
 public abstract class Foods {
 	private String name;

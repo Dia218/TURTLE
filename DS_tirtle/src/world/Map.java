@@ -1,4 +1,4 @@
-package element;
+package world;
 
 public class Map {
 	String Map_Name;
