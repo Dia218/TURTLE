@@ -1,0 +1,8 @@
+package elements;
+
+public class Armors extends tools {
+	private static int defence;
+	
+	public void returnDEF() {};
+}
+

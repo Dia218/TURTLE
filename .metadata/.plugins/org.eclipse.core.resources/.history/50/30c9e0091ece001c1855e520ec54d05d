@@ -1,0 +1,11 @@
+package elements;
+
+public abstract class Tools {
+	private static String name;
+	private int durability;
+	private static String[][] ingredient;
+	
+	public void returnName() {};
+	public void returnDurability() {};
+	public void returnIngredient() {};
+}

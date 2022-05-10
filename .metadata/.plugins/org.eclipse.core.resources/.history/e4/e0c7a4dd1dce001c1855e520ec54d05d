@@ -1,0 +1,11 @@
+package elements;
+
+public abstract class foods {
+	private static String name;
+	private static int healPoint;
+	private static int starvePoint;
+	
+	public void returnName() {};
+	public void returnHealPoint() {};
+	public void returStarvePoint() {};
+}

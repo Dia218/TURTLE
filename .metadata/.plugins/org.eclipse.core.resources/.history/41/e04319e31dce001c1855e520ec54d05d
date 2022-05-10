@@ -1,0 +1,8 @@
+package elements;
+
+public abstract class processedFoods extends Foods {
+	private static String[][] ingredient;
+
+	public void returnIngredient() {};
+}
+

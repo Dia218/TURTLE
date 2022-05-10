@@ -1,0 +1,21 @@
+package elements;
+
+public abstract class Tools {
+	private static String name;
+	private int durability;
+	private static String[][] ingredient;
+	
+	public String returnName() {
+		return name;
+	}
+	public int returnDurability() {
+		return durability;
+	}
+	public String returnIngredient() {
+		for(int i = 0; i < ingredient.length; i++) {
+			for(int j = 0; j < ingredient[ingredient.length - 1].length; j++) {
+				return ingredient[i][j];
+			}
+		}
+	}
+}

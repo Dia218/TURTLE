@@ -1,0 +1,7 @@
+package elements;
+
+public abstract class Weapons extends Tools {
+	private static int Attack;
+	
+	public void returnATK() {}
+}

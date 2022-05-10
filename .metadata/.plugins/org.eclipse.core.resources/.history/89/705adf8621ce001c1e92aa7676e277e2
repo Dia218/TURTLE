@@ -1,0 +1,14 @@
+package elements;
+
+public abstract class UnprocessedFoods extends Foods {
+}
+
+class FrogLeg extends UnprocessedFoods {
+	private static String name = "개구리다리";
+	private static int healPoint = 0;
+	private static int starvePoint = 10;
+	
+	public void returnName() {}
+	public void returnHealPoint() {}
+	public void returStarvePoint() {}
+}
