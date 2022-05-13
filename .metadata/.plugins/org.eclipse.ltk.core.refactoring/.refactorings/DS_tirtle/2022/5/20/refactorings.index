@@ -13,3 +13,7 @@
 1651989670213	Rename package 'menu'
 1651989685568	Rename package 'act'
 1651990353795	Rename compilation unit 'Frame.java'
+1652432895187	Rename compilation unit 'Inventory.java'
+1652432961187	Rename type 'InventoryBox'
+1652435452832	Rename type 'Inventory'
+1652437555381	Rename type 'InventoryPanel'
