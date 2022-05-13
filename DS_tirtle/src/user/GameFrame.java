@@ -47,8 +47,8 @@ public class GameFrame extends JFrame {
 		profilePanel.add(new JTextField(10));
 		
 		//왼쪽 - 인벤토리 출력//
-		Inventory inventory = new Inventory();
-		mainScreen.add(inventory.inventoryPanel, BorderLayout.WEST);
+		//Inventory inventory = new Inventory();
+		mainScreen.add(System.inventory.inventoryPanel, BorderLayout.WEST);
 		
 		//중앙 - 게임 진행 화면//
 		JPanel playPanel = new JPanel();
