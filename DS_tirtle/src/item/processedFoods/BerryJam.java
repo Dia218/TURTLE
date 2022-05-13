@@ -9,7 +9,7 @@ public class BerryJam extends Foods {
 	private static int starvePoint = 35;
 	private static int healPoint = 10;
 	
-	static private ImageIcon berryJam = new ImageIcon("./images/Berry_Jam.png");
+	static private ImageIcon img = new ImageIcon("./images/Berry_Jam.png");
 	
 	public String returnName() {
 		return name;
@@ -20,7 +20,7 @@ public class BerryJam extends Foods {
 	public int returnHealPoint() {
 		return healPoint;
 	}
-	static public ImageIcon berryJam() {
-		return berryJam;
+	static public ImageIcon returnImg() {
+		return img;
 	}
 }

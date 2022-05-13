@@ -9,7 +9,7 @@ public class MonsterMeat extends UnprocessedFoods {
 	private static int starvePoint = 20;
 	private static int healPoint = -30;
 	
-	static private ImageIcon monsterMeat = new ImageIcon("./images/Monster_Meat.png");
+	static private ImageIcon img = new ImageIcon("./images/Monster_Meat.png");
 	
 	public String returnName() {
 		return name;
@@ -20,7 +20,7 @@ public class MonsterMeat extends UnprocessedFoods {
 	public int returnHealPoint() {
 		return healPoint;
 	}
-	static public ImageIcon monsterMeat() {
-		return monsterMeat;
+	static public ImageIcon returnImg() {
+		return img;
 	}
 }

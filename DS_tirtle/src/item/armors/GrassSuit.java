@@ -9,7 +9,7 @@ public class GrassSuit extends Armors {
 	private int durability = 100;
 	private int defence = 60;
 	
-	static private ImageIcon grassSuit = new ImageIcon("./images/Grass_Suit.png");
+	static private ImageIcon img = new ImageIcon("./images/Grass_Suit.png");
 	
 	public String returnName() {
 		return name;
@@ -20,7 +20,7 @@ public class GrassSuit extends Armors {
 	public int returnDEF() {
 		return defence;
 	}
-	static public ImageIcon grassSuit() {
-		return grassSuit;
+	static public ImageIcon returnImg() {
+		return img;
 	}
 }

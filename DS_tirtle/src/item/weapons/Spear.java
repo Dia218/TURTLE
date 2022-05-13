@@ -9,7 +9,7 @@ public class Spear extends Weapons {
 	private int durability = 100;
 	private int attack = 30;
 	
-	static private ImageIcon spear = new ImageIcon("./images/Spear.png");
+	static private ImageIcon img = new ImageIcon("./images/Spear.png");
 	
 	public String returnName() {
 		return name;
@@ -20,7 +20,7 @@ public class Spear extends Weapons {
 	public int returnATK() {
 		return attack;
 	}
-	static public ImageIcon spear() {
-		return spear;
+	static public ImageIcon returnImg() {
+		return img;
 	}
 }

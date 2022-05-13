@@ -9,7 +9,7 @@ public class FrogLeg extends UnprocessedFoods {
 	private static int starvePoint = 10;
 	private static int healPoint = -10;
 	
-	static private ImageIcon frogLeg = new ImageIcon("./images/Frog_Leg.png");
+	static private ImageIcon img = new ImageIcon("./images/Frog_Leg.png");
 	
 	public String returnName() {
 		return name;
@@ -20,7 +20,7 @@ public class FrogLeg extends UnprocessedFoods {
 	public int returnHealPoint() {
 		return healPoint;
 	}
-	static public ImageIcon frogLeg() {
-		return frogLeg;
+	static public ImageIcon returnImg() {
+		return img;
 	}
 }

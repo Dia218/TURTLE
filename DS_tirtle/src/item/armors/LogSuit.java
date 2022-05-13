@@ -9,7 +9,7 @@ public class LogSuit extends Armors {
 	private int durability = 100;
 	private int defence = 80;
 	
-	static private ImageIcon logSuit = new ImageIcon("./images/Log_Suit.png");
+	static private ImageIcon img = new ImageIcon("./images/Log_Suit.png");
 	
 	public String returnName() {
 		return name;
@@ -20,7 +20,7 @@ public class LogSuit extends Armors {
 	public int returnDEF() {
 		return defence;
 	}
-	static public ImageIcon logSuit() {
-		return logSuit;
+	static public ImageIcon returnImg() {
+		return img;
 	}
 }

@@ -9,7 +9,7 @@ public class Fishsticks extends Foods {
 	private static int starvePoint = 35;
 	private static int healPoint = 40;
 	
-	static private ImageIcon fishsticks = new ImageIcon("./images/Fishsticks.png");
+	static private ImageIcon img = new ImageIcon("./images/Fishsticks.png");
 	
 	public String returnName() {
 		return name;
@@ -20,7 +20,7 @@ public class Fishsticks extends Foods {
 	public int returnHealPoint() {
 		return healPoint;
 	}
-	static public ImageIcon fishsticks() {
-		return fishsticks;
+	static public ImageIcon returnImg() {
+		return img;
 	}
 }

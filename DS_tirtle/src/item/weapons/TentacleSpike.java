@@ -9,7 +9,7 @@ public class TentacleSpike extends Weapons {
 	private int durability = 100;
 	private int attack = 50;
 	
-	static private ImageIcon tentacleSpike = new ImageIcon("./images/Tentacle_Spike.png");
+	static private ImageIcon img = new ImageIcon("./images/Tentacle_Spike.png");
 	
 	public String returnName() {
 		return name;
@@ -20,7 +20,7 @@ public class TentacleSpike extends Weapons {
 	public int returnATK() {
 		return attack;
 	}
-	static public ImageIcon tentacleSpike() {
-		return tentacleSpike;
+	static public ImageIcon returnImg() {
+		return img;
 	}
 }

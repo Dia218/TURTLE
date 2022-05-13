@@ -9,7 +9,7 @@ public class MeatStew extends Foods {
 	private static int starvePoint = 100;
 	private static int healPoint = 10;
 	
-	static private ImageIcon meatStew = new ImageIcon("./images/Meaty_Stew.png");
+	static private ImageIcon img = new ImageIcon("./images/Meaty_Stew.png");
 	
 	public String returnName() {
 		return name;
@@ -20,7 +20,7 @@ public class MeatStew extends Foods {
 	public int returnHealPoint() {
 		return healPoint;
 	}
-	static public ImageIcon meatStew() {
-		return meatStew;
+	static public ImageIcon returnImg() {
+		return img;
 	}
 }

@@ -9,7 +9,7 @@ public class Carrot extends UnprocessedFoods {
 	private static int starvePoint = 10;
 	private static int healPoint = 0;
 	
-	static private ImageIcon carrot = new ImageIcon("./images/Carrot.png");
+	static private ImageIcon img = new ImageIcon("./images/Carrot.png");
 	
 	public String returnName() {
 		return name;
@@ -20,7 +20,7 @@ public class Carrot extends UnprocessedFoods {
 	public int returnHealPoint() {
 		return healPoint;
 	}
-	static public ImageIcon carrot() {
-		return carrot;
+	static public ImageIcon returnImg() {
+		return img;
 	}
 }

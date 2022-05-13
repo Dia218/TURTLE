@@ -7,7 +7,7 @@ public class WetGoop {
 	private static int starvePoint = 0;
 	private static int healPoint = 0;
 	
-	static private ImageIcon wetGoop = new ImageIcon("./images/Wet_Goop.png");
+	static private ImageIcon img = new ImageIcon("./images/Wet_Goop.png");
 	
 	public String returnName() {
 		return name;
@@ -18,7 +18,7 @@ public class WetGoop {
 	public int returnHealPoint() {
 		return healPoint;
 	}
-	static public ImageIcon wetGoop() {
-		return wetGoop;
+	static public ImageIcon returnImg() {
+		return img;
 	}
 }

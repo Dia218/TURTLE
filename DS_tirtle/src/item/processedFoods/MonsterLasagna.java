@@ -9,7 +9,7 @@ public class MonsterLasagna extends Foods {
 	private static int starvePoint = 60;
 	private static int healPoint = -20;
 	
-	static private ImageIcon monsterlasagna = new ImageIcon("./images/Monster_Lasagna.png");
+	static private ImageIcon img = new ImageIcon("./images/Monster_Lasagna.png");
 	
 	public String returnName() {
 		return name;
@@ -20,7 +20,7 @@ public class MonsterLasagna extends Foods {
 	public int returnHealPoint() {
 		return healPoint;
 	}
-	static public ImageIcon monsterLasagna() {
-		return monsterlasagna;
+	static public ImageIcon returnImg() {
+		return img;
 	}
 }

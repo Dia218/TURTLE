@@ -9,7 +9,7 @@ public class Ratatouille extends Foods {
 	private static int starvePoint = 25;
 	private static int healPoint = 10;
 	
-	static private ImageIcon ratatouille = new ImageIcon("./images/Ratatouille.png");
+	static private ImageIcon img = new ImageIcon("./images/Ratatouille.png");
 	
 	public String returnName() {
 		return name;
@@ -20,7 +20,7 @@ public class Ratatouille extends Foods {
 	public int returnHealPoint() {
 		return healPoint;
 	}
-	static public ImageIcon ratatouille() {
-		return ratatouille;
+	static public ImageIcon returnImg() {
+		return img;
 	}
 }

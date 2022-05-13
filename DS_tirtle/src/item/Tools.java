@@ -1,9 +1,9 @@
 package item;
 
-public abstract class Tools {
-	private String name;
+public abstract class Tools extends Item {
+	//내구도
 	private int durability;
 	
-	public abstract String returnName();
+	//내구도 return
 	public abstract int returnDurability();
 }
