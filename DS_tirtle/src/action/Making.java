@@ -7,9 +7,5 @@ public class Making {
 	 */
 	private String ingredients[] = new String[4];
 	
-	public boolean chekcItem {
-		for(boolean check: ingredient) {
-			
-		}
-	}
+	
 }

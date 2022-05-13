@@ -1,7 +1,7 @@
 package user;
 import java.awt.*;
 import javax.swing.*;
-
+import item.*;
 public class GameFrame extends JFrame {
 
 	public GameFrame() {
