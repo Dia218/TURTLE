@@ -78,8 +78,10 @@ public class Inventory {
 			inventoryButton[vectorSize] = new JButton("Empty");
 			
 			//인벤토리 패널에 버튼 다시 넣기
+			inventoryPanel.removeAll();
 			for(int i = 0; i <= 20; i++) {
 				inventoryPanel.add(inventoryButton[i]);
+				inventoryButton[i].addActionListener(System.userListener);
 			}
 			
 			//인벤토리 패널 다시 그리기
@@ -117,6 +119,7 @@ public class Inventory {
 		//인벤토리 버튼 초기화 및 배치
 		for(int i = 0; i <= 20; i++) {
 			inventoryPanel.add(inventoryButton[i] = new JButton("Empty"));
+			inventoryButton[i].addActionListener(System.userListener);
 		}
 	}
 	

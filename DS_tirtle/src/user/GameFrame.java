@@ -4,6 +4,7 @@ import javax.swing.*;
 
 public class GameFrame extends JFrame {
 
+	//화면 구성
 	public GameFrame() {
 		////프레임////
 		setTitle("굶지마 거북이 플레이");
@@ -53,15 +54,22 @@ public class GameFrame extends JFrame {
 		
 		
 		//왼쪽 - 인벤토리 출력//
-		//Inventory inventory = new Inventory();
 		mainScreen.add(System.inventory.inventoryPanel, BorderLayout.WEST);
 		
 		
 		//중앙 - 게임 진행 화면//
-		JPanel playPanel = new JPanel();
-		mainScreen.add(playPanel, BorderLayout.CENTER);
+		mainScreen.add(System.playPanel, BorderLayout.CENTER);
+		
+		//시작 패널
+		JPanel startPanel = new JPanel();
+		JButton gameStartButton = new JButton("게임하기");
+		JButton gameExitButton = new JButton("종료하기");
+		startPanel.add(gameStartButton);
+		startPanel.add(gameExitButton);
+		System.playPanel.add(startPanel);
 		
 		
+		/*
 		//테스트용 - 삭제해야함
 		JPanel testBiomPanel = new JPanel();
 		ImageIcon carrotPlantImg = new ImageIcon("./images/BerryBush.png");
@@ -69,8 +77,7 @@ public class GameFrame extends JFrame {
 
 		testBiomPanel.add(carrotPlant);
 		mainScreen.add(testBiomPanel, BorderLayout.CENTER);
-		
+		*/
 	}
-	
 	
 }

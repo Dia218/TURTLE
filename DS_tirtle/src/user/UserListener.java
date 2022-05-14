@@ -4,23 +4,24 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class UserListener implements ActionListener, ItemListener {
-	
-	public UserListener userListener = new UserListener();
-	
+		
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+		//이벤트가 발생한 버튼
 		JButton chooseItem = (JButton)e.getSource();
-		
 	}
 	
 	@Override
 	public void itemStateChanged(ItemEvent e) {
 		
 		if(e.getStateChange() == ItemEvent.SELECTED) {
-			e.setSelected(false);
+			//이벤트가 발생한 체크박스
+			JCheckBox selectedItem = (JCheckBox)e.getItem();
 		}
-		
+		else {
+			return;
+		}
+		//e.setSelected(false);
 	}
 
 }
