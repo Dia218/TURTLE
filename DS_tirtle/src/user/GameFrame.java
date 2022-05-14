@@ -15,7 +15,11 @@ public class GameFrame extends JFrame {
 		Container mainScreen = this.getContentPane();
 		mainScreen.setLayout(new BorderLayout(10, 10));
 		
-		////화면 구성////
+		
+		/* *
+		 * 화면 구성
+		 * */
+		
 		//상단 - 지역 출력//
 		JPanel statePanel = new JPanel();
 		mainScreen.add(statePanel, BorderLayout.NORTH);
@@ -24,6 +28,7 @@ public class GameFrame extends JFrame {
 		statePanel.add(map);
 		statePanel.setBackground(Color.YELLOW);
 	
+		
 		//하단 - 결과 출력//
 		JPanel resultPanel = new JPanel();
 		mainScreen.add(resultPanel, BorderLayout.SOUTH);
@@ -46,14 +51,18 @@ public class GameFrame extends JFrame {
 		profilePanel.add(new JLabel("방어력"));
 		profilePanel.add(new JTextField(10));
 		
+		
 		//왼쪽 - 인벤토리 출력//
 		//Inventory inventory = new Inventory();
 		mainScreen.add(System.inventory.inventoryPanel, BorderLayout.WEST);
+		
 		
 		//중앙 - 게임 진행 화면//
 		JPanel playPanel = new JPanel();
 		mainScreen.add(playPanel, BorderLayout.CENTER);
 		
+		
+		//테스트용 - 삭제해야함
 		JPanel testBiomPanel = new JPanel();
 		ImageIcon carrotPlantImg = new ImageIcon("./images/BerryBush.png");
 		JCheckBox carrotPlant = new JCheckBox(carrotPlantImg);
