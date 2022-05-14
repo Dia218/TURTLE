@@ -24,13 +24,13 @@ public class Cooking {
 	JButton[] potButton = new JButton[4];
 	
 	//솥 결과 버튼 객체 배열 생성
-	JButton[] resultButton = new JButton[4];
+	JButton resultButton = new JButton();
 	
 	//요리 재료 객체들을 저장할 벡터 생성
 	Vector<Item> potItem = new Vector<Item>();
 	
 	//요리 결과 객체를 저장할 벡터 생성
-	Vector<Item> resultItem = newVector<Item>();
+	Vector<Item> resultItem = new Vector<Item>();
 	
 	Object[] objs;
 	
@@ -63,8 +63,6 @@ public class Cooking {
 			potButton[index].setIcon(item.imageIcon);
 			potButton[index].setText(item.name);
 		}
-		
-		
 	}
 	
 	//아이템 객체를 사전 순으로 정렬
@@ -77,27 +75,70 @@ public class Cooking {
 	//재료들을 분별하여 요리 제작
 	void cook () {
 		//우선순위 1: 괴물라자냐
-		if(objs[0] == "MonsterMeat", objs[1] == "MonsterMeat", objs[2] != "Twigs", objs[3] != "Twigs")
+		if(objs[0] == "MonsterMeat", objs[1] == "MonsterMeat", objs[2] != "Twigs", objs[3] != "Twigs") {
 			resultItem.add(MonsterLasagna);
+			
+			resultButton.setIcon(item.MonsterLasagna.imageIcon);
+			resultButton.setText(item.MonsterLasagna.name);
+		}
+		
 		//우선순위 2: 미트스튜
-		else if(objs[0] == "Meat", objs[1] == "Meat", objs[2] != "Twigs", objs[3] != "Twigs")
+		else if(objs[0] == "Meat", objs[1] == "Meat", objs[2] != "Twigs", objs[3] != "Twigs") {
 			resultItem.add(MeatStew);
+
+			resultButton.setIcon(item.MeatStew.imageIcon);
+			resultButton.setText(item.MeatStew.name);
+		}
+		
 		//우선순위 3: 
-		else if(objs[0] == "Meat", objs[2] != "Twigs", objs[2] !="Twigs", objs[3] != "Twigs")
+		else if(objs[0] == "Meat", objs[2] != "Twigs", objs[2] !="Twigs", objs[3] != "Twigs") {
 			resultItem.add(Meatball);
+
+			resultButton.setIcon(item.Meatball.imageIcon);
+			resultButton.setText(item.Meatball.name);
+		}
+		
 		//재료가 겹치지 않은 가공식품. (가공식품 오름차순 우선순위. 곤죽 제외)
 		else {
+			//잼 한 줌
 			if(objs[0] == "Berry", obj[1] == "Berry", obj[2] == "Berry", obj[3] == "Berry") {
-				resultItem.add("BerryJam");
+				resultItem.add(BerryJam);
+
+				resultButton.setIcon(item.BerryJam.imageIcon);
+				resultButton.setText(item.BerryJam.name);
 			}
-			else if(objs[0] == "Fish", obj[1] != "Twigs", obj[2] == "Twigs", obj[3] == "Twigs" || obj[0] != "Twigs", obj[1] == "Fish", obj[2] == "Twigs", obj[3] == "Twigs")
-				resultItem.add("Fishsticks");
-			else if(objs[0] == "Carrot", obj[1] != "Carrot", obj[2] == "Carrot", obj[3] == "Carrot" || objs[0] == "Carrot", obj[1] != "Carrot", obj[2] == "Carrot", obj[3] == "Mushroom" || objs[0] == "Carrot", obj[1] != "Carrot", obj[2] == "Mushroom", obj[3] == "Mushroom" || objs[0] == "Carrot", obj[1] != "Mushroom", obj[2] == "Mushroom", obj[3] == "Mushroom" || objs[0] == "Mushroom", obj[1] != "Mushroom", obj[2] == "Mushroom", obj[3] == "Mushroom")
-				resultItem.add("Ratatouille");
-			else if(objs[0] == "Carrot", obj[1] != "Carrot", obj[2] == "Carrot", obj[3] == "FrogLeg" || objs[0] == "Carrot", obj[1] != "Carrot", obj[2] == "FrogLeg", obj[3] == "Mushroom" || objs[0] == "Carrot", obj[1] != "FrogLeg", obj[2] == "Mushroom", obj[3] == "Mushroom" || objs[0] == "FrogLeg", obj[1] != "Mushroom", obj[2] == "Mushroom", obj[3] == "Mushroom")
-				resultItem.add("Sandwich");
-			else
-				resultItem.add("WetGoop");
+			
+			//생선튀김
+			else if(objs[0] == "Fish", obj[1] != "Twigs", obj[2] == "Twigs", obj[3] == "Twigs" || obj[0] != "Twigs", obj[1] == "Fish", obj[2] == "Twigs", obj[3] == "Twigs") {
+				resultItem.add(Fishsticks);
+
+				resultButton.setIcon(item.Fishsticks.imageIcon);
+				resultButton.setText(item.Fishsticks.name);
+			}
+			
+			//라따뚜이
+			else if(objs[0] == "Carrot", obj[1] != "Carrot", obj[2] == "Carrot", obj[3] == "Carrot" || objs[0] == "Carrot", obj[1] != "Carrot", obj[2] == "Carrot", obj[3] == "Mushroom" || objs[0] == "Carrot", obj[1] != "Carrot", obj[2] == "Mushroom", obj[3] == "Mushroom" || objs[0] == "Carrot", obj[1] != "Mushroom", obj[2] == "Mushroom", obj[3] == "Mushroom" || objs[0] == "Mushroom", obj[1] != "Mushroom", obj[2] == "Mushroom", obj[3] == "Mushroom") {
+				resultItem.add(Ratatouille);
+
+				resultButton.setIcon(item.Ratatouille.imageIcon);
+				resultButton.setText(item.Ratatouille.name);
+			}
+			
+			//샌드위치
+			else if(objs[0] == "Carrot", obj[1] != "Carrot", obj[2] == "Carrot", obj[3] == "FrogLeg" || objs[0] == "Carrot", obj[1] != "Carrot", obj[2] == "FrogLeg", obj[3] == "Mushroom" || objs[0] == "Carrot", obj[1] != "FrogLeg", obj[2] == "Mushroom", obj[3] == "Mushroom" || objs[0] == "FrogLeg", obj[1] != "Mushroom", obj[2] == "Mushroom", obj[3] == "Mushroom") {
+				resultItem.add(Sandwich);
+
+				resultButton.setIcon(item.Sandwich.imageIcon);
+				resultButton.setText(item.Sandwich.name);
+			}
+			
+			//곤죽
+			else {
+				resultItem.add(WetGoop);
+
+				resultButton.setIcon(item.WetGoop.imageIcon);
+				resultButton.setText(item.WetGoop.name);
+			}
 		}
 		
 		//가공식품을 인벤토리에 추가
