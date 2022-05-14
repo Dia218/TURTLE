@@ -54,19 +54,23 @@ public class GameFrame extends JFrame {
 		
 		
 		//왼쪽 - 인벤토리 출력//
-		mainScreen.add(System.inventory.inventoryPanel, BorderLayout.WEST);
+		mainScreen.add(GameSystem.inventory.inventoryPanel, BorderLayout.WEST);
 		
 		
 		//중앙 - 게임 진행 화면//
-		mainScreen.add(System.playPanel, BorderLayout.CENTER);
+		mainScreen.add(GameSystem.playPanel, BorderLayout.CENTER);
 		
 		//시작 패널
 		JPanel startPanel = new JPanel();
 		JButton gameStartButton = new JButton("게임하기");
+		gameStartButton.addActionListener(GameSystem.userListener);
 		JButton gameExitButton = new JButton("종료하기");
+		gameExitButton.addActionListener(GameSystem.userListener);
 		startPanel.add(gameStartButton);
 		startPanel.add(gameExitButton);
-		System.playPanel.add(startPanel);
+		GameSystem.playPanel.add(startPanel);
+		
+
 		
 		
 		/*
