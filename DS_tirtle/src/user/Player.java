@@ -3,7 +3,7 @@ package user;
 import javax.swing.*;
 import java.awt.*;
 
-//장비 교체 수정 예정
+//장비 교체 추가 예정
 
 public class Player {
 

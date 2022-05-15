@@ -11,7 +11,7 @@ public class Menu {
 	 * */
 	
 	//기본 생성자
-	Menu() {
+	public Menu() {
 		
 		//메뉴 패널 생성
 		JPanel menuPanel = new JPanel();
@@ -47,4 +47,48 @@ public class Menu {
 		GameSystem.playPanel.repaint();
 	}
 	
+}
+
+class MenuEventCheck {
+
+	//메뉴패널 버튼 체크 생성자
+	public MenuEventCheck(JButton clickButton) {
+		//이동하기 버튼인 경우
+		if(clickButton.getText().equals("이동하기") ) {
+				/*Moving 클래스를 발생시켜서 지역이동*/
+				/*
+				 * Moving moving = new Moving();
+				 * */;
+		}
+		//사냥하기 버튼인 경우
+		else if(clickButton.getText().equals("사냥하기") ) {
+				/*Hunting 클래스를 발생시켜서 몬스터 사냥*/
+				/*
+				 * Hunting hunting = new Hunting(); 
+				 * */;
+		}
+		//채집하기 버튼인 경우
+		else if(clickButton.getText().equals("채집하기") ) {
+				/*Collecting 클래스를 발생시켜서 오브젝트에서 자원 채집*/
+				/*
+				 * Collecting collecting = new Collecting();
+				 * */;
+		}
+		//제작하기 버튼인 경우
+		else if(clickButton.getText().equals("제작하기") ) {
+				/*Making 클래스를 발생시켜서 도구 제작*/
+				/*
+				 * Making making = new Making();
+				 * */;
+		}
+		//요리하기 버튼인 경우
+		else if(clickButton.getText().equals("요리하기") ) {
+				/*Cooking 클래스를 발생시켜서 요리하기*/
+				/*
+				 * Cooking cooking = new Cooking();
+				 * */;
+		}
+		else
+			;
+	}
 }

@@ -2,69 +2,38 @@ package user;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.util.*;
 
 public class UserListener implements ActionListener, ItemListener {
-		
+	
+	/*
+	 * 유저리스너 클래스의 필드
+	 * */
+	
+	//이벤트가 발생한 버튼의 레퍼런스
+	public static JButton clickButton;
+	
+	//버튼 체크 클래스 생성
+	 CheckEvent checkevent = new CheckEvent();
+	
+	 
+	/*
+	 * 유저리스너 클래스의 메소드
+	 * */
+	 
+	//버튼 이벤트 설정
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		//이벤트가 발생한 버튼
-		JButton clickButton = (JButton)e.getSource();
 		
+		//이벤트가 발생한 버튼 저장하기
+		clickButton = (JButton)e.getSource();
 		
-		//시작 선택//
-		if(clickButton.getText().equals("게임하기") ) {
-			Menu menu = new Menu();
-		}
-		else if(clickButton.getText().equals("종료하기") ) {
-			System.exit(0);
-		}
-		else
-			;
-		
-		
-		//메뉴 선택//
-		if(clickButton.getText().equals("이동하기") ) {
-			/*Moving 클래스의 메소드를 호출하여 지역이동*/
-			/*
-			 * Moving moving = new Moving();
-			 * moving.moveEx();
-			 * */
-		}
-		else if(clickButton.getText().equals("사냥하기") ) {
-			/*Hunting 클래스의 메소드를 호출하여 몬스터 사냥*/
-			/*
-			 * Hunting hunting = new Hunting(); 
-			 * hunting.huntEx();
-			 * */
-		}
-		else if(clickButton.getText().equals("채집하기") ) {
-			/*Collecting 클래스의 메소드를 호출하여 오브젝트에서 자원 채집*/
-			/*
-			 * Collecting collecting = new Collecting();
-			 * collecting.collectEx();
-			 * */
-		}
-		else if(clickButton.getText().equals("제작하기") ) {
-			/*Making 클래스의 메소드를 호출하여 도구 제작*/
-			/*
-			 * Making making = new Making();
-			 * making.makeEx();
-			 * */
-		}
-		else if(clickButton.getText().equals("요리하기") ) {
-			/*Cooking 클래스의 메소드를 호출하여 요리하기*/
-			/*
-			 * Cooking cooking = new Cooking();
-			 * cooking.cookEx();
-			 * */
-		}
-		else
-			;
-		
-		//
-		
+		//버튼을 체크하는 메소드 호출하기 -> 옵저버 패키지
+		checkevent.checkbutton(clickButton);
 	}
 	
+	
+	//체크박스 이벤트 설정
 	@Override
 	public void itemStateChanged(ItemEvent e) {
 		
@@ -77,5 +46,4 @@ public class UserListener implements ActionListener, ItemListener {
 		}
 		//e.setSelected(false);
 	}
-
 }

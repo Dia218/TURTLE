@@ -48,6 +48,7 @@ public class Inventory {
 		}
 	}
 	
+	//수정해야함 - 아이템 타입 검사를 해야함
 	//인벤토리에서 아이템이 있는 지 확인하기
 	int checkItem(Item item) {
 		
@@ -115,15 +116,17 @@ public class Inventory {
 	
 	
 	//인벤토리에서 아이템을 선택하기
-	void choose() {
+	void choose(Item chooseItem) {
 		
+		//요리하기인 경우
+		
+		
+		//아이템이 도구인 경우
+		
+		//아이템이 음식인 경우
+				
 		
 	}
-	/* 
-	 * 인벤토리에서 아이템 선택해서 '선택아이템' 레퍼런스에 객체 저장하는법
-	 * Item chooseItem = vector.get(i);
-	 * 
-	 * */
 	
 	
 	
@@ -143,3 +146,31 @@ public class Inventory {
 		}
 	}
 }
+
+class InventoryEventCheck {
+
+	//인벤토리 패널 버튼 체크 생성자
+	public InventoryEventCheck(JButton clickButton) {
+		
+		//비어있는 버튼을 클릭한 경우
+		if(clickButton.getText().equals("Empty")) {
+			; //아무 일도 일어나지 않음
+		}
+		
+		else {
+			//클릭한 버튼에 들어있는 아이템을 선택하기
+			for(int index = 0; index <= 20; index++) {
+				if (GameSystem.inventory.inventoryButton[index].equals(clickButton)) {
+					Item chooseItem = GameSystem.inventory.vector.get(index);
+					//인벤토리의 선택하기 메소드 호출
+					GameSystem.inventory.choose(chooseItem);
+					break;
+				}
+				else
+					;
+			}
+		}
+		
+	}
+}
+

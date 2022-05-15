@@ -2,6 +2,8 @@ package user;
 import java.awt.*;
 import javax.swing.*;
 
+import user.Menu;
+
 public class GameFrame extends JFrame {
 
 	//화면 구성
@@ -81,5 +83,23 @@ public class GameFrame extends JFrame {
 		mainScreen.add(testBiomPanel, BorderLayout.CENTER);
 		*/
 	}
+}
+
+class StartEventCheck {
 	
+	//시작패널 버튼 체크 생성자
+	public StartEventCheck(JButton eventButton) {
+		//이벤트 버튼이 게임하기 버튼인 경우
+		if(eventButton.getText().equals("게임하기") ) {
+			//메뉴 클래스 생성
+			Menu menu = new Menu();
+		}
+		//이벤트 버튼이 종료하기 버튼인 경우
+		else if(eventButton.getText().equals("종료하기") ) {
+			//프로그램 종료
+			System.exit(0);
+		}
+		else
+			;
+	}
 }
