@@ -18,8 +18,6 @@ public class Making {
 	//제작 종류, 아이템 버튼 객체 배열 생성
 	JButton[][] makingButton = new JButton[2][2];
 	
-	
-	
 	//제작 패널에 아이템을 집어넣기
 		void inputItem() {
 			

@@ -1,11 +1,10 @@
 package action;
 
-import java.awt.*;
-import javax.swing.*;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Vector;
 
-import user.Item;
-import user.System;
+import javax.swing.JButton;
+import javax.swing.JPanel;
 
 
 public class Cooking {
@@ -77,6 +76,9 @@ public class Cooking {
 		//우선순위 1: 괴물라자냐
 		if(objs[0] == "MonsterMeat", objs[1] == "MonsterMeat", objs[2] != "Twigs", objs[3] != "Twigs") {
 			resultItem.add(MonsterLasagna);
+			consumeItem(MonsterMeat);
+			consumeItem(MonsterMeat);
+			
 			
 			resultButton.setIcon(item.MonsterLasagna.imageIcon);
 			resultButton.setText(item.MonsterLasagna.name);
