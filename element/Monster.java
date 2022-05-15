@@ -1,4 +1,5 @@
-package element;
+package world;
+import user.Player;
 
 public class Monster {
 	String Mon_name;
