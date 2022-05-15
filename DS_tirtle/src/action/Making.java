@@ -50,11 +50,6 @@ public class Making {
 					 result = "재료가 부족합니다..";
 					 break;
 				}
-				//인벤토리가 가득 찼을 때
-				else if (vectorSize >= 21) {
-					result = "인벤토리가 꽉 찼습니다.";
-					break;
-				}
 				//제작 할 떄
 				else {
 					consumeItem(Grass, Twigs);
@@ -67,12 +62,8 @@ public class Making {
 				int vectorSize = vector.size();
 				String result;
 				if (consumeItem(Grass, Log) == 0) {
-					 result = "재료가 부족합니다..";
+					 result = "재료가 부족합니다.";
 					 break;
-				}
-				else if (vectorSize >= 21) {
-					result = "인벤토리가 꽉 찼습니다.";
-					break;
 				}
 				else {
 					consumeItem(Grass, Log);
@@ -87,10 +78,6 @@ public class Making {
 				if (consumeItem(Twigs, Stone) == 0) {
 					 result = "재료가 부족합니다..";
 					 break;
-				}
-				else if (vectorSize >= 21) {
-					result = "인벤토리가 꽉 찼습니다.";
-					break;
 				}
 				else {
 					consumeItem(Twigs, Stone);
