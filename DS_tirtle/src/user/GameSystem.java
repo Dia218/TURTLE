@@ -15,6 +15,7 @@ public class GameSystem {
 	//이벤트 처리 생성
 	public static UserListener userListener = new UserListener();
 	
+	
 	//메인 메소드
 	public static void main(String[] args) {
 		

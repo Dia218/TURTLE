@@ -57,6 +57,7 @@ public class Inventory {
 		if (index == -1) {
 			 result = "재료가 부족합니다.";
 			 
+			 //아이템이 없으면 0 리턴
 			 return 0;
 		}
 		
@@ -88,6 +89,7 @@ public class Inventory {
 			inventoryPanel.revalidate();
 			inventoryPanel.repaint();
 			
+			//아이템이 있으면 1 리턴
 			return 1;
 		}
 		

@@ -40,17 +40,7 @@ public class GameFrame extends JFrame {
 		
 		
 		//오른쪽 - 캐릭터창 출력//
-		JPanel profilePanel = new JPanel();
-		mainScreen.add(profilePanel, BorderLayout.EAST);
-		profilePanel.setLayout(new GridLayout(4, 2, 20, 20));
-		profilePanel.add(new JLabel("체력"));
-		profilePanel.add(new JTextField(10));
-		profilePanel.add(new JLabel("허기"));
-		profilePanel.add(new JTextField(10));
-		profilePanel.add(new JLabel("공격력"));
-		profilePanel.add(new JTextField(10));
-		profilePanel.add(new JLabel("방어력"));
-		profilePanel.add(new JTextField(10));
+		mainScreen.add(GameSystem.player.playerPanel, BorderLayout.EAST);
 		
 		
 		//왼쪽 - 인벤토리 출력//
@@ -60,14 +50,18 @@ public class GameFrame extends JFrame {
 		//중앙 - 게임 진행 화면//
 		mainScreen.add(GameSystem.playPanel, BorderLayout.CENTER);
 		
-		//시작 패널
+		//게임시작 패널
 		JPanel startPanel = new JPanel();
+		
+		//게임시작 패널의 버튼
 		JButton gameStartButton = new JButton("게임하기");
 		gameStartButton.addActionListener(GameSystem.userListener);
 		JButton gameExitButton = new JButton("종료하기");
 		gameExitButton.addActionListener(GameSystem.userListener);
 		startPanel.add(gameStartButton);
 		startPanel.add(gameExitButton);
+		
+		//게임시작 패널 중앙 패널에 배치
 		GameSystem.playPanel.add(startPanel);
 		
 
