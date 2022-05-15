@@ -6,4 +6,5 @@ public abstract class Tools {
 	
 	public abstract String returnName();
 	public abstract int returnDurability();
+
 }
