@@ -3,6 +3,8 @@ package user;
 import javax.swing.*;
 import java.awt.*;
 
+//장비 교체 수정 예정
+
 public class Player {
 
 	/*
@@ -16,6 +18,9 @@ public class Player {
 	
 	//캐릭터 수치 정보를 나타내는 풀레이어 패널 생성
 	PlayerPanel playerPanel = new PlayerPanel();
+	
+	//캐릭터가 착용한 장비 정보를 나타내는 장비 패널 생성
+	EquipPanel equipPanel = new EquipPanel();
 	
 	
 	/*
@@ -73,6 +78,12 @@ public class Player {
 		//플레이어 패널 갱신
 		playerPanel.revalidate();
 		playerPanel.repaint();	
+		
+		//방어구 체크 박스 갱신
+		
+		//장비 패널 갱신
+		equipPanel.revalidate();
+		equipPanel.repaint();
 	}
 	
 	//방어값을 변화시키는 메소드
@@ -87,6 +98,12 @@ public class Player {
 		//플레이어 패널 갱신
 		playerPanel.revalidate();
 		playerPanel.repaint();
+		
+		//방어구 체크 박스 갱신
+		
+		//장비 패널 갱신
+		equipPanel.revalidate();
+		equipPanel.repaint();
 	}
 }
 
@@ -131,6 +148,31 @@ class PlayerPanel extends JPanel {
 		this.add(new JLabel("방어력"));
 		this.add(defensiveField);
 	}
+}
+
+
+////착용 장비 패널 클래스////
+class EquipPanel extends JPanel {
+	
+	//장비 체크 박스 만들기
+	ImageIcon noEquip = new ImageIcon("./images/NoEquip.jpg");
+	JCheckBox equipWeapon = new JCheckBox(noEquip);
+	JCheckBox equipArmor = new JCheckBox(noEquip);
+	
+	/*
+	 * 장비 패널 생성자
+	 * */
+	EquipPanel() {
+		
+		//장비 패널 배치 관리자
+		this.setLayout(new GridLayout(2, 2));
+		
+		//장비 패널 요소 배치
+		this.add(new JLabel("방어구"));
+		this.add(equipArmor);
+		this.add(new JLabel("무기"));
+		this.add(equipWeapon);
+	}	
 }
 
 

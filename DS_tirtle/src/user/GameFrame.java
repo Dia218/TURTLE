@@ -39,8 +39,12 @@ public class GameFrame extends JFrame {
 		resultPanel.setBackground(Color.YELLOW);
 		
 		
-		//오른쪽 - 캐릭터창 출력//
-		mainScreen.add(GameSystem.player.playerPanel, BorderLayout.EAST);
+		//오른쪽 - 캐릭터 정보 출력//
+		JPanel profilePanel = new JPanel();
+		profilePanel.setLayout(new GridLayout(2, 1));
+		profilePanel.add(GameSystem.player.playerPanel);
+		profilePanel.add(GameSystem.player.equipPanel);
+		mainScreen.add(profilePanel, BorderLayout.EAST);
 		
 		
 		//왼쪽 - 인벤토리 출력//
