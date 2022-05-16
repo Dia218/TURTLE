@@ -1,5 +1,6 @@
 package item.weapons;
 
+<<<<<<< HEAD
 import javax.swing.ImageIcon;
 
 import item.Weapons;
@@ -24,3 +25,9 @@ public class TentacleSpike extends Weapons {
 		return img;
 	}
 }
+=======
+public class TentacleSpike {
+	//임시
+	static public String name = "촉수가시";
+}
+>>>>>>> af339bbd79ee4ee31bfc6d09a42a0afed7854e69

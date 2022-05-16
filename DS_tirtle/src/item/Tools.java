@@ -6,4 +6,5 @@ public abstract class Tools extends Item {
 	
 	//³»±¸µµ return
 	public abstract int returnDurability();
+
 }
