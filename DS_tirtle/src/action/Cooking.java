@@ -4,7 +4,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.util.*;
 
-import user.Item;
+import item.*;
 import user.System;
 
 
