@@ -20,7 +20,7 @@ public class TentacleSpike extends Weapons {
 	public int returnATK() {
 		return attack;
 	}
-	static public ImageIcon returnImg() {
+	public ImageIcon returnImg() {
 		return img;
 	}
 }

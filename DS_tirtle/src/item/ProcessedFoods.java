@@ -18,7 +18,7 @@ public class ProcessedFoods extends Foods {
 		return name;
 	}
 	//아이템 아이콘 return
-	public static ImageIcon returnImg() {
+	public ImageIcon returnImg() {
 		return img;
 	}
 	//허기 회복량 return

@@ -20,7 +20,7 @@ public class GrassSuit extends Armors {
 	public int returnDEF() {
 		return defence;
 	}
-	static public ImageIcon returnImg() {
+	public ImageIcon returnImg() {
 		return img;
 	}
 }
