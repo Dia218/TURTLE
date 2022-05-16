@@ -2,9 +2,9 @@ package item.processedFoods;
 
 import javax.swing.ImageIcon;
 
-import item.Foods;
+import item.*;
 
-public class MonsterLasagna extends Foods {
+public class MonsterLasagna extends ProcessedFoods {
 	private static String name = "±«¹°¶óÀÚ³Ä";
 	private static int starvePoint = 60;
 	private static int healPoint = -20;
@@ -14,7 +14,7 @@ public class MonsterLasagna extends Foods {
 	public String returnName() {
 		return name;
 	}
-	public int returStarvePoint() {
+	public int returnStarvePoint() {
 		return starvePoint;
 	}
 	public int returnHealPoint() {

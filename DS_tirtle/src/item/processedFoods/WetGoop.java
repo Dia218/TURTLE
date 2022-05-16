@@ -2,7 +2,9 @@ package item.processedFoods;
 
 import javax.swing.ImageIcon;
 
-public class WetGoop {
+import item.*;
+
+public class WetGoop extends ProcessedFoods {
 	private static String name = "ฐ๏มื";
 	private static int starvePoint = 0;
 	private static int healPoint = 0;
@@ -12,7 +14,7 @@ public class WetGoop {
 	public String returnName() {
 		return name;
 	}
-	public int returStarvePoint() {
+	public int returnStarvePoint() {
 		return starvePoint;
 	}
 	public int returnHealPoint() {

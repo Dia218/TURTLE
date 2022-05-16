@@ -1,6 +1,7 @@
 package user;
 import java.awt.*;
 import javax.swing.*;
+import item.*;
 
 import user.Menu;
 
@@ -72,9 +73,16 @@ public class GameFrame extends JFrame {
 		
 
 		
+<<<<<<< HEAD
 		
 		/*
 		//테스트용 - 삭제해야함
+=======
+		//중앙 - 게임 진행 화면
+		JPanel playPanel = new JPanel();
+		mainScreen.add(playPanel, BorderLayout.CENTER);
+		ItemData a;
+>>>>>>> 0658b5a093b23280ab7fb806864f2d876e498203
 		JPanel testBiomPanel = new JPanel();
 		ImageIcon carrotPlantImg = new ImageIcon("./images/BerryBush.png");
 		JCheckBox carrotPlant = new JCheckBox(carrotPlantImg);

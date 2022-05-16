@@ -3,7 +3,7 @@ package item;
 import javax.swing.ImageIcon;
 
 public class Empty extends Item {
-	private String name = "empty";
+	private static String name = "empty";
 	
 	static private ImageIcon img = new ImageIcon("./images/Empty.png");
 	

@@ -8,9 +8,9 @@ import item.Armors;
 public class LogSuit extends Armors {
 	private static String name = "³ª¹«°©¿Ê";
 	private int durability = 100;
-	private int defence = 80;
+	private static int defence = 80;
 	
-	static private ImageIcon img = new ImageIcon("./images/Log_Suit.png");
+	private static ImageIcon img = new ImageIcon("./images/Log_Suit.png");
 	
 	public String returnName() {
 		return name;
@@ -21,7 +21,7 @@ public class LogSuit extends Armors {
 	public int returnDEF() {
 		return defence;
 	}
-	static public ImageIcon returnImg() {
+	public static ImageIcon returnImg() {
 		return img;
 	}
 }

@@ -1,8 +1,7 @@
 package item.unprocessedFoods;
 
 import javax.swing.ImageIcon;
-
-import item.UnprocessedFoods;
+import item.*;
 
 public class FrogLeg extends UnprocessedFoods {
 	private static String name = "개구리다리";
@@ -14,7 +13,7 @@ public class FrogLeg extends UnprocessedFoods {
 	public String returnName() {
 		return name;
 	}
-	public int returStarvePoint() {
+	public int returnStarvePoint() {
 		return starvePoint;
 	}
 	public int returnHealPoint() {

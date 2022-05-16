@@ -8,7 +8,7 @@ import item.Weapons;
 public class Spear extends Weapons {
 	private static String name = "â";
 	private int durability = 100;
-	private int attack = 30;
+	private static int attack = 30;
 	
 	static private ImageIcon img = new ImageIcon("./images/Spear.png");
 	
