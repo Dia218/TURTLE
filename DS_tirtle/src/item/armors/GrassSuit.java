@@ -7,7 +7,7 @@ import item.Armors;
 public class GrassSuit extends Armors {
 	private static String name = "Ç®°©¿Ê";
 	private int durability = 100;
-	private int defence = 60;
+	private static int defence = 60;
 	
 	static private ImageIcon img = new ImageIcon("./images/Grass_Suit.png");
 	

@@ -14,13 +14,13 @@ public class Berry extends UnprocessedFoods {
 	public String returnName() {
 		return name;
 	}
-	public int returStarvePoint() {
+	public int returnStarvePoint() {
 		return starvePoint;
 	}
 	public int returnHealPoint() {
 		return healPoint;
 	}
-	public ImageIcon returnImg() {
+	static public ImageIcon returnImg() {
 		return img;
 	}
 }

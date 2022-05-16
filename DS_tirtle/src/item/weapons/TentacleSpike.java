@@ -7,7 +7,7 @@ import item.Weapons;
 public class TentacleSpike extends Weapons {
 	private static String name = "ÃË¼ö°¡½Ã";
 	private int durability = 100;
-	private int attack = 50;
+	private static int attack = 50;
 	
 	static private ImageIcon img = new ImageIcon("./images/Tentacle_Spike.png");
 	
