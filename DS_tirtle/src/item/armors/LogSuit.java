@@ -21,7 +21,7 @@ public class LogSuit extends Armors {
 	public int returnDEF() {
 		return defence;
 	}
-	public static ImageIcon returnImg() {
+	public ImageIcon returnImg() {
 		return img;
 	}
 }

@@ -20,7 +20,7 @@ public class Sandwich extends ProcessedFoods {
 	public int returnHealPoint() {
 		return healPoint;
 	}
-	static public ImageIcon returnImg() {
+	public ImageIcon returnImg() {
 		return img;
 	}
 }

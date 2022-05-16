@@ -14,13 +14,13 @@ public class BerryJam extends ProcessedFoods {
 	public String returnName() {
 		return name;
 	}
-	public int returnStarvepoint() {
+	public int returnStarvePoint() {
 		return starvePoint;
 	}
 	public int returnHealPoint() {
 		return healPoint;
 	}
-	static public ImageIcon returnImg() {
+	public ImageIcon returnImg() {
 		return img;
 	}
 }

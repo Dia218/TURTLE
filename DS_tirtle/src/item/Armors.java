@@ -19,7 +19,7 @@ public class Armors extends Tools {
 		return name;
 	}
 	//이미지 아이콘 return
-	public static ImageIcon returnImg() {
+	public ImageIcon returnImg() {
 		return img;
 	}
 	//내구도 return

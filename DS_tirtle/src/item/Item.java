@@ -2,12 +2,17 @@ package item;
 
 import javax.swing.*;
 
-public abstract class Item {
+public class Item {
 	//이름
-	static String name;
+	private static String name;
 	//이미지
-	private ImageIcon img;
+	private static ImageIcon img;
 	
 	//이름 return
-	public abstract String returnName();
+	public String returnName() {
+		return name;
+	}
+	public ImageIcon returmImg() {
+		return img;
+	}
 }
