@@ -1,39 +1,9 @@
 package item;
 
 public abstract class Weapons extends Tools {
+	//공격력
 	private int attack;
 	
+	//공격력 return
 	public abstract int returnATK();
-}
-
-class Spear extends Weapons {
-	private static String name = "창";
-	private int durability = 100;
-	private int attack = 30;
-	
-	public String returnName() {
-		return name;
-	}
-	public int returnDurability() {
-		return durability;
-	}
-	public int returnATK() {
-		return attack;
-	}
-}
-
-class Tentacles extends Weapons {
-	private static String name = "촉수가시";
-	private int durability = 100;
-	private int attack = 50;
-	
-	public String returnName() {
-		return name;
-	}
-	public int returnDurability() {
-		return durability;
-	}
-	public int returnATK() {
-		return attack;
-	}
 }
