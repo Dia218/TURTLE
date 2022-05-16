@@ -1,7 +1,6 @@
 package user;
 import java.awt.*;
 import javax.swing.*;
-import item.*;
 
 import user.Menu;
 
@@ -81,8 +80,11 @@ public class GameFrame extends JFrame {
 		//중앙 - 게임 진행 화면
 		JPanel playPanel = new JPanel();
 		mainScreen.add(playPanel, BorderLayout.CENTER);
+<<<<<<< HEAD
 		ItemData a;
 >>>>>>> 0658b5a093b23280ab7fb806864f2d876e498203
+=======
+>>>>>>> 5d2d768ebabeb0a4fbc2441a66598c519bdf6481
 		JPanel testBiomPanel = new JPanel();
 		ImageIcon carrotPlantImg = new ImageIcon("./images/BerryBush.png");
 		JCheckBox carrotPlant = new JCheckBox(carrotPlantImg);

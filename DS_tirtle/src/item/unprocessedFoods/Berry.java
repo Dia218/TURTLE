@@ -20,7 +20,7 @@ public class Berry extends UnprocessedFoods {
 	public int returnHealPoint() {
 		return healPoint;
 	}
-	static public ImageIcon returnImg() {
+	public ImageIcon returnImg() {
 		return img;
 	}
 }

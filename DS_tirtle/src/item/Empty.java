@@ -11,7 +11,7 @@ public class Empty extends Item {
 		return name;
 	}
 	
-	static public ImageIcon returnImg() {
+	public ImageIcon returnImg() {
 		return img;
 	}
 }
