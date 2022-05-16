@@ -2,9 +2,9 @@ package item.processedFoods;
 
 import javax.swing.ImageIcon;
 
-import item.Foods;
+import item.*;
 
-public class Fishsticks extends Foods {
+public class Fishsticks extends ProcessedFoods {
 	private static String name = "»ý¼±Æ¢±è";
 	private static int starvePoint = 35;
 	private static int healPoint = 40;
@@ -14,7 +14,7 @@ public class Fishsticks extends Foods {
 	public String returnName() {
 		return name;
 	}
-	public int returStarvePoint() {
+	public int returnStarvePoint() {
 		return starvePoint;
 	}
 	public int returnHealPoint() {

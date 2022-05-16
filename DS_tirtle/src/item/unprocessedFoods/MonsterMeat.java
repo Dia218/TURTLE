@@ -14,7 +14,7 @@ public class MonsterMeat extends UnprocessedFoods {
 	public String returnName() {
 		return name;
 	}
-	public int returStarvePoint() {
+	public int returnStarvePoint() {
 		return starvePoint;
 	}
 	public int returnHealPoint() {
