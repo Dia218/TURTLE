@@ -1,7 +1,10 @@
 package user;
-import java.awt.*;
-import javax.swing.*;
-import java.util.*;
+import java.awt.GridLayout;
+import java.util.Vector;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
 import item.*;
 
 //이터레이터를 이용해 소비할 아이템 갯수 체크 추가 고려
@@ -44,7 +47,7 @@ public class Inventory {
 			int index = vector.size()-1;
 			
 			//벡터 인덱스 값과 동일한 인덱스의 버튼에 이미지 삽입
-			inventoryButton[index].setIcon(item.returnIcon());
+			inventoryButton[index].setIcon(item.returnImg());
 			inventoryButton[index].setText(item.returnName());
 		}
 	}
@@ -94,7 +97,7 @@ public class Inventory {
 		
 		//인벤토리 버튼 다시 그리기
 		for(int i = 1; i < vectorSize; i++) {
-			inventoryButton[i].setIcon(vector.get(i).returnIcon());
+			inventoryButton[i].setIcon(vector.get(i).returnImg());
 			inventoryButton[i].setText(vector.get(i).returnName());
 		}
 		

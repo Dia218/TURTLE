@@ -1,6 +1,5 @@
 package item.weapons;
 
-<<<<<<< HEAD
 import javax.swing.ImageIcon;
 
 import item.Weapons;
@@ -25,9 +24,3 @@ public class Spear extends Weapons {
 		return img;
 	}
 }
-=======
-public class Spear {
-	//юс╫ц
-	static public String name = "ц╒";
-}
->>>>>>> af339bbd79ee4ee31bfc6d09a42a0afed7854e69
