@@ -1,6 +1,5 @@
 package item.armors;
 
-<<<<<<< HEAD
 import javax.swing.ImageIcon;
 
 import item.Armors;
@@ -25,10 +24,4 @@ public class GrassSuit extends Armors {
 		return img;
 	}
 }
-=======
-public class GrassSuit {
-	//ÀÓ½Ã
-	static public String name = "Ç®°©¿Ê";
 	
-}
->>>>>>> af339bbd79ee4ee31bfc6d09a42a0afed7854e69

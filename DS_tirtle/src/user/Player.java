@@ -1,7 +1,17 @@
 package user;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+
+import javax.swing.ImageIcon;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import item.Item;
+import item.armors.GrassSuit;
 
 //장비 교체 추가 예정
 
@@ -153,7 +163,6 @@ class PlayerPanel extends JPanel {
 
 ////착용 장비 패널 클래스////
 class EquipPanel extends JPanel {
-	
 	//장비 체크 박스 만들기
 	ImageIcon noEquip = new ImageIcon("./images/NoEquip.jpg");
 	JCheckBox equipWeapon = new JCheckBox(noEquip);

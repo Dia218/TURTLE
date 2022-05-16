@@ -5,12 +5,7 @@ public class Tools extends Item {
 	private int durability;
 	
 	//³»±¸µµ return
-<<<<<<< HEAD
-	public abstract int returnDurability();
-
-=======
 	public int returnDurability() {
 		return durability;
 	}
->>>>>>> item
 }
