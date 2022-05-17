@@ -10,9 +10,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import item.Item;
-import item.armors.GrassSuit;
-
 //장비 교체 추가 예정
 
 public class Player {

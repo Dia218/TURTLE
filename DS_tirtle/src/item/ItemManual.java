@@ -8,6 +8,8 @@ import item.weapons.*;
 
 public class ItemManual {			
 	
+	
+	
 	//
 	//*아이템 객체 상속관계*
 	//
@@ -35,6 +37,7 @@ public class ItemManual {
 	//ex) GrassSuit의 상속관계 : Item > Tools > Armors > GrassSuit
 	
 	
+	
 	//
 	//*아이템 클래스의 구성*
 	//
@@ -48,33 +51,52 @@ public class ItemManual {
 	//ex2) GrassSuit 클래스 : (필드)name, img, durability, defecne (메소드)returnName, returnImg, returnDurability, returnDEF
 	
 	
+	
 	//
 	//*아이템 클래스의 사용*
 	//
 	
-	//아이템 클래스를 뽑아 올 때는 아이템 패키지를 import 해야 한다.
+	//아이템 클래스를 뽑아 쓰는 방식은 Item객체를 선언하고
+	
+	//각 아이템 클래스 객체를 생성하여
+	
+	//Item 객체에 업캐스팅하여 생성한다.
+	
+	//그러면 생성된 Item 객체에
+	
+	//각 아이템 클래스의 정보가 들어간다.
+	
+	
+	//아이템 클래스를 뽑아 올 때는 먼저 아이템 패키지를 import 해야 한다.
 	
 	//각 아이템 클래스들은 이중 패키지로 분류되어 있다.
 	
-	//import 할 때는 item.*;만 작성한다면 item패키지 안의 다른 패키지는 접근할 수 없다.
+	//import 할 때는 item.*;만 작성한다면 item패키지 안의 다른 이중 패키지는 접근할 수 없다.
 	
-	//ex1) GrassSuit 클래스를 import 받고 싶을 때 : import.item.armor.*;
+	//ex1) GrassSuit 클래스를 import 받고 싶을 때 : import.item.armor.GrassSuit;
 	
-	//ex2) BerryJam 클래스를 import 받고 싶을 때 : import.item.processedFoods.*;
+	//ex2) BerryJam 클래스를 import 받고 싶을 때 : import.item.processedFoods.BerryJam;
 	
-	//아이템 데이터를 뽑아 쓸 때는
-	
-	//뽑아쓸 아이템 클래스 객체를 생성하고
-	
-	//그 객체를 아이템 객체에다 집어넣어야 한다.
-	
-	//단, 아이템 데이터를 뽑아 쓸 떄는 무조건 필드값이 아닌 메소드값을 대입해야 한다.
 	
 	//ex)	GrassSuit 클래스의 이름을 뽑아 쓸 때
-	//GrassSuit grassSuit = new GrassSuit();
-	//Item item = grassSuit.returnName();
 	
-	//결과값 item.name = "풀 갑옷"
+	//import item.Item;
+	//import.item.armor.GrassSuit;
+	
+	//...
+	
+	//Item item;
+	//GrassSuit grassSuit = new GrassSuit();
+	//item = grassSuit;
+	
+	//item객체에 GrassSuit객체가 업캐스팅되어 정보가 입력됨.
+   
+	//JButton test = new JButton(item.returnImg());
+    //test.addActionListener(GameSystem.userListener);
+    //test.add(test);
+	
+	//결과 test 버튼에 풀 갑옷 이미지가 적용됨.
+	
 	
 	
 	//

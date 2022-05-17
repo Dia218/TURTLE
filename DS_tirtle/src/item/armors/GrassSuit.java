@@ -21,7 +21,7 @@ public class GrassSuit extends Armors {
 		return defence;
 	}
 	public ImageIcon returnImg() {
-		return img;
+		return this.img;
 	}
 }
 	
