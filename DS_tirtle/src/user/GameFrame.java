@@ -70,7 +70,6 @@ public class GameFrame extends JFrame {
 		//게임시작 패널 중앙 패널에 배치
 		GameSystem.playPanel.add(startPanel);
 		
-		
 	}
 }
 

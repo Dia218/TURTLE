@@ -6,6 +6,7 @@ public class Foods extends Item {
 	//체력 회복량
 	private int healPoint;
 
+	
 	//허기 회복량 return
 	public int returnStarvePoint() {
 		return starvePoint;

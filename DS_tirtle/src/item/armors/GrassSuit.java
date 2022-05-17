@@ -17,6 +17,9 @@ public class GrassSuit extends Armors {
 	public int returnDurability() {
 		return durability;
 	}
+	public void returnDurDec(int i) {
+		durability -= i;
+	}
 	public int returnDEF() {
 		return defence;
 	}
@@ -24,3 +27,4 @@ public class GrassSuit extends Armors {
 		return img;
 	}
 }
+
