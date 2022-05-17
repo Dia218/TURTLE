@@ -2,6 +2,7 @@ package user;
 
 import java.awt.*;
 import javax.swing.*;
+import action.*;
 
 public class Menu {
 
@@ -77,16 +78,15 @@ class MenuEventCheck {
 		//제작하기 버튼인 경우
 		else if(clickButton.getText().equals("제작하기") ) {
 				/*Making 클래스를 발생시켜서 도구 제작*/
-				/*
-				 * Making making = new Making();
-				 * */;
+
+			Making making = new Making();
+
 		}
 		//요리하기 버튼인 경우
 		else if(clickButton.getText().equals("요리하기") ) {
 				/*Cooking 클래스를 발생시켜서 요리하기*/
-				/*
-				 * Cooking cooking = new Cooking();
-				 * */;
+
+			Cooking cooking = new Cooking();
 		}
 		else
 			;
