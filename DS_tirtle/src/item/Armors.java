@@ -1,8 +1,5 @@
 package item;
 
-import javax.swing.ImageIcon;
-import item.armors.*;
-
 public class Armors extends Tools {
 	//¹æ¾î·Â
 	private int defence;
