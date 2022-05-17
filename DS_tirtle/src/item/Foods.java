@@ -1,11 +1,18 @@
 package item;
 
-public abstract class Foods {
-	private String name;
+public class Foods extends Item {
+	//허기 회복량
 	private int starvePoint;
+	//체력 회복량
 	private int healPoint;
+
 	
-	public abstract String returnName();
-	public abstract int returStarvePoint();
-	public abstract int returnHealPoint();
+	//허기 회복량 return
+	public int returnStarvePoint() {
+		return starvePoint;
+	}
+	//체력 회복량 return
+	public int returnHealPoint() {
+		return healPoint;
+	}
 }

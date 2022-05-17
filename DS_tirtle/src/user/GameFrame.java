@@ -2,6 +2,8 @@ package user;
 import java.awt.*;
 import javax.swing.*;
 
+import user.Menu;
+
 public class GameFrame extends JFrame {
 
 	//화면 구성
@@ -39,45 +41,53 @@ public class GameFrame extends JFrame {
 		resultPanel.setBackground(Color.YELLOW);
 		
 		
-		//오른쪽 - 캐릭터창 출력//
+		//오른쪽 - 캐릭터 정보 출력//
 		JPanel profilePanel = new JPanel();
+		profilePanel.setLayout(new GridLayout(2, 1));
+		profilePanel.add(GameSystem.player.playerPanel);
+		profilePanel.add(GameSystem.player.equipPanel);
 		mainScreen.add(profilePanel, BorderLayout.EAST);
-		profilePanel.setLayout(new GridLayout(4, 2, 20, 20));
-		profilePanel.add(new JLabel("체력"));
-		profilePanel.add(new JTextField(10));
-		profilePanel.add(new JLabel("허기"));
-		profilePanel.add(new JTextField(10));
-		profilePanel.add(new JLabel("공격력"));
-		profilePanel.add(new JTextField(10));
-		profilePanel.add(new JLabel("방어력"));
-		profilePanel.add(new JTextField(10));
 		
 		
 		//왼쪽 - 인벤토리 출력//
-		mainScreen.add(System.inventory.inventoryPanel, BorderLayout.WEST);
+		mainScreen.add(GameSystem.inventory.inventoryPanel, BorderLayout.WEST);
 		
 		
 		//중앙 - 게임 진행 화면//
-		mainScreen.add(System.playPanel, BorderLayout.CENTER);
+		mainScreen.add(GameSystem.playPanel, BorderLayout.CENTER);
 		
-		//시작 패널
+		//게임시작 패널
 		JPanel startPanel = new JPanel();
+		
+		//게임시작 패널의 버튼
 		JButton gameStartButton = new JButton("게임하기");
+		gameStartButton.addActionListener(GameSystem.userListener);
 		JButton gameExitButton = new JButton("종료하기");
+		gameExitButton.addActionListener(GameSystem.userListener);
 		startPanel.add(gameStartButton);
 		startPanel.add(gameExitButton);
-		System.playPanel.add(startPanel);
 		
+		//게임시작 패널 중앙 패널에 배치
+		GameSystem.playPanel.add(startPanel);
 		
-		/*
-		//테스트용 - 삭제해야함
-		JPanel testBiomPanel = new JPanel();
-		ImageIcon carrotPlantImg = new ImageIcon("./images/BerryBush.png");
-		JCheckBox carrotPlant = new JCheckBox(carrotPlantImg);
-
-		testBiomPanel.add(carrotPlant);
-		mainScreen.add(testBiomPanel, BorderLayout.CENTER);
-		*/
 	}
+}
+
+class StartEventCheck {
 	
+	//시작패널 버튼 체크 생성자
+	public StartEventCheck(JButton eventButton) {
+		//이벤트 버튼이 게임하기 버튼인 경우
+		if(eventButton.getText().equals("게임하기") ) {
+			//메뉴 클래스 생성
+			Menu menu = new Menu();
+		}
+		//이벤트 버튼이 종료하기 버튼인 경우
+		else if(eventButton.getText().equals("종료하기") ) {
+			//프로그램 종료
+			System.exit(0);
+		}
+		else
+			;
+	}
 }

@@ -1,10 +1,15 @@
 package item;
 
-public abstract class Tools {
-	private String name;
+public class Tools extends Item {
+	//내구도
 	private int durability;
 	
-	public abstract String returnName();
-	public abstract int returnDurability();
-
+	//내구도 return
+	public int returnDurability() {
+		return durability;
+	}
+	//내구도 손상
+	public void returnDurDec(int i) {
+		durability -= i;
+	}
 }

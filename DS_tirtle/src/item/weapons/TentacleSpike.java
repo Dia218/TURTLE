@@ -1,6 +1,29 @@
 package item.weapons;
 
-public class TentacleSpike {
-	//임시
-	static public String name = "촉수가시";
+import javax.swing.ImageIcon;
+
+import item.Weapons;
+
+public class TentacleSpike extends Weapons {
+	private static String name = "촉수가시";
+	private int durability = 100;
+	private static int attack = 50;
+	
+	static private ImageIcon img = new ImageIcon("./images/Tentacle_Spike.png");
+	
+	public String returnName() {
+		return name;
+	}
+	public int returnDurability() {
+		return durability;
+	}
+	public void returnDurDec(int i) {
+		durability -= i;
+	}
+	public int returnATK() {
+		return attack;
+	}
+	public ImageIcon returnImg() {
+		return img;
+	}
 }
