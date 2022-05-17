@@ -17,6 +17,9 @@ public class LogSuit extends Armors {
 	public int returnDurability() {
 		return durability;
 	}
+	public void returnDurDec(int i) {
+		durability -= i;
+	}
 	public int returnDEF() {
 		return defence;
 	}

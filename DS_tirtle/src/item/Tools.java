@@ -8,4 +8,8 @@ public class Tools extends Item {
 	public int returnDurability() {
 		return durability;
 	}
+	//내구도 손상
+	public void returnDurDec(int i) {
+		durability -= i;
+	}
 }

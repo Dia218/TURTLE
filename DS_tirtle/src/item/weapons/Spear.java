@@ -17,6 +17,9 @@ public class Spear extends Weapons {
 	public int returnDurability() {
 		return durability;
 	}
+	public void returnDurDec(int i) {
+		durability -= i;
+	}
 	public int returnATK() {
 		return attack;
 	}

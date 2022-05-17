@@ -46,9 +46,9 @@ public class ItemManual {
 	
 	//아이템 마다 들어있는 데이터는 클래스의 상속에 따라 다르다.
 	
-	//ex1) BerryJam 클래스 : (필드)name, img, starvePoint, healPoint (메소드)returnName, returnImg, returnStarvePoint, returnHealPoint
+	//ex1) BerryJam 클래스 : (필드)name, img, starvePoint, healPoint (메소드)returnName(), returnImg(), returnStarvePoint(), returnHealPoint()
 	
-	//ex2) GrassSuit 클래스 : (필드)name, img, durability, defecne (메소드)returnName, returnImg, returnDurability, returnDEF
+	//ex2) GrassSuit 클래스 : (필드)name, img, durability, defecne (메소드)returnName(), returnImg(), returnDurability(), returnDEF(), returnDurDec(int i)
 	
 	
 	
@@ -100,56 +100,32 @@ public class ItemManual {
 	
 	
 	//
-	//*아이템 필드와 메소드 정보*
+	//*아이템 데이터를 불러오는 명령어들*
 	//
 	
-	//내가 친절히 어떤 아이템 정보가 있는지 적어 둠
-	
-	//아이템 필드들
-	
-	//이름
-	//private static String name;
-	
-	//이미지 아이콘
-	//static private ImageIcon img;
-	
-	//허기 회복량
-	//private static int starvePoint;
-	
-	//체력 회복량
-	//private static int healPoint;
-	
-	//내구도
-	//private int durability;
-		
-	//방어력
-	//private static int defence;
-		
-	//공격력
-	//private static int attack;
-		
-	//아이템 메소드들
-	
 	//이름 return
-	//public String returnName();
+	//item.returnName();
 	
 	//이미지 아이콘 return
-	//public ImageIcon returnImg();
+	//item.returnImg();
 	
 	//허기 회복량 return
-	//public int returnStarvePoint();
+	//item.returnStarvePoint();
 	
 	//체력 회복량 return
-	//public int returnHealPoint();
+	//item.returnHealPoint();
 	
 	//내구도 return
-	//public int returnDurability();
+	//item.returnDurability();
 	
 	//방어력 return
-	//public int returnDEF();
+	//item.returnDEF();
 	
 	//공격력 return
-	//public int returnATK();
+	//item.returnATK();
+
+	//내구도가 i만큼 감소하는 메소드
+	//item.returnDurDec(int i);
 	
 	//나 넘모 힘들어~~~
 	//2022.05.16
