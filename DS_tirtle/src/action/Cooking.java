@@ -34,7 +34,7 @@ public class Cooking {
 		JButton potresultButton = new JButton();
 		
 		//메뉴 패널 배치 관리자 - 플로우레이아웃
-		potPanel.setLayout(new GridLayout(5, 1));
+		potPanel.setLayout(new GridLayout(6, 1));
 		
 		//인벤토리 버튼 초기화 및 배치
 		for(int i = 0; i <= 3; i++) {
@@ -44,6 +44,9 @@ public class Cooking {
 
 		potPanel.add(potButton[4] = new JButton("요리하기"));
 		potButton[4].addActionListener(GameSystem.userListener);
+		JButton goBack = new JButton("활동 끝내기");
+		goBack.addActionListener(GameSystem.userListener);
+		potPanel.add(goBack);
 
 		//메뉴 패널 배치하기
 		GameSystem.playPanel.removeAll();

@@ -41,29 +41,12 @@ public class Making {
 	
 	
 	/*
-	//제작 패널 생성
-	JPanel makingPanel = new JPanel();
 		
 	//제작 종류, 아이템 버튼 객체 배열 생성
 	JButton[][] makingButton = new JButton[2][2];
 	
 	//제작 패널에 아이템을 집어넣기
 		void inputItem() {
-			
-			//제작하기 패널 생성
-			makingPanel.add(makingButton[0][0]);
-			makingPanel.add(makingButton[0][1]);
-			makingPanel.add(makingButton[1][0]);
-			makingPanel.add(makingButton[1][1]);
-			
-			makingButton[0].setIcon(item.Armors.imageIcon);
-			makingButton[0].setText(item.Armors.name);
-			
-			makingButton[1].setIcon(item.Weapons.imageIcon);
-			makingButton[1].setText(item.Weapons.name);
-			
-			makingButton[0][0].setIcon(item.armors.GrassSuit.imageIcon);
-			makingButton[0][0].setText(item.armors.GrassSuit.name);
 			
 			//버튼 이벤트 리스너
 			if (makingButton[0][0].addActionListener(ActionEvent)) {
@@ -139,10 +122,14 @@ class MakingArmors {
 		makingGrassSuit.addActionListener(GameSystem.userListener);
 		JButton makingLogSuit = new JButton(logSuit);
 		makingLogSuit.addActionListener(GameSystem.userListener);
+		JButton goBack = new JButton("활동 끝내기");
+		goBack.addActionListener(GameSystem.userListener);
 
 		//제작하기 패널에 제작하기 버튼 배치하기
+		makingArmorPanel.add(makingGrassSuit);
 		makingArmorPanel.add(makingLogSuit);
-		makingArmorPanel.add(makingLogSuit);
+		makingArmorPanel.add(goBack);
+		
 		
 		//제작하기 패널 배치하기
 		GameSystem.playPanel.removeAll();
@@ -170,9 +157,12 @@ class MakingWeapons {
 		//제작하기 버튼 만들기
 		JButton makingSpear = new JButton(spear);
 		makingSpear.addActionListener(GameSystem.userListener);
+		JButton goBack = new JButton("활동 끝내기");
+		goBack.addActionListener(GameSystem.userListener);
 
 		//제작하기 패널에 제작하기 버튼 배치하기
 		makingWeaponsPanel.add(makingSpear);
+		makingWeaponsPanel.add(goBack);
 		
 		//제작하기 패널 배치하기
 		GameSystem.playPanel.removeAll();
@@ -183,27 +173,4 @@ class MakingWeapons {
 		GameSystem.playPanel.repaint();
 	}
 	
-}
-
-class MakingEventCheck {
-
-	//메뉴패널 버튼 체크 생성자
-	public MakingEventCheck(JButton clickButton) {
-		//방어구 만들기 버튼인 경우
-		if(clickButton.getText().equals("방어구 만들기") ) {
-				/*MakingArmors 클래스를 발생시켜서 방어구 만들기*/
-
-			MakingArmors makingArmors = new MakingArmors();
-
-		}
-		//무기 만들기 버튼인 경우
-		else if(clickButton.getText().equals("무기 만들기") ) {
-				/*MakingWeapons 클래스를 발생시켜서 무기 만들기*/
-	
-			MakingWeapons makingWeapons = new MakingWeapons(); 
-		}
-		
-		else
-			;
-	}
 }
