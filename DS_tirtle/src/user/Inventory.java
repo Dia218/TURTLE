@@ -52,43 +52,40 @@ public class Inventory {
 		}
 	}
 	
-	//수정해야함 - 아이템 타입 검사를 해야함
-	//인벤토리에서 아이템이 있는 지 확인하기 - 제작용
-	public int checkItem(Item item) {
+
+	//인벤토리에서 아이템이 있는 지 확인하기 - 제작하기용
+	public Boolean checkItem(String itemName) {
+		//현재 백터에 들어있는 아이템의 갯수
+		int vectorSize = vector.size();
 		
-		//벡터에서 해당 아이템이 저장된 첫번째 인덱스 값 찾기
-		int index = vector.indexOf(item);
-		
-		//해당하는 아이템이 없을 경우
-		if (index == -1) {
-			
-			 //아이템이 없으면 0 리턴
-			 return 0;
+		//인벤토리 버튼 중에서 같은 이름을 가진 아이템 찾기
+		for(int i = 0; i < vectorSize; i++) {
+			//찾으려는 아이템 이름과 같은 이름의 버튼을 찾았을 경우
+			if(inventoryButton[i].getText().equals(itemName)) {
+				//true 리턴
+				return true;
+			}
 		}
-		
-		//해당하는 아이템이 있을 경우
-		else {
-				
-			//아이템이 있으면 1 리턴
-			return 1;
-		}
+		//없을 경우 false 리턴
+		return false;
 	}
 	
 	
 	//인벤토리에서 아이템을 소비하기
 	public void consumeItem(Item item) {
 		
-		//해당 아이템이 저장된 백터 인덱스 값 찾기
-		int index = vector.indexOf(item);
+		//현재 백터에 들어있는 아이템의 갯수
+		int vectorSize = vector.size();
 		
-		//벡터에서 해당 객체 삭제
-		vector.remove(index);
-		
-		//현재 인벤토리에 저장된 아이템의 갯수
-		int vectorSize = vector.size();	
-		
-		//인벤토리 적용 호출
-		this.applyItem();
+		//벡터에 저장된 아이템 중에서 소비할 아이템과 같은 이름 찾기
+		for(int i = 0; i < vectorSize; i++) {
+			//같은 이름을 찾았을 경우
+			if(vector.get(i).returnName().equals(item.returnName())) {
+				//벡터에서 해당 객체 삭제
+				vector.remove(i);
+				break;
+			}
+		}
 	}
 	
 	
@@ -99,7 +96,7 @@ public class Inventory {
 		int vectorSize = vector.size();
 		
 		//인벤토리 버튼 다시 그리기
-		for(int i = 1; i < vectorSize; i++) {
+		for(int i = 0; i < vectorSize; i++) {
 			inventoryButton[i].setIcon(vector.get(i).returnImg());
 			inventoryButton[i].setText(vector.get(i).returnName());
 		}
@@ -116,7 +113,7 @@ public class Inventory {
 			inventoryButton[i].addActionListener(GameSystem.userListener);
 		}
 			
-		//인벤토리 패널 다시 그리기 -> 이거 수정해야할 듯?
+		//인벤토리 패널 다시 그리기
 		inventoryPanel.revalidate();
 		inventoryPanel.repaint();
 	}
