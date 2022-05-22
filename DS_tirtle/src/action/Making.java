@@ -87,9 +87,5 @@ public class Making {
 			makingButton[1][1].setIcon(item.weapons.TentacleSpike.imageIcon);
 			makingButton[1][1].setText(item.weapons.TentacleSpike.name);
 			}
-		
-		
->>>>>>> af339bbd79ee4ee31bfc6d09a42a0afed7854e69
-}
 
 }
