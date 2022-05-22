@@ -88,19 +88,23 @@ class CookingEventCheck {
 		ImageIcon slot1 = new ImageIcon("./images/slot1.png");
 		ImageIcon slot2 = new ImageIcon("./images/slot2.png");
 		ImageIcon slot3 = new ImageIcon("./images/slot3.png");
-		String a = clickButton.getText();
 
+		//빈 공간 아이템 객체 생성
 		Empty empty = new Empty();
 		
+		//슬롯 아이템 객체 배열 생성
 		Item[] potSlot = {empty, empty, empty, empty};
 		
+		//아이템 결과 객체 생성
 		Item resultSlot = empty;
 		
 		//재료 수량
 		int br = 0, cr = 0, fs = 0, fl = 0, mt = 0, mm = 0, mr = 0, tg = 0;
 		
+		//활동 끝내기 버튼을 누른 경우
 		if(clickButton.getText().equals("활동 끝내기") ) {
 
+			//메뉴 생성
 			Menu menu = new Menu();
 			System.out.println("활동 끝내기");
 		}
@@ -110,20 +114,28 @@ class CookingEventCheck {
 			
 			//potSlot의 재료를 갯수로 변환.
 			for(int i = 0; i < 4; i++) {
+				//베리
 				if(potSlot[i] instanceof Berry)
 					br++;
+				//당근
 				else if(potSlot[i] instanceof Carrot)
 					cr++;
+				//물고기
 				else if(potSlot[i] instanceof Fish)
 					fs++;
+				//개구리다리
 				else if(potSlot[i] instanceof FrogLeg)
 					fl++;
+				//고기
 				else if(potSlot[i] instanceof Meat)
 					mt++;
+				//괴물고기
 				else if(potSlot[i] instanceof MonsterMeat)
 					mm++;
+				//버섯
 				else if(potSlot[i] instanceof Mushroom)
 					mr++;
+				//잔가지
 				else if(potSlot[i] instanceof Twigs)
 					tg++;
 			}
@@ -132,24 +144,91 @@ class CookingEventCheck {
 			if(potSlot[0] == empty || potSlot[1] == empty || potSlot[2] == empty || potSlot[3] == empty) {
 				System.out.println("재료를 4개 넣어주세요.");
 			}
-			
-			//
+			//괴물라자냐 요리
+			else if(mm >= 2 && tg == 0) {
+				MonsterLasagna result = new MonsterLasagna();
+				for(int i = 0; i < 4; i++)
+					GameSystem.inventory.consumeItem(potSlot[i]);
+				GameSystem.inventory.inputItem(result);
+				Cooking start = new Cooking();
+			}
+			//미트스튜 요리
+			else if(mt >= 2 && tg == 0) {
+				MeatStew result = new MeatStew();
+				for(int i = 0; i < 4; i++)
+					GameSystem.inventory.consumeItem(potSlot[i]);
+				GameSystem.inventory.inputItem(result);
+				Cooking start = new Cooking();
+			}
+			//샌드위치 요리
+			else if(fl == 1 && cr == 0 && mr == 3 || fl == 1 && cr == 1 && mr == 2 || fl == 1 && cr == 2 && mr == 1 || fl == 1 && cr == 3 && mr == 0) {
+				Sandwich result = new Sandwich();
+				for(int i = 0; i < 4; i++)
+					GameSystem.inventory.consumeItem(potSlot[i]);
+				GameSystem.inventory.inputItem(result);
+				Cooking start = new Cooking();
+			}
+			//라따뚜이 요리
+			else if(cr == 0 && mr == 4 || cr == 1 && mr == 3 || cr == 2 && mr == 2 || cr == 3 && mr == 1 || cr == 4 && mr == 0) {
+				Ratatouille result = new Ratatouille();
+				for(int i = 0; i < 4; i++)
+					GameSystem.inventory.consumeItem(potSlot[i]);
+				GameSystem.inventory.inputItem(result);
+				Cooking start = new Cooking();
+			}
+			//미트볼 요리
+			else if(mt == 1 && tg == 0) {
+				MeatBall result = new MeatBall();
+				for(int i = 0; i < 4; i++)
+					GameSystem.inventory.consumeItem(potSlot[i]);
+				GameSystem.inventory.inputItem(result);
+				Cooking start = new Cooking();
+			}
+			//생선튀김 요리
+			else if(fs == 1 && tg == 2) {
+				Fishsticks result = new Fishsticks();
+				for(int i = 0; i < 4; i++)
+					GameSystem.inventory.consumeItem(potSlot[i]);
+				GameSystem.inventory.inputItem(result);
+				Cooking start = new Cooking();
+			}
+			//과일잼 요리
+			else if(br == 4) {
+				BerryJam result = new BerryJam();
+				for(int i = 0; i < 4; i++)
+					GameSystem.inventory.consumeItem(potSlot[i]);
+				GameSystem.inventory.inputItem(result);
+				Cooking start = new Cooking();
+			}
+			//곤죽 요리
 			else {
+				WetGoop result = new WetGoop();
+				for(int i = 0; i < 4; i++)
+					GameSystem.inventory.consumeItem(potSlot[i]);
+				GameSystem.inventory.inputItem(result);
 				Cooking start = new Cooking();
 			}
 		}
+		
+		//슬롯 1 버튼을 누른 경우
 		else if(clickButton.getText().equals("슬롯 1")) {
 			clickButton.setIcon(slot0);
 			System.out.println("슬롯 1");
 		}
+
+		//슬롯 2 버튼을 누른 경우
 		else if(clickButton.getText().equals("슬롯 2")) {
 			clickButton.setIcon(slot1);
 			System.out.println("슬롯 2");
 		}
+
+		//슬롯 3 버튼을 누른 경우
 		else if(clickButton.getText().equals("슬롯 3") ) {
 			clickButton.setIcon(slot2);
 			System.out.println("슬롯 3");
 		}
+
+		//슬롯 4 버튼을 누른 경우
 		else if(clickButton.getText().equals("슬롯 4") ) {
 			clickButton.setIcon(slot3);
 			System.out.println("슬롯 4");

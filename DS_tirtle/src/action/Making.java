@@ -3,8 +3,11 @@ package action;
 import javax.swing.*;
 import java.awt.*;
 import item.*;
+import item.armors.*;
+import item.weapons.*;
 import user.*;
 import user.Menu;
+import world.resource.*;
 
 public class Making {
 
@@ -40,67 +43,6 @@ public class Making {
 		GameSystem.playPanel.repaint();
 	}
 	
-	
-	/*
-		
-	//제작 종류, 아이템 버튼 객체 배열 생성
-	JButton[][] makingButton = new JButton[2][2];
-	
-	//제작 패널에 아이템을 집어넣기
-		void inputItem() {
-			
-			//버튼 이벤트 리스너
-			if (makingButton[0][0].addActionListener(ActionEvent)) {
-				//인벤토리 공간
-				int vectorSize = vector.size();
-				
-				String result;
-				
-				//제료가 부족할 떄
-				if (consumeItem(Grass, Twigs) == 0) {
-					 result = "재료가 부족합니다..";
-					 break;
-				}
-				//제작 할 떄
-				else {
-					consumeItem(Grass, Twigs);
-					inputItem(GrassSuit);
-				}
-			}
-			makingButton[0][1].setIcon(item.armors.LogSuit.imageIcon);
-			makingButton[0][1].setText(item.armors.LogSuit.name);
-			if (makingButton[0][0].addActionListener(ActionEvent)) {
-				int vectorSize = vector.size();
-				String result;
-				if (consumeItem(Grass, Log) == 0) {
-					 result = "재료가 부족합니다.";
-					 break;
-				}
-				else {
-					consumeItem(Grass, Log);
-					inputItem(LogSuit);
-				}
-			}
-			
-			makingButton[1][0].setIcon(item.weapons.Spear.imageIcon);
-			makingButton[1][0].setText(item.weapons.Spear.name); {
-				int vectorSize = vector.size();
-				String result;
-				if (consumeItem(Twigs, Stone) == 0) {
-					 result = "재료가 부족합니다..";
-					 break;
-				}
-				else {
-					consumeItem(Twigs, Stone);
-					inputItem(Spear);
-				}
-			}
-			makingButton[1][1].setIcon(item.weapons.TentacleSpike.imageIcon);
-			makingButton[1][1].setText(item.weapons.TentacleSpike.name);
-			}
-
-		
-*/	
 }
 
 class MakingArmors {
@@ -193,26 +135,62 @@ class MakingEventCheck {
 			MakingArmors makingArmors = new MakingArmors();
 		}
 		
+		//무기 만들기 버튼인 경우
 		else if(clickButton.getText().equals("무기 만들기") ) {
-			/*MakingArmors 클래스를 발생시켜서 방어구 만들기*/
+			/*MakingWeapons 클래스를 발생시켜서 무기 만들기*/
 
 				MakingWeapons makingWeapons = new MakingWeapons();
 				
 		}
 		
+		//풀 갑옷 만들기 버튼인 경우
 		else if(clickButton.getText().equals("풀 갑옷 만들기") ) {
 
 			System.out.println("풀 갑옷 만들기");
+			/*
+			//풀, 잔가지 인벤토리 확인
+			if(GameSystem.inventory.checkItem(new CutGrass()) && GameSystem.inventory.checkItem(new Twigs())) {
+				//인벤토리 제거
+				GameSystem.inventory.consumeItem(new CutGrass());
+				GameSystem.inventory.consumeItem(new Twigs());
+				//인벤토리 생성
+				GameSystem.inventory.inputItem(new GrassSuit());
+				
+			}
+			*/
 		}
-		
+		 
+		//나무 갑옷 만들기 버튼인 경우
 		else if(clickButton.getText().equals("나무 갑옷 만들기") ) {
 			
 			System.out.println("나무 갑옷 만들기");
+			/*
+			//풀, 통나무 인벤토리 확인
+			if(GameSystem.inventory.checkItem(new CutGrass()) && GameSystem.inventory.checkItem(new Log())) {
+				//인벤토리 제거
+				GameSystem.inventory.consumeItem(new CutGrass());
+				GameSystem.inventory.consumeItem(new Log());
+				//인벤토리 생성
+				GameSystem.inventory.inputItem(new LogSuit());
+				
+			}
+			*/
 		}
 		
+		//창 만들기 버튼인 경우
 		else if(clickButton.getText().equals("창 만들기") ) {
 			
 			System.out.println("창 만들기");
+			/*
+			//잔가지, 돌 인벤토리 확인
+			if(GameSystem.inventory.checkItem(new Twigs()) && GameSystem.inventory.checkItem(new Rock())) {
+				//인벤토리 제거
+				GameSystem.inventory.consumeItem(new Twigs());
+				GameSystem.inventory.consumeItem(new Rock());
+				//인벤토리 생성
+				GameSystem.inventory.inputItem(new Spear());
+			}
+			*/
 		}
 
 		else
