@@ -14,8 +14,10 @@ public class UserListener implements ActionListener, ItemListener {
 	
 	//이벤트가 발생한 버튼의 레퍼런스
 	private JButton clickButton;
+	//이벤트가 발생한 체크박스의 레퍼런스
+	private JCheckBox clickBox;
 	
-	//버튼 체크 클래스 생성
+	//이벤트 체크 클래스 생성
 	 CheckEvent checkevent = new CheckEvent();
 	 ActionEventCheck actioncheckevent = new ActionEventCheck();
 	 
@@ -32,7 +34,7 @@ public class UserListener implements ActionListener, ItemListener {
 		//이벤트가 발생한 버튼 저장하기
 		clickButton = (JButton)e.getSource();
 		
-		//버튼을 체크하는 메소드 호출하기 -> 옵저버 패키지
+		//버튼을 체크하는 메소드 호출하기
 		checkevent.checkbutton(clickButton);
 		actioncheckevent.checkbutton(clickButton);
 	}
@@ -42,13 +44,8 @@ public class UserListener implements ActionListener, ItemListener {
 	@Override
 	public void itemStateChanged(ItemEvent e) {
 		
-		if(e.getStateChange() == ItemEvent.SELECTED) {
-			//이벤트가 발생한 체크박스
-			JCheckBox selectedItem = (JCheckBox)e.getItem();
-		}
-		else {
-			return;
-		}
-		//e.setSelected(false);
+		//이벤트가 발생한 체크박스 저장하기
+		clickBox = (JCheckBox)e.getSource();
+
 	}
 }
