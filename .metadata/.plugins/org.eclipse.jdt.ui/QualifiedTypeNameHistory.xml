@@ -3,4 +3,8 @@
     <fullyQualifiedTypeName name="java.awt.event.ActionEvent"/>
     <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
     <fullyQualifiedTypeName name="user.GameSystem"/>
+    <fullyQualifiedTypeName name="world.Map"/>
+    <fullyQualifiedTypeName name="user.Player"/>
+    <fullyQualifiedTypeName name="world.Spider"/>
+    <fullyQualifiedTypeName name="world.Monster"/>
 </qualifiedTypeNameHistroy>

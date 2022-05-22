@@ -1,7 +1,7 @@
 package world;
 
 public class Map {
-	String Map_Name;
+	int Map_Num;
 	String Map_Mon;
 	String Map_Object;
 	int Map_Down_hungry;
@@ -9,42 +9,42 @@ public class Map {
 
 class Grassland extends Map{
 	public Grassland() {
-		Map_Name = "Grassland";
+		Map_Num = 1;
 		Map_Down_hungry = 5;
 	}
 }
 
 class Forest extends Map{
 	public Forest() {
-		Map_Name = "Forest";
+		Map_Num = 2;
 		Map_Down_hungry = 10;
 	}
 }
 
 class Birchnut extends Map{
 	public Birchnut() {
-		Map_Name = "Birchnut";
+		Map_Num = 3;
 		Map_Down_hungry = 10;
 	}
 }
 
 class Savannah extends Map{
 	public Savannah() {
-		Map_Name = "Savannah";
+		Map_Num = 4;
 		Map_Down_hungry = 15;
 	}
 }
 
 class Swamp extends Map{
 	public Swamp() {
-		Map_Name = "Swamp";
+		Map_Num = 5;
 		Map_Down_hungry = 20;
 	}
 }
 
 class Rocky extends Map{
 	public Rocky() {
-		Map_Name = "Rocky";
+		Map_Num = 6;
 		Map_Down_hungry = 15;
 	}
 }
