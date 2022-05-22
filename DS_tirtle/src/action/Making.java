@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import item.*;
 import user.*;
+import user.Menu;
 
 public class Making {
 
@@ -118,12 +119,12 @@ class MakingArmors {
 		ImageIcon logSuit = new ImageIcon("./images/Log_Suit.png");
 
 		//제작하기 패널 배치 관리자 - 플로우레이아웃
-		makingArmorPanel.setLayout(new FlowLayout());
+		makingArmorPanel.setLayout(new GridLayout(3, 1));
 		
 		//제작하기 버튼 만들기
-		JButton makingGrassSuit = new JButton(grassSuit);
+		JButton makingGrassSuit = new JButton("풀 갑옷 만들기", grassSuit);
 		makingGrassSuit.addActionListener(GameSystem.userListener);
-		JButton makingLogSuit = new JButton(logSuit);
+		JButton makingLogSuit = new JButton("나무 갑옷 만들기", logSuit);
 		makingLogSuit.addActionListener(GameSystem.userListener);
 		JButton goBack = new JButton("활동 끝내기");
 		goBack.addActionListener(GameSystem.userListener);
@@ -155,10 +156,10 @@ class MakingWeapons {
 		ImageIcon spear = new ImageIcon("./images/Spear.png");
 
 		//제작하기 패널 배치 관리자 - 플로우레이아웃
-		makingWeaponsPanel.setLayout(new FlowLayout());
+		makingWeaponsPanel.setLayout(new GridLayout(2, 1));
 		
 		//제작하기 버튼 만들기
-		JButton makingSpear = new JButton(spear);
+		JButton makingSpear = new JButton("창 만들기", spear);
 		makingSpear.addActionListener(GameSystem.userListener);
 		JButton goBack = new JButton("활동 끝내기");
 		goBack.addActionListener(GameSystem.userListener);
@@ -174,6 +175,51 @@ class MakingWeapons {
 		//중앙 패널 다시 그리기
 		GameSystem.playPanel.revalidate();
 		GameSystem.playPanel.repaint();
+	}
+	
+}
+
+class MakingEventCheck {
+	public MakingEventCheck(JButton clickButton) {
+	
+		if(clickButton.getText().equals("활동 끝내기") ) {
+			/*MakingArmors 클래스를 발생시켜서 방어구 만들기*/
+
+				Menu menu = new Menu();
+				System.out.println("활동 끝내기");
+		}
+		
+		//방어구 만들기 버튼인 경우
+		else if(clickButton.getText().equals("방어구 만들기") ) {
+		/*MakingArmors 클래스를 발생시켜서 방어구 만들기*/
+
+			MakingArmors makingArmors = new MakingArmors();
+		}
+		
+		else if(clickButton.getText().equals("무기 만들기") ) {
+			/*MakingArmors 클래스를 발생시켜서 방어구 만들기*/
+
+				MakingWeapons makingWeapons = new MakingWeapons();
+				
+		}
+		
+		else if(clickButton.getText().equals("풀 갑옷 만들기") ) {
+
+			System.out.println("풀 갑옷 만들기");
+		}
+		
+		else if(clickButton.getText().equals("나무 갑옷 만들기") ) {
+			
+			System.out.println("나무 갑옷 만들기");
+		}
+		
+		else if(clickButton.getText().equals("창 만들기") ) {
+			
+			System.out.println("창 만들기");
+		}
+
+		else
+			;
 	}
 	
 }

@@ -126,7 +126,6 @@ public class Inventory {
 		
 		//아이템이 음식인 경우
 				
-		
 	}
 	
 	

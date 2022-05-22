@@ -12,6 +12,7 @@ public class Item {
 	public String returnName() {
 		return name;
 	}
+	//ÀÌ¹ÌÁö return
 	public ImageIcon returnImg() {
 		return img;
 	}
