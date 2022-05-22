@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="world.resource.Twigs"/>
+    <fullyQualifiedTypeName name="world.resource.Log"/>
+    <fullyQualifiedTypeName name="item.unprocessedFoods.Berry"/>
 </qualifiedTypeNameHistroy>
