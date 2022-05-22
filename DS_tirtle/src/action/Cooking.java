@@ -78,12 +78,6 @@ public class Cooking {
 				GameSystem.playPanel.repaint();
 	}
 	
-	public static void salryojo() {
-		int i = hahaha();
-	}
-	public int hahaha() {
-		return 3;
-	}
 }
 	
 class CookingEventCheck {
@@ -168,7 +162,6 @@ class CookingEventCheck {
 		else if(clickButton.getText().equals("½½·Ô 4") ) {
 			clickButton.setIcon(slot3);
 			System.out.println("½½·Ô 4");
-			Cooking.salryojo();
 		}
 		else
 			;
