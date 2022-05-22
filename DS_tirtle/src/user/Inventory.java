@@ -122,22 +122,9 @@ public class Inventory {
 	}
 	
 	
-<<<<<<< HEAD
 	//인벤토리에서 선택된 아이템을 리턴하기
 	Item returnChoose() {
 		return this.chooseItem;
-=======
-	//인벤토리에서 아이템을 선택하기
-	void choose(Item chooseItem) {
-		
-		//요리하기인 경우
-		
-		
-		//아이템이 도구인 경우
-		
-		//아이템이 음식인 경우
-				
->>>>>>> action
 	}
 	
 	
