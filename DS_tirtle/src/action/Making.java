@@ -98,10 +98,9 @@ public class Making {
 			makingButton[1][1].setIcon(item.weapons.TentacleSpike.imageIcon);
 			makingButton[1][1].setText(item.weapons.TentacleSpike.name);
 			}
+
 		
-		
-}
-*/
+*/	
 }
 
 class MakingArmors {
@@ -142,6 +141,7 @@ class MakingArmors {
 	}
 	
 }
+
 class MakingWeapons {
 	
 	//무기 만들기 생성자

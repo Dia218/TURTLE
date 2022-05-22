@@ -12,6 +12,9 @@ public class GameSystem {
 	//중앙에 배치할 플레이패널(중앙패널) 생성
 	public static JPanel playPanel = new JPanel();
 	
+	//상태정보 생성
+	public static State state = new State();
+	
 	//이벤트 처리 생성
 	public static UserListener userListener = new UserListener();
 	

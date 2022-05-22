@@ -13,7 +13,7 @@ public class UserListener implements ActionListener, ItemListener {
 	 * */
 	
 	//이벤트가 발생한 버튼의 레퍼런스
-	public static JButton clickButton;
+	private JButton clickButton;
 	
 	//버튼 체크 클래스 생성
 	 CheckEvent checkevent = new CheckEvent();

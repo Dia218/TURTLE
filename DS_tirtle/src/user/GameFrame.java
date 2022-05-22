@@ -24,13 +24,8 @@ public class GameFrame extends JFrame {
 		 * */
 		
 		//상단 - 지역 출력//
-		JPanel statePanel = new JPanel();
-		mainScreen.add(statePanel, BorderLayout.NORTH);
-		JLabel map = new JLabel("현재 위치 출력창 test");
-		map.setFont(new Font("", Font.PLAIN, 20));
-		statePanel.add(map);
-		statePanel.setBackground(Color.YELLOW);
-	
+		mainScreen.add(GameSystem.state.statePanel, BorderLayout.NORTH);
+
 		
 		//하단 - 결과 출력//
 		JPanel resultPanel = new JPanel();

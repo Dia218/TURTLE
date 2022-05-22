@@ -7,8 +7,8 @@ public class Monster {
 	String Mon_Drop;
 }
 
-class Forg extends Monster{
-	public Forg() {
+class Frog extends Monster{
+	public Frog() {
 		Mon_name = "Frog";
 		Mon_HP = 100;
 		Mon_ATK = 10;

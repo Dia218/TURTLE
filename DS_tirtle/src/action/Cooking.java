@@ -109,32 +109,22 @@ class CookingEventCheck {
 			
 			//potSlot의 재료를 갯수로 변환.
 			for(int i = 0; i < 4; i++) {
-				switch(potSlot[i].returnName()) {
-				case "베리" :
+				if(potSlot[i] instanceof Berry)
 					br++;
-					break;
-				case "당근" :
+				else if(potSlot[i] instanceof Carrot)
 					cr++;
-					break;
-				case "물고기" :
+				else if(potSlot[i] instanceof Fish)
 					fs++;
-					break;
-				case "개구리다리" :
+				else if(potSlot[i] instanceof FrogLeg)
 					fl++;
-					break;
-				case "고기" :
+				else if(potSlot[i] instanceof Meat)
 					mt++;
-					break;
-				case "괴물고기" :
+				else if(potSlot[i] instanceof MonsterMeat)
 					mm++;
-					break;
-				case "버섯" :
+				else if(potSlot[i] instanceof Mushroom)
 					mr++;
-					break;
-				case "나무가지" :
+				else if(potSlot[i] instanceof Twigs)
 					tg++;
-					break;
-				}
 			}
 			
 			//potSlot중 빈 곳이 있다면 출력
