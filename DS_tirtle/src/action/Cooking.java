@@ -144,7 +144,8 @@ class CookingEventCheck {
 			
 			//potSlot중 빈 곳이 있다면 출력
 			if(potSlot[0] == empty || potSlot[1] == empty || potSlot[2] == empty || potSlot[3] == empty) {
-				System.out.println("재료를 4개 넣어주세요.");
+				
+				GameSystem.result.changeResultArea("\n" + "재료가 부족하다.");
 			}
 			//괴물라자냐 요리
 			else if(mm >= 2 && tg == 0) {
@@ -152,6 +153,8 @@ class CookingEventCheck {
 				for(int i = 0; i < 4; i++)
 					GameSystem.inventory.consumeItem(potSlot[i]);
 				GameSystem.inventory.inputItem(result);
+				
+				GameSystem.result.changeResultArea("\n" + "괴물라자냐를 만들었다.");
 				Cooking start = new Cooking();
 				GameSystem.player.changeStarvePoint(-5);
 			}
@@ -161,6 +164,8 @@ class CookingEventCheck {
 				for(int i = 0; i < 4; i++)
 					GameSystem.inventory.consumeItem(potSlot[i]);
 				GameSystem.inventory.inputItem(result);
+				
+				GameSystem.result.changeResultArea("\n" + "미트스튜를 만들었다.");
 				Cooking start = new Cooking();
 				GameSystem.player.changeStarvePoint(-5);
 			}
@@ -170,6 +175,8 @@ class CookingEventCheck {
 				for(int i = 0; i < 4; i++)
 					GameSystem.inventory.consumeItem(potSlot[i]);
 				GameSystem.inventory.inputItem(result);
+				
+				GameSystem.result.changeResultArea("\n" + "샌드위치를 만들었다.");
 				Cooking start = new Cooking();
 				GameSystem.player.changeStarvePoint(-5);
 			}
@@ -179,6 +186,8 @@ class CookingEventCheck {
 				for(int i = 0; i < 4; i++)
 					GameSystem.inventory.consumeItem(potSlot[i]);
 				GameSystem.inventory.inputItem(result);
+				
+				GameSystem.result.changeResultArea("\n" + "라따뚜이를 만들었다.");
 				Cooking start = new Cooking();
 				GameSystem.player.changeStarvePoint(-5);
 			}
@@ -188,6 +197,8 @@ class CookingEventCheck {
 				for(int i = 0; i < 4; i++)
 					GameSystem.inventory.consumeItem(potSlot[i]);
 				GameSystem.inventory.inputItem(result);
+				
+				GameSystem.result.changeResultArea("\n" + "미트볼을 만들었다.");
 				Cooking start = new Cooking();
 				GameSystem.player.changeStarvePoint(-5);
 			}
@@ -197,6 +208,8 @@ class CookingEventCheck {
 				for(int i = 0; i < 4; i++)
 					GameSystem.inventory.consumeItem(potSlot[i]);
 				GameSystem.inventory.inputItem(result);
+				
+				GameSystem.result.changeResultArea("\n" + "생선튀김을 만들었다.");
 				Cooking start = new Cooking();
 				GameSystem.player.changeStarvePoint(-5);
 			}
@@ -206,6 +219,8 @@ class CookingEventCheck {
 				for(int i = 0; i < 4; i++)
 					GameSystem.inventory.consumeItem(potSlot[i]);
 				GameSystem.inventory.inputItem(result);
+				
+				GameSystem.result.changeResultArea("\n" + "과일잼을 만들었다.");
 				Cooking start = new Cooking();
 				GameSystem.player.changeStarvePoint(-5);
 			}
@@ -215,6 +230,8 @@ class CookingEventCheck {
 				for(int i = 0; i < 4; i++)
 					GameSystem.inventory.consumeItem(potSlot[i]);
 				GameSystem.inventory.inputItem(result);
+				
+				GameSystem.result.changeResultArea("\n" + "곤죽을 만들었다.");
 				Cooking start = new Cooking();
 				GameSystem.player.changeStarvePoint(-5);
 			}
@@ -224,18 +241,24 @@ class CookingEventCheck {
 		else if(clickButton.getText().equals("슬롯 1")) {
 			clickButton.setIcon(slot0);
 			System.out.println("슬롯 1");
+			
+			GameSystem.result.changeResultArea("\n" + "1 슬롯에 아이템을 뺐다.");
 		}
 
 		//슬롯 2 버튼을 누른 경우
 		else if(clickButton.getText().equals("슬롯 2")) {
 			clickButton.setIcon(slot1);
 			System.out.println("슬롯 2");
+			
+			GameSystem.result.changeResultArea("\n" + "2 슬롯에 아이템을 뺐다.");
 		}
 
 		//슬롯 3 버튼을 누른 경우
 		else if(clickButton.getText().equals("슬롯 3") ) {
 			clickButton.setIcon(slot2);
 			System.out.println("슬롯 3");
+			
+			GameSystem.result.changeResultArea("\n" + "3 슬롯에 아이템을 뺐다.");
 		}
 
 		//슬롯 4 버튼을 누른 경우
@@ -243,7 +266,7 @@ class CookingEventCheck {
 			clickButton.setIcon(slot3);
 			System.out.println("슬롯 4");
 
-
+			GameSystem.result.changeResultArea("\n" + "4 슬롯에 아이템을 뺐다.");
 		}
 		
 		else

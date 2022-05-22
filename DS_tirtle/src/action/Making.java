@@ -157,10 +157,12 @@ class MakingEventCheck {
 				GameSystem.inventory.consumeItem(twigs);
 				//인벤토리 생성
 				GameSystem.inventory.inputItem(new GrassSuit());;
+				
+				GameSystem.result.changeResultArea("\n" + "풀 갑옷을 만들었다.");
 				GameSystem.player.changeStarvePoint(-5);
 			}
 			else {
-				System.out.println("재료가 부족합니다.");
+				GameSystem.result.changeResultArea("\n" + "재료가 부족하다.");
 			}		
 		}
 		 
@@ -178,10 +180,12 @@ class MakingEventCheck {
 				GameSystem.inventory.consumeItem(log);
 				//인벤토리 생성
 				GameSystem.inventory.inputItem(new LogSuit());
+				
+				GameSystem.result.changeResultArea("\n" + "나무 갑옷을 만들었다.");
 				GameSystem.player.changeStarvePoint(-5);
 			}
 			else 
-				System.out.println("재료가 부족합니다.");
+				GameSystem.result.changeResultArea("\n" + "재료가 부족하다.");
 			
 		}
 		
@@ -199,10 +203,12 @@ class MakingEventCheck {
 				GameSystem.inventory.consumeItem(rock);
 				//인벤토리 생성
 				GameSystem.inventory.inputItem(new Spear());
+
+				GameSystem.result.changeResultArea("\n" + "창을 만들었다.");
 				GameSystem.player.changeStarvePoint(-5);
 			}
 			else 
-				System.out.println("재료가 부족합니다.");
+				GameSystem.result.changeResultArea("\n" + "재료가 부족하다.");
 			
 		}
 
