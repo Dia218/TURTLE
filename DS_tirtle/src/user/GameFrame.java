@@ -70,18 +70,6 @@ public class GameFrame extends JFrame {
 		//게임시작 패널 중앙 패널에 배치
 		GameSystem.playPanel.add(startPanel);
 		
-
-		
-		
-		/*
-		//테스트용 - 삭제해야함
-		JPanel testBiomPanel = new JPanel();
-		ImageIcon carrotPlantImg = new ImageIcon("./images/BerryBush.png");
-		JCheckBox carrotPlant = new JCheckBox(carrotPlantImg);
-
-		testBiomPanel.add(carrotPlant);
-		mainScreen.add(testBiomPanel, BorderLayout.CENTER);
-		*/
 	}
 }
 

@@ -21,9 +21,5 @@ public class GameSystem {
 		
 		GameFrame frame = new GameFrame();
 		
-		
-		//아이템 넣기 테스트 - 삭제 해야함
-		//inventory.inputItem(new Item());
-		
 	}
 }
