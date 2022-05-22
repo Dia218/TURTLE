@@ -28,13 +28,8 @@ public class GameFrame extends JFrame {
 
 		
 		//하단 - 결과 출력//
-		JPanel resultPanel = new JPanel();
-		mainScreen.add(resultPanel, BorderLayout.SOUTH);
-		JTextArea result = new JTextArea("결과 출력창 test", 7, 70);
-		//result.setFont(new Font("", Font.PLAIN, 20));				
-		resultPanel.add(new JScrollPane(result));
-		resultPanel.setBackground(Color.YELLOW);
-		
+		mainScreen.add(GameSystem.result.resultPanel, BorderLayout.SOUTH);
+		GameSystem.result.resultPanel.setBackground(Color.YELLOW);
 		
 		//오른쪽 - 캐릭터 정보 출력//
 		JPanel profilePanel = new JPanel();

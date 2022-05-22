@@ -7,7 +7,6 @@ import item.armors.*;
 import item.weapons.*;
 import user.*;
 import user.Menu;
-import world.resource.*;
 
 public class Making {
 
