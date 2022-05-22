@@ -1,12 +1,10 @@
-package world.resource;
+package world.object;
 
 import javax.swing.ImageIcon;
 
-import world.Resource;
+public class MushRoot extends Object{
 
-public class Mushrrom  extends Resource {
-	
-	private String resource_name = "¹ö¼¸";
+	private String resource_name = "¹ö¼¸»Ñ¸®";
 
 	static private ImageIcon img = new ImageIcon("./images/Mushroom.png");
 	
@@ -18,4 +16,5 @@ public class Mushrrom  extends Resource {
 		return resource_name;
 	}
 	
+	void getResource(){}
 }

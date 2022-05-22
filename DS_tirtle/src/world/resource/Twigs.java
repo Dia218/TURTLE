@@ -2,8 +2,6 @@ package world.resource;
 
 import javax.swing.ImageIcon;
 
-import world.Resource;
-
 public class Twigs  extends Resource {
 	
 	private String resource_name = "나무가지";
