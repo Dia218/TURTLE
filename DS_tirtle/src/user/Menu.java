@@ -52,7 +52,28 @@ public class Menu {
 
 class MenuEventCheck {
 
-	//메뉴패널 버튼 체크 생성자
+	/*
+	 * 모드에 대한 필드
+	 * */
+	//사냥 모드
+	String huntingMode = "사냥모드";
+
+	//이동 모드
+	String movingMode = "이동모드";
+
+	//채집 모드
+	String collectingMode = "채집모드";
+
+	//제작 모드
+	String makingMode = "제작모드";
+
+	//요리 모드
+	String cookingMode = "요리모드";
+
+	
+	/*
+	 * 메뉴패널 버튼 체크 생성자
+	 * */
 	public MenuEventCheck(JButton clickButton) {
 		//이동하기 버튼인 경우
 		if(clickButton.getText().equals("이동하기") ) {
@@ -60,6 +81,9 @@ class MenuEventCheck {
 				/*
 				 * Moving moving = new Moving();
 				 * */;
+				 
+			//모드 바꾸는 메소드를 호출하여 이동 모드로 전환
+			GameSystem.state.changeMode(movingMode);	
 		}
 		//사냥하기 버튼인 경우
 		else if(clickButton.getText().equals("사냥하기") ) {
@@ -67,6 +91,9 @@ class MenuEventCheck {
 				/*
 				 * Hunting hunting = new Hunting(); 
 				 * */;
+				 
+			//모드 바꾸는 메소드를 호출하여 사냥 모드로 전환
+			GameSystem.state.changeMode(huntingMode);
 		}
 		//채집하기 버튼인 경우
 		else if(clickButton.getText().equals("채집하기") ) {
@@ -74,19 +101,27 @@ class MenuEventCheck {
 				/*
 				 * Collecting collecting = new Collecting();
 				 * */;
+				 
+			//모드 바꾸는 메소드를 호출하여 채집 모드로 전환
+			GameSystem.state.changeMode(collectingMode);
 		}
 		//제작하기 버튼인 경우
 		else if(clickButton.getText().equals("제작하기") ) {
-				/*Making 클래스를 발생시켜서 도구 제작*/
-
+				
+			//Making 클래스를 발생시켜서 도구 제작
 			Making making = new Making();
-
+			
+			//모드 바꾸는 메소드를 호출하여 제작 모드로 전환
+			GameSystem.state.changeMode(makingMode);
 		}
 		//요리하기 버튼인 경우
 		else if(clickButton.getText().equals("요리하기") ) {
-				/*Cooking 클래스를 발생시켜서 요리하기*/
-
+				
+			//Cooking 클래스를 발생시켜서 요리하기
 			Cooking cooking = new Cooking();
+			
+			//모드 바꾸는 메소드를 호출하여 요리 모드로 전환
+			GameSystem.state.changeMode(cookingMode);
 		}
 		else
 			;
