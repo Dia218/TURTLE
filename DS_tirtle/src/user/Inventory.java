@@ -53,7 +53,7 @@ public class Inventory {
 	}
 	
 	//수정해야함 - 아이템 타입 검사를 해야함
-	//인벤토리에서 아이템이 있는 지 확인하기
+	//인벤토리에서 아이템이 있는 지 확인하기 - 제작용
 	public int checkItem(Item item) {
 		
 		//벡터에서 해당 아이템이 저장된 첫번째 인덱스 값 찾기
