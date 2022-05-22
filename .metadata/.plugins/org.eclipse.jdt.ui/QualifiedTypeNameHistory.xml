@@ -2,5 +2,11 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.awt.event.ActionEvent"/>
     <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+    <fullyQualifiedTypeName name="world.Map"/>
+    <fullyQualifiedTypeName name="java.awt.Font"/>
     <fullyQualifiedTypeName name="user.GameSystem"/>
+    <fullyQualifiedTypeName name="item.Tools"/>
+    <fullyQualifiedTypeName name="item.Empty"/>
+    <fullyQualifiedTypeName name="item.Weapons"/>
+    <fullyQualifiedTypeName name="item.Armors"/>
 </qualifiedTypeNameHistroy>
