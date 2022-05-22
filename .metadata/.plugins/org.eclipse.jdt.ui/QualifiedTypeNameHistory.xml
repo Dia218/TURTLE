@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.awt.event.ActionEvent"/>
+<<<<<<< Updated upstream
     <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
     <fullyQualifiedTypeName name="user.GameSystem"/>
     <fullyQualifiedTypeName name="world.Map"/>
     <fullyQualifiedTypeName name="user.Player"/>
     <fullyQualifiedTypeName name="world.Spider"/>
+=======
+    <fullyQualifiedTypeName name="world.Spider"/>
+    <fullyQualifiedTypeName name="user.Player"/>
+    <fullyQualifiedTypeName name="user.GameSystem"/>
+    <fullyQualifiedTypeName name="user.Menu"/>
+    <fullyQualifiedTypeName name="javax.swing.JPanel"/>
+    <fullyQualifiedTypeName name="user.GameFrame"/>
+    <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+    <fullyQualifiedTypeName name="user.Inventory"/>
+    <fullyQualifiedTypeName name="item.Item"/>
+    <fullyQualifiedTypeName name="world.Map"/>
+>>>>>>> Stashed changes
     <fullyQualifiedTypeName name="world.Monster"/>
 </qualifiedTypeNameHistroy>

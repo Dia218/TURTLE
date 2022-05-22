@@ -1,12 +1,12 @@
 package action;
 
-import world.Map;
-import world.Monster;
 import user.GameSystem;
 import user.Menu;
 import user.Player;
 import java.util.Random;
 import world.*;
+import world.monster.*;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -25,38 +25,40 @@ public class Hunting {
 	}
 	
 	void Random_mon(){
-		if(Map.Map_Num == 1) {//초원
+		Biome biome = new Biome();
+		if(biome.returnName()=="초원") {//초원
 			rNum = rnd.nextInt(2)+1;//2마리 몬스터 랜덤
-			if(rNum==1) {Frog frog = new Frog(5);Hunt(frog);}
-			else {Bunny bunny = new Bunny(5);Hunt(bunny);}
+			if(rNum==1) {Frog frog = new Frog();Hunt(frog);}
+			else {Bunny bunny = new Bunny();Hunt(bunny);}
 		}
 		
-		else if(Map.Map_Num == 2) {//숲
+		else if(biome.returnName()=="숲") {//숲
 			rNum = rnd.nextInt(2)+1;
-			if(rNum==1) {Spider spider = new Spider(10);Hunt(spider);}
-			else {Pig pig = new Pig(10);Hunt(pig);}
+			if(rNum==1) {Spider spider = new Spider();Hunt(spider);}
+			else {Pig pig = new Pig();Hunt(pig);}
 		}
 		
-		else if(Map.Map_Num == 3) {//버치넛
-			Pig pig = new Pig(10);Hunt(pig);
+		else if(biome.returnName()=="버치넛") {//버치넛
+			Pig pig = new Pig();Hunt(pig);
 		}
 		
-		else if(Map.Map_Num == 4) {//사바나
+		else if(biome.returnName()=="사바나") {//사바나
 			rNum = rnd.nextInt(2)+1;
-			if(rNum==1) {Buffalo buffalo = new Buffalo(15);Hunt(buffalo);}
-			else {Bunny bunny = new Bunny(15);Hunt(bunny);}
+			if(rNum==1) {Beefalo beefalo = new Beefalo();Hunt(beefalo);}
+			else {Bunny bunny = new Bunny();Hunt(bunny);}
 		}
 		
-		else if(Map.Map_Num == 5) {//늪
+		else if(biome.returnName()=="늪") {//늪
 			rNum = rnd.nextInt(3)+1;//3마리 몬스터 랜덤
-			if(rNum==1) {Spider spider = new Spider(20);Hunt(spider);}
-			else if(rNum==2) {Fishman fishman = new Fishman(20);Hunt(fishman);}
-			else {Tentacle tentacle = new Tentacle(20);Hunt(tentacle);}
+			if(rNum==1) {Spider spider = new Spider();Hunt(spider);}
+			else if(rNum==2) {Fishman fishman = new Fishman();Hunt(fishman);}
+			else {Tentacle tentacle = new Tentacle();Hunt(tentacle);}
 		}
 		
-		else {//암석지대
-			Spider spider = new Spider(15);Hunt(spider);
+		else if(biome.returnName()=="암석지대") {//암석지대
+			Spider spider = new Spider();Hunt(spider);
 		}
+		else;
 		
 	}
 	
@@ -65,8 +67,8 @@ public class Hunting {
 		int PA=0;
 		int PD=0;
 		int PS=0;//공복
-		int MH=monster.Mon_HP;
-		int MA=monster.Mon_ATK;
+		int MH=monster.getHP();
+		int MA=monster.getATK();
 		
 		//공복값 받기 필드 공복 + 몬스터 공복
 		//(-(monster.Mon_starve + map.mapStarve(map.Map_Num)))
@@ -86,37 +88,37 @@ class HuntPanel extends JPanel {
 	public HuntPanel(Monster monster) {
 		//몬스터 랜덤 발생 메소드의 결과를 받아서 해당 몬스터 이미지가 들어간 체크박스 생성 및 패널에 넣기
 		
-		if(monster.Mon_name=="Frog") {
+		if(monster.getName()=="Frog") {
 			ImageIcon frogIcon = new ImageIcon("./images/Frog.png");
 			JCheckBox frog = new JCheckBox("개구리",frogIcon);
 			this.add(frog);
 		}
-		else if(monster.Mon_name=="Bunny") {
+		else if(monster.getName()=="Bunny") {
 			ImageIcon rabbitIcon = new ImageIcon("./images/Rabbit.png");
 			JCheckBox rabbit = new JCheckBox("토끼",rabbitIcon);
 			this.add(rabbit);
 		}
-		else if(monster.Mon_name=="Pig") {
+		else if(monster.getName()=="Pig") {
 			ImageIcon pigIcon = new ImageIcon("./images/Pig.png");
 			JCheckBox pig = new JCheckBox("돼지",pigIcon);
 			this.add(pig);
 		}
-		else if(monster.Mon_name=="Beefalo") {
+		else if(monster.getName()=="Beefalo") {
 			ImageIcon beefaloIcon = new ImageIcon("./images/Beefalo.png");
 			JCheckBox beefalo = new JCheckBox("비팔로",beefaloIcon);
 			this.add(beefalo);
 		}
-		else if(monster.Mon_name=="Spider") {
+		else if(monster.getName()=="Spider") {
 			ImageIcon spiderIcon = new ImageIcon("./images/Spider.png");
 			JCheckBox spider = new JCheckBox("거미",spiderIcon);
 			this.add(spider);
 		}
-		else if(monster.Mon_name=="Tentacle") {
+		else if(monster.getName()=="Tentacle") {
 			ImageIcon tentacleIcon = new ImageIcon("./images/Tentacle.png");
 			JCheckBox tentacle = new JCheckBox("촉수",tentacleIcon);
 			this.add(tentacle);
 		}
-		else if (monster.Mon_name=="Tentacle") {
+		else if (monster.getName()=="Tentacle") {
 			ImageIcon fishmanIcon = new ImageIcon("./images/Fishman.png");
 			JCheckBox fishman = new JCheckBox("어인",fishmanIcon);
 			this.add(fishman);

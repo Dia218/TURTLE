@@ -1,7 +1,14 @@
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
 >>>>>>>=9ec0b1cd71fa44385a5e316693130e92b5c39bcf
+<<<<<<< Updated upstream
 eclipse.preferences.version=1
 platformState=1647854869729
+=======
+IMPORT_FILES_AND_FOLDERS_RELATIVE=true
+IMPORT_FILES_AND_FOLDERS_TYPE=23,1
+eclipse.preferences.version=1
+platformState=1646896998239
+>>>>>>> Stashed changes
 quickStart=false
 tipsAndTricks=true

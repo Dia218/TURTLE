@@ -6,7 +6,14 @@ import javax.swing.*;
 import item.Item;
 import user.GameSystem;
 import user.Menu;
+<<<<<<< Updated upstream
 import world.Map;
+=======
+import world.Biome;
+import world.object.*;
+import world.object.Object;
+import world.resource.*;
+>>>>>>> Stashed changes
 import user.GameFrame;
 import user.Inventory;
 import world_object.*;
@@ -59,14 +66,14 @@ class CollectPanel extends JPanel {
 		JCheckBox mushroom = new JCheckBox("버섯뿌리",mushroomIcon);
 		JCheckBox rock = new JCheckBox("바위",rockIcon);
 		
-		
+		Biome biome = new Biome();
 		//맵에 따라서 체크박스 패널에 넣기
-		if(Map.Map_Num==1) {this.add(sapling);this.add(grass);this.add(berry);this.add(carrot);this.add(mushroom);this.add(rock);}
-		else if(Map.Map_Num==2) {this.add(tree);this.add(sapling);}
-		else if(Map.Map_Num==3) {this.add(tree);this.add(mushroom);}
-		else if(Map.Map_Num==4) {this.add(grass);this.add(carrot);}
-		else if(Map.Map_Num==5) {this.add(berry);}
-		else if(Map.Map_Num==6) {this.add(rock);}
+		if(biome.returnName()=="초원") {this.add(sapling);this.add(grass);this.add(berry);this.add(carrot);this.add(mushroom);this.add(rock);}
+		else if(biome.returnName()=="숲") {this.add(tree);this.add(sapling);}
+		else if(biome.returnName()=="버치넛") {this.add(tree);this.add(mushroom);}
+		else if(biome.returnName()=="사바나") {this.add(grass);this.add(carrot);}
+		else if(biome.returnName()=="늪") {this.add(berry);}
+		else if(biome.returnName()=="암석지대") {this.add(rock);}
 		else ;
 
 		//채집종료 버튼 만들기
