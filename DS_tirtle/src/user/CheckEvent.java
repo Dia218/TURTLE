@@ -12,7 +12,6 @@ public class CheckEvent {
 		new StartEventCheck(clickButton);
 		new MenuEventCheck(clickButton);
 		new InventoryEventCheck(clickButton);
-		new ActionEventCheck(clickButton);
 	}
 	
 }

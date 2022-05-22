@@ -3,6 +3,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
+import action.*;
+import action.Cooking;
 
 public class UserListener implements ActionListener, ItemListener {
 	
@@ -15,7 +17,9 @@ public class UserListener implements ActionListener, ItemListener {
 	
 	//버튼 체크 클래스 생성
 	 CheckEvent checkevent = new CheckEvent();
-	
+	 ActionEventCheck actioncheckevent = new ActionEventCheck();
+	 
+	 
 	 
 	/*
 	 * 유저리스너 클래스의 메소드
@@ -30,6 +34,7 @@ public class UserListener implements ActionListener, ItemListener {
 		
 		//버튼을 체크하는 메소드 호출하기 -> 옵저버 패키지
 		checkevent.checkbutton(clickButton);
+		actioncheckevent.checkbutton(clickButton);
 	}
 	
 	
