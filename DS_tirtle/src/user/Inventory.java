@@ -31,7 +31,7 @@ public class Inventory {
 	 * 인벤토리 클래스 메소드
 	 * */
 	//인벤토리에 아이템을 집어넣기
-	void inputItem(Item item) {
+	public void inputItem(Item item) {
 		
 		//아이템을 넣기 전, 인벤토리에 들어있는 아이템의 갯수
 		int vectorSize = vector.size();

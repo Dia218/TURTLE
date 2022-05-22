@@ -2,9 +2,7 @@ package world.resource;
 
 import javax.swing.ImageIcon;
 
-import world.Resource;
-
-public class Rocky  extends Resource {
+public class Rock  extends Resource {
 	
 	private String resource_name = "Á¶¾àµ¹";
 
