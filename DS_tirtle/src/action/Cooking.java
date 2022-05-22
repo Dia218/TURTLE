@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Vector;
 
 import java.awt.*;
+
+import javax.naming.spi.DirStateFactory.Result;
 import javax.swing.*;
 
 import item.*;
@@ -151,6 +153,7 @@ class CookingEventCheck {
 					GameSystem.inventory.consumeItem(potSlot[i]);
 				GameSystem.inventory.inputItem(result);
 				Cooking start = new Cooking();
+				GameSystem.player.changeStarvePoint(-5);
 			}
 			//¹ÌÆ®½ºÆ© ¿ä¸®
 			else if(mt >= 2 && tg == 0) {
@@ -159,6 +162,7 @@ class CookingEventCheck {
 					GameSystem.inventory.consumeItem(potSlot[i]);
 				GameSystem.inventory.inputItem(result);
 				Cooking start = new Cooking();
+				GameSystem.player.changeStarvePoint(-5);
 			}
 			//»÷µåÀ§Ä¡ ¿ä¸®
 			else if(fl == 1 && cr == 0 && mr == 3 || fl == 1 && cr == 1 && mr == 2 || fl == 1 && cr == 2 && mr == 1 || fl == 1 && cr == 3 && mr == 0) {
@@ -167,6 +171,7 @@ class CookingEventCheck {
 					GameSystem.inventory.consumeItem(potSlot[i]);
 				GameSystem.inventory.inputItem(result);
 				Cooking start = new Cooking();
+				GameSystem.player.changeStarvePoint(-5);
 			}
 			//¶óµû¶ÑÀÌ ¿ä¸®
 			else if(cr == 0 && mr == 4 || cr == 1 && mr == 3 || cr == 2 && mr == 2 || cr == 3 && mr == 1 || cr == 4 && mr == 0) {
@@ -175,6 +180,7 @@ class CookingEventCheck {
 					GameSystem.inventory.consumeItem(potSlot[i]);
 				GameSystem.inventory.inputItem(result);
 				Cooking start = new Cooking();
+				GameSystem.player.changeStarvePoint(-5);
 			}
 			//¹ÌÆ®º¼ ¿ä¸®
 			else if(mt == 1 && tg == 0) {
@@ -183,6 +189,7 @@ class CookingEventCheck {
 					GameSystem.inventory.consumeItem(potSlot[i]);
 				GameSystem.inventory.inputItem(result);
 				Cooking start = new Cooking();
+				GameSystem.player.changeStarvePoint(-5);
 			}
 			//»ý¼±Æ¢±è ¿ä¸®
 			else if(fs == 1 && tg == 2) {
@@ -191,6 +198,7 @@ class CookingEventCheck {
 					GameSystem.inventory.consumeItem(potSlot[i]);
 				GameSystem.inventory.inputItem(result);
 				Cooking start = new Cooking();
+				GameSystem.player.changeStarvePoint(-5);
 			}
 			//°úÀÏÀë ¿ä¸®
 			else if(br == 4) {
@@ -199,6 +207,7 @@ class CookingEventCheck {
 					GameSystem.inventory.consumeItem(potSlot[i]);
 				GameSystem.inventory.inputItem(result);
 				Cooking start = new Cooking();
+				GameSystem.player.changeStarvePoint(-5);
 			}
 			//°ïÁ× ¿ä¸®
 			else {
@@ -207,6 +216,7 @@ class CookingEventCheck {
 					GameSystem.inventory.consumeItem(potSlot[i]);
 				GameSystem.inventory.inputItem(result);
 				Cooking start = new Cooking();
+				GameSystem.player.changeStarvePoint(-5);
 			}
 		}
 		
@@ -232,7 +242,10 @@ class CookingEventCheck {
 		else if(clickButton.getText().equals("½½·Ô 4") ) {
 			clickButton.setIcon(slot3);
 			System.out.println("½½·Ô 4");
+
+
 		}
+		
 		else
 			;
 	}

@@ -7,6 +7,7 @@ import item.armors.*;
 import item.weapons.*;
 import user.*;
 import user.Menu;
+import world.resource.*;
 
 public class Making {
 
@@ -146,50 +147,63 @@ class MakingEventCheck {
 		else if(clickButton.getText().equals("풀 갑옷 만들기") ) {
 
 			System.out.println("풀 갑옷 만들기");
-			/*
+			
 			//풀, 잔가지 인벤토리 확인
-			if(GameSystem.inventory.checkItem(new CutGrass()) && GameSystem.inventory.checkItem(new Twigs())) {
+			CutGrass cutGrass = new CutGrass();
+			Twigs twigs = new Twigs();
+			if(GameSystem.inventory.checkItem(cutGrass.returnName()) && GameSystem.inventory.checkItem(twigs.returnName())) {
 				//인벤토리 제거
-				GameSystem.inventory.consumeItem(new CutGrass());
-				GameSystem.inventory.consumeItem(new Twigs());
+				GameSystem.inventory.consumeItem(cutGrass);
+				GameSystem.inventory.consumeItem(twigs);
 				//인벤토리 생성
-				GameSystem.inventory.inputItem(new GrassSuit());
-				
+				GameSystem.inventory.inputItem(new GrassSuit());;
+				GameSystem.player.changeStarvePoint(-5);
 			}
-			*/
+			else {
+				System.out.println("재료가 부족합니다.");
+			}		
 		}
 		 
 		//나무 갑옷 만들기 버튼인 경우
 		else if(clickButton.getText().equals("나무 갑옷 만들기") ) {
 			
 			System.out.println("나무 갑옷 만들기");
-			/*
+			
 			//풀, 통나무 인벤토리 확인
-			if(GameSystem.inventory.checkItem(new CutGrass()) && GameSystem.inventory.checkItem(new Log())) {
+			CutGrass cutGrass = new CutGrass();
+			Log log = new Log();
+			if(GameSystem.inventory.checkItem(cutGrass.returnName()) && GameSystem.inventory.checkItem(log.returnName())) {
 				//인벤토리 제거
-				GameSystem.inventory.consumeItem(new CutGrass());
-				GameSystem.inventory.consumeItem(new Log());
+				GameSystem.inventory.consumeItem(cutGrass);
+				GameSystem.inventory.consumeItem(log);
 				//인벤토리 생성
 				GameSystem.inventory.inputItem(new LogSuit());
-				
+				GameSystem.player.changeStarvePoint(-5);
 			}
-			*/
+			else 
+				System.out.println("재료가 부족합니다.");
+			
 		}
 		
 		//창 만들기 버튼인 경우
 		else if(clickButton.getText().equals("창 만들기") ) {
 			
 			System.out.println("창 만들기");
-			/*
+			
 			//잔가지, 돌 인벤토리 확인
-			if(GameSystem.inventory.checkItem(new Twigs()) && GameSystem.inventory.checkItem(new Rock())) {
+			Twigs twigs = new Twigs();
+			Rock rock = new Rock();
+			if(GameSystem.inventory.checkItem(twigs.returnName()) && GameSystem.inventory.checkItem(rock.returnName())) {
 				//인벤토리 제거
-				GameSystem.inventory.consumeItem(new Twigs());
-				GameSystem.inventory.consumeItem(new Rock());
+				GameSystem.inventory.consumeItem(twigs);
+				GameSystem.inventory.consumeItem(rock);
 				//인벤토리 생성
 				GameSystem.inventory.inputItem(new Spear());
+				GameSystem.player.changeStarvePoint(-5);
 			}
-			*/
+			else 
+				System.out.println("재료가 부족합니다.");
+			
 		}
 
 		else
