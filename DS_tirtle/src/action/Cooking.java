@@ -1,11 +1,17 @@
 package action;
 
+import java.util.Arrays;
+import java.util.Vector;
+
 import java.awt.*;
 import javax.swing.*;
-import java.util.*;
 
 import item.*;
-import user.System;
+import item.armors.*;
+import item.processedFoods.*;
+import item.unprocessedFoods.*;
+import item.weapons.*;
+import user.*;
 
 
 public class Cooking {
@@ -13,31 +19,45 @@ public class Cooking {
 	/*
 	 * 재료 선택 - 요리 결과 출력 - 인벤토리에 수납
 	 */
-	
-	//솥 패널 생성
-	JPanel potPanel = new JPanel();
-	
-	//솥 결과 패널
-	JPanel resultPanel = new JPanel();
 
-	//솥 버튼 객체 배열 생성
-	JButton[] potButton = new JButton[4];
+	//요리하기 생성자
+	public Cooking() {
+		
+		//솥 패널 생성
+		JPanel potPanel = new JPanel();
+		
+		//솥 버튼 객체 배열 생성
+		JButton[] potButton = new JButton[6];
+		
+		ImageIcon slot = new ImageIcon("./images/slot.png");
+
+		JButton potresultButton = new JButton();
+		
+		//메뉴 패널 배치 관리자 - 플로우레이아웃
+		potPanel.setLayout(new GridLayout(6, 1));
+		
+		//인벤토리 버튼 초기화 및 배치
+		for(int i = 0; i <= 3; i++) {
+			potPanel.add(potButton[i] = new JButton(slot));
+			potButton[i].addActionListener(GameSystem.userListener);
+		}
+
+		potPanel.add(potButton[4] = new JButton("요리하기"));
+		potButton[4].addActionListener(GameSystem.userListener);
+		JButton goBack = new JButton("활동 끝내기");
+		goBack.addActionListener(GameSystem.userListener);
+		potPanel.add(goBack);
+
+		//메뉴 패널 배치하기
+		GameSystem.playPanel.removeAll();
+		GameSystem.playPanel.add(potPanel);
+		
+		//중앙 패널 다시 그리기
+		GameSystem.playPanel.revalidate();
+		GameSystem.playPanel.repaint();
+	}
 	
-	//솥 결과 버튼 객체 배열 생성
-	JButton resultButton = new JButton();
-	
-	//요리 재료 객체들을 저장할 벡터 생성
-	Vector<Item> potItem = new Vector<Item>();
-	
-	//요리 결과 객체를 저장할 벡터 생성
-	Vector<Item> resultItem = new Vector<Item>();
-	
-	Object[] objs;
-	
-	//결과창에 출력할 텍스트 필드
-	String result;
-	
-	
+/*	
 	//요리하기 메소드
 	
 	//선택아이템 객체를 요리 재료 아이템 객체로 넣기
@@ -75,8 +95,11 @@ public class Cooking {
 	//재료들을 분별하여 요리 제작
 	void cook () {
 		//우선순위 1: 괴물라자냐
-		if(objs[0] == "MonsterMeat", objs[1] == "MonsterMeat", objs[2] != "Twigs", objs[3] != "Twigs") {
+		if(potButton[0].returnName == "MonsterMeat", potButton[1] == "MonsterMeat", objs[2] != "Twigs", objs[3] != "Twigs") {
 			resultItem.add(MonsterLasagna);
+			consumeItem(MonsterMeat);
+			consumeItem(MonsterMeat);
+			
 			
 			resultButton.setIcon(item.MonsterLasagna.imageIcon);
 			resultButton.setText(item.MonsterLasagna.name);
@@ -112,8 +135,8 @@ public class Cooking {
 			else if(objs[0] == "Fish", obj[1] != "Twigs", obj[2] == "Twigs", obj[3] == "Twigs" || obj[0] != "Twigs", obj[1] == "Fish", obj[2] == "Twigs", obj[3] == "Twigs") {
 				resultItem.add(Fishsticks);
 
-				resultButton.setIcon(item.Fishsticks.imageIcon);
-				resultButton.setText(item.Fishsticks.name);
+				resultButton.setIcon(Fishsticks.returnImg);
+				resultButton.setText(Fishsticks.returName);
 			}
 			
 			//라따뚜이
@@ -147,22 +170,5 @@ public class Cooking {
 		}
 		
 	}
-	
-	public Cooking() {
-		
-		//솥 패널 배치 관리자
-		//potPanel.setLayout(new //?(4, 1));
-		//솥 결과 패널 배치 관리자 
-		//resultPanel.setLayout(new //?(1, 1));
-		
-		//인벤토리 버튼 초기화 및 배치
-		for(int i = 0; i <= 4; i++) {
-			potPanel.add(potButton[i] = new JButton("Empty"));
-			potButton[i].addActionListener(System.userListener);
-		}
-
-		resultPanel.add(resultButton[0] = new JButton("Empty"));
-		resultButton[0].addActionListener(System.userListener);
-	}
-
+*/
 }

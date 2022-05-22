@@ -1,7 +1,7 @@
 package user;
 
 import javax.swing.*;
-
+import action.*;
 
 public class CheckEvent {
 
@@ -12,6 +12,7 @@ public class CheckEvent {
 		new StartEventCheck(clickButton);
 		new MenuEventCheck(clickButton);
 		new InventoryEventCheck(clickButton);
+		new ActionEventCheck(clickButton);
 	}
 	
 }
