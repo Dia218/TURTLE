@@ -2,8 +2,6 @@ package world_resource;
 
 import javax.swing.ImageIcon;
 
-import world.Resource;
-
 public class Rocky  extends Resource {
 	
 	private String resource_name = "Á¶¾àµ¹";

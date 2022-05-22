@@ -2,11 +2,11 @@ package world_resource;
 
 import javax.swing.ImageIcon;
 
-public class Twigs  extends Resource {
+public class Monster_Meat extends Resource {
 	
-	private String resource_name = "나무가지";
+	private String resource_name = "괴물 고기";
 
-	static private ImageIcon img = new ImageIcon("./images/Twigs.png");
+	static private ImageIcon img = new ImageIcon("./images/Monster_Meat.png");
 	
 	public ImageIcon returnImg() {
 		return img;

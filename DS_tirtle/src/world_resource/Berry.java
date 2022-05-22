@@ -2,8 +2,6 @@ package world_resource;
 
 import javax.swing.ImageIcon;
 
-import world.Resource;
-
 public class Berry extends Resource {
 	
 	private String resource_name = "º£¸®";

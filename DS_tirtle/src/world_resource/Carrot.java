@@ -2,8 +2,6 @@ package world_resource;
 
 import javax.swing.ImageIcon;
 
-import world.Resource;
-
 public class Carrot  extends Resource {
 	
 	private String resource_name = "´ç±Ù";

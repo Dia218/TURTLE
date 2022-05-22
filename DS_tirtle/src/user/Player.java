@@ -34,7 +34,7 @@ public class Player {
 	 * 플레이어 클래스 메소드
 	 * */
 	//체력 값을 변화시키는 메소드
-	void changeHealPoint(int addHealPoint) {
+	public void changeHealPoint(int addHealPoint) {
 		
 		//체력 값 변화
 		this.healPoint += addHealPoint;
@@ -54,7 +54,7 @@ public class Player {
 	}
 	
 	//허기 값을 변화시키는 메소드
-	void changeStarvePoint(int addStarvePoint) {
+	public void changeStarvePoint(int addStarvePoint) {
 		
 		//허기 값 변화
 		this.starvePoint += addStarvePoint;

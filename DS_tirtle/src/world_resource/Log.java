@@ -1,6 +1,5 @@
 package world_resource;
 
-import world.Resource;
 import javax.swing.ImageIcon;
 
 public class Log extends Resource {
