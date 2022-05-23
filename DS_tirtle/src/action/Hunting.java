@@ -12,6 +12,8 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 
+import item.Item;
+
 ////사냥하기 클래스////
 public class Hunting extends Acting{
 	
@@ -26,6 +28,18 @@ public class Hunting extends Acting{
 	public Hunting() {
 		this.randomMonster = Random_mon();
 		HuntPanel huntPanel = new HuntPanel(randomMonster);
+		
+		//사냥하기 패널 배치하기
+		GameSystem.playPanel.removeAll();
+		GameSystem.playPanel.add(huntPanel);
+		
+		//중앙 패널 다시 그리기
+		GameSystem.playPanel.revalidate();
+		GameSystem.playPanel.repaint();
+		
+		//상태 초기화
+		GameSystem.state.changeMode(null);
+		GameSystem.state.changeActing(null);
 	}
 	
 	
@@ -74,7 +88,9 @@ public class Hunting extends Acting{
 	}
 	
 	//몬스터 사냥 계산 메소드
-	void Hunt(Monster monster) {
+	void hunt() {
+		Monster monster = this.randomMonster;
+		
 		int PH=0;//메소드 들어갈 자리
 		int PA=0;
 		int PD=0;
@@ -90,7 +106,8 @@ public class Hunting extends Acting{
 			MH=MH-PA;
 			}
 		
-		//몬스터가 드롭하는 자원을 인벤토리 저장 메소드에 전달 
+		//몬스터가 드롭하는 자원을 인벤토리 저장 메소드에 전달
+		GameSystem.inventory.inputItem(this.randomMonster.returnItem());
 		
 		//메뉴로 이동
 		Menu menu = new Menu();
@@ -141,7 +158,10 @@ class HuntPanel extends JPanel {
 		
 		//공격 도망 버튼 생성 및 패널에 넣은거같다
 		JButton huntAtk = new JButton("공격하기");
+		huntAtk.addActionListener(GameSystem.userListener);
 		JButton huntRun = new JButton("도망가기");
+		huntRun.addActionListener(GameSystem.userListener);
+		
 		this.add(huntAtk);this.add(huntRun);
 	}
 
@@ -157,10 +177,14 @@ class HuntingEventCheck {
  * */
 	public HuntingEventCheck(JButton clickButton, Hunting hunting) {
 	
-
 		if(clickButton.getText().equals("공격하기")) {
+			hunting.hunt();
 		}
-		
-	
+		else if(clickButton.getText().equals("도망가기")) {
+			//메뉴로 이동
+			Menu menu = new Menu();
+		}
+		else
+			;
 	}
 }
