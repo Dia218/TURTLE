@@ -77,30 +77,28 @@ class MenuEventCheck {
 	public MenuEventCheck(JButton clickButton) {
 		//이동하기 버튼인 경우
 		if(clickButton.getText().equals("이동하기") ) {
+			
 				/*Moving 클래스를 발생시켜서 지역이동*/
-				/*
-				 * Moving moving = new Moving();
-				 * */;
-				 
+				 Moving moving = new Moving();
+
 			//모드 바꾸는 메소드를 호출하여 이동 모드로 전환
 			GameSystem.state.changeMode(movingMode);	
 		}
 		//사냥하기 버튼인 경우
 		else if(clickButton.getText().equals("사냥하기") ) {
+			
 				/*Hunting 클래스를 발생시켜서 몬스터 사냥*/
-				/*
-				 * Hunting hunting = new Hunting(); 
-				 * */;
+				Hunting hunting = new Hunting(); 
+				hunting.startHuntMenu();
 				 
 			//모드 바꾸는 메소드를 호출하여 사냥 모드로 전환
 			GameSystem.state.changeMode(huntingMode);
 		}
 		//채집하기 버튼인 경우
 		else if(clickButton.getText().equals("채집하기") ) {
+			
 				/*Collecting 클래스를 발생시켜서 오브젝트에서 자원 채집*/
-				/*
-				 * Collecting collecting = new Collecting();
-				 * */;
+				Collecting collecting = new Collecting();
 				 
 			//모드 바꾸는 메소드를 호출하여 채집 모드로 전환
 			GameSystem.state.changeMode(collectingMode);

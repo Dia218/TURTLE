@@ -5,6 +5,9 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import world.*;
+import world.map.*;
+
 
 public class State {
 
@@ -13,9 +16,7 @@ public class State {
 	 * */
 	
 	//현재 위치를 저장하는 필드 - 초원으로 초기화
-	private Biome stateBiome = new Biome();
-	/* 감자 바이옴 수정해야함
-	 * Biome biome = new GrassLand(); */
+	private Biome stateBiome = new Grassland();
 	
 	//현재 위치를 알려주는 상태 패널 생성
 	StatePanel statePanel = new StatePanel(stateBiome);
