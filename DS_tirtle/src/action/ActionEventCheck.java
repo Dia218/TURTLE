@@ -12,6 +12,9 @@ public class ActionEventCheck{
 			new MakingEventCheck(clickButton);
 			new CookingEventCheck(clickButton);
 			new HuntingEventCheck(clickButton);
+			new CollectEvent(clickButton);
+			new HuntingEventCheck(clickButton);
+
 		}
 
 }	

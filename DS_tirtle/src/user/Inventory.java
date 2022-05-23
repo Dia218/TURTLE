@@ -194,7 +194,7 @@ class InventoryEventCheck {
 					this.itemTypeCheck(clickItem);
 					break;
 				}
-				else
+				else			
 					;
 			}
 		}
