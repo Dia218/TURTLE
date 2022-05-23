@@ -166,9 +166,15 @@ public class Inventory {
 		//인벤토리 버튼 초기화 및 배치
 		for(int i = 0; i <= 20; i++) {
 			inventoryButton[i] = new JButton("Empty");
-			inventoryButton[i].addActionListener(GameSystem.userListener);
 			inventoryPanel.add(inventoryButton[i]);
+			//inventoryButton[i].addActionListener(GameSystem.userListener);
 			System.out.println("인벤토리 초기화");
+		}
+		
+		for(int i = 0; i <= 20; i++) {
+			JButton button = inventoryButton[i];
+					button.addActionListener(GameSystem.userListener);
+			System.out.println("리스너");
 		}
 	}
 }

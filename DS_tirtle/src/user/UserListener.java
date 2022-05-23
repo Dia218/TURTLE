@@ -6,7 +6,7 @@ import java.util.*;
 import action.*;
 import action.Cooking;
 
-public class UserListener implements ActionListener, ItemListener {
+public class UserListener extends MouseAdapter implements ActionListener, ItemListener {
 	
 	/*
 	 * 유저리스너 클래스의 필드
@@ -30,9 +30,18 @@ public class UserListener implements ActionListener, ItemListener {
 	//버튼 이벤트 설정
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("인벤토리 이벤트 ??");
-
+		System.out.println("유저 이벤트 ??");
 		
+		//이벤트가 발생한 버튼 저장하기
+		clickButton = (JButton)e.getSource();
+		
+		//버튼을 체크하는 메소드 호출하기
+		checkevent.checkbutton(clickButton);
+		actioncheckevent.checkbutton(clickButton);
+	}
+	
+	@Override
+	public void mousePressed(MouseEvent e) {
 		//이벤트가 발생한 버튼 저장하기
 		clickButton = (JButton)e.getSource();
 		

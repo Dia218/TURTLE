@@ -17,9 +17,12 @@ import item.Item;
 ////사냥하기 클래스////
 public class Hunting extends Acting{
 	
-	int rNum;
-	Random rnd = new Random();
-	Monster randomMonster;
+	   int rNum;
+	   int playerDameged=0;
+	   int playerHungry=0;
+	   Random rnd = new Random();
+	   Monster randomMonster;
+
 
 	
 	/*
@@ -87,24 +90,27 @@ public class Hunting extends Acting{
 		
 	}
 	
-	//몬스터 사냥 계산 메소드
-	void hunt() {
-		Monster monster = this.randomMonster;
-		
-		int PH=0;//메소드 들어갈 자리
-		int PA=0;
-		int PD=0;
-		int PS=0;//공복
-		int MH=monster.getHP();
-		int MA=monster.getATK();
-		
-		//공복값 받기 필드 공복 + 몬스터 공복
-		//(-(monster.Mon_starve + map.mapStarve(map.Map_Num)))
-		
-		for(int i=1;MH<=0;i++) {
-			PH=PH-(MA-PD);
-			MH=MH-PA;
-			}
+	 //몬스터 사냥 계산 메소드
+	   void hunt() {
+	      Monster monster = this.randomMonster;
+	      Biome biome = new Biome();
+	      int PH= GameSystem.player.returnHealPoint();//메소드 들어갈 자리
+	      int PA= GameSystem.player.returnOffensivePower();
+	      int PD=GameSystem.player.returnDefensivePower();
+	      int PS=0;//공복
+	      int MH=monster.getHP();
+	      int MA=monster.getATK();
+	      //공복값 받기 필드 공복 + 몬스터 공복
+	      //(-(monster.Mon_starve + map.mapStarve(map.Map_Num)))
+	      
+	      for(int i=1;MH<=0;i++) {
+	         PH=PH-(MA-PD);
+	         MH=MH-PA;
+	         playerDameged+=(MA-PD);
+	         playerHungry+=biome.returnStavePoint();
+	         }
+	      GameSystem.player.changeHealPoint(-playerDameged);
+	      GameSystem.player.changeStarvePoint(playerHungry);
 		
 		//몬스터가 드롭하는 자원을 인벤토리 저장 메소드에 전달
 		GameSystem.inventory.inputItem(this.randomMonster.returnItem());
