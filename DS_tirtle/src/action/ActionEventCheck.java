@@ -9,7 +9,7 @@ public class ActionEventCheck{
 
 		public void checkbutton(JButton clickButton) {
 			
-			System.out.println("이벤트 발생");
+			System.out.println("엑션 이벤트 발생");
 			
 			if(GameSystem.state.returnActing() instanceof Hunting) {
 				new HuntingEventCheck(clickButton, (Hunting)GameSystem.state.returnActing());

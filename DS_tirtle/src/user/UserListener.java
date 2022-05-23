@@ -30,6 +30,8 @@ public class UserListener implements ActionListener, ItemListener {
 	//버튼 이벤트 설정
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		System.out.println("인벤토리 이벤트 ??");
+
 		
 		//이벤트가 발생한 버튼 저장하기
 		clickButton = (JButton)e.getSource();
