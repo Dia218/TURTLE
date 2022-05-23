@@ -17,12 +17,14 @@ public class Hunting extends Acting{
 	
 	int rNum;
 	Random rnd = new Random();
+	Monster randomMonster;
+
 	
 	/*
 	 * 사냥하기 클래스 생성자
 	 * */
 	public Hunting() {
-		Monster randomMonster = Random_mon();
+		this.randomMonster = Random_mon();
 		HuntPanel huntPanel = new HuntPanel(randomMonster);
 	}
 	
@@ -153,9 +155,11 @@ class HuntingEventCheck {
 /*
  * 사냥하기 이벤트 체크 생성자
  * */
-	public HuntingEventCheck(JButton clickButton) {
+	public HuntingEventCheck(JButton clickButton, Hunting hunting) {
 	
-		
+
+		if(clickButton.getText().equals("공격하기")) {
+		}
 		
 	
 	}

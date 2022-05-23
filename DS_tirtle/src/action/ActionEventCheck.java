@@ -1,17 +1,32 @@
 package action;
 
 import javax.swing.JButton;
-import user.*;
+
+import user.GameSystem;
 
 public class ActionEventCheck{
 	
 
 		public void checkbutton(JButton clickButton) {
 			
-			//버튼을 체크하는 클래스들을 발생시킴
-			new MakingEventCheck(clickButton);
-			new CookingEventCheck(clickButton);
-			new HuntingEventCheck(clickButton);
+			if(GameSystem.state.returnActing() instanceof Hunting) {
+				new HuntingEventCheck(clickButton, (Hunting) GameSystem.state.returnActing());
+			}
+			else if (GameSystem.state.returnActing() instanceof Collecting) {
+				;//new CollectingEventCheck(clickButton, (Collecting) GameSystem.state.returnActing());
+			}
+			else if (GameSystem.state.returnActing() instanceof Moving) {
+				;//new MovingEventCheck(clickButton, (Moving) GameSystem.state.returnActing());
+			}
+			else if (GameSystem.state.returnActing() instanceof Making) {
+				;//new MakingEventCheck(clickButton, (Making) GameSystem.state.returnActing());
+			}
+			else if (GameSystem.state.returnActing() instanceof Cooking) {
+				;//new CookingEventCheck(clickButton, (Cooking) GameSystem.state.returnActing());
+			}
+			else
+				;
+			
 		}
 
 }	
