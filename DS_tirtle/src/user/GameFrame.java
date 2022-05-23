@@ -24,22 +24,12 @@ public class GameFrame extends JFrame {
 		 * */
 		
 		//상단 - 지역 출력//
-		JPanel statePanel = new JPanel();
-		mainScreen.add(statePanel, BorderLayout.NORTH);
-		JLabel map = new JLabel("현재 위치 출력창 test");
-		map.setFont(new Font("", Font.PLAIN, 20));
-		statePanel.add(map);
-		statePanel.setBackground(Color.YELLOW);
-	
+		mainScreen.add(GameSystem.state.statePanel, BorderLayout.NORTH);
+
 		
 		//하단 - 결과 출력//
-		JPanel resultPanel = new JPanel();
-		mainScreen.add(resultPanel, BorderLayout.SOUTH);
-		JTextArea result = new JTextArea("결과 출력창 test", 7, 70);
-		//result.setFont(new Font("", Font.PLAIN, 20));				
-		resultPanel.add(new JScrollPane(result));
-		resultPanel.setBackground(Color.YELLOW);
-		
+		mainScreen.add(GameSystem.result.resultPanel, BorderLayout.SOUTH);
+		GameSystem.result.resultPanel.setBackground(Color.YELLOW);
 		
 		//오른쪽 - 캐릭터 정보 출력//
 		JPanel profilePanel = new JPanel();
@@ -70,31 +60,6 @@ public class GameFrame extends JFrame {
 		//게임시작 패널 중앙 패널에 배치
 		GameSystem.playPanel.add(startPanel);
 		
-<<<<<<< HEAD
-=======
-
-		
-<<<<<<< HEAD
-		
-		/*
-		//테스트용 - 삭제해야함
-=======
-		//중앙 - 게임 진행 화면
-		JPanel playPanel = new JPanel();
-		mainScreen.add(playPanel, BorderLayout.CENTER);
-<<<<<<< HEAD
-		ItemData a;
->>>>>>> 0658b5a093b23280ab7fb806864f2d876e498203
-=======
->>>>>>> 5d2d768ebabeb0a4fbc2441a66598c519bdf6481
-		JPanel testBiomPanel = new JPanel();
-		ImageIcon carrotPlantImg = new ImageIcon("./images/BerryBush.png");
-		JCheckBox carrotPlant = new JCheckBox(carrotPlantImg);
-
-		testBiomPanel.add(carrotPlant);
-		mainScreen.add(testBiomPanel, BorderLayout.CENTER);
-		*/
->>>>>>> item
 	}
 }
 

@@ -1,11 +1,21 @@
 package action;
 
+import java.util.Arrays;
+import java.util.Vector;
+
 import java.awt.*;
+
+import javax.naming.spi.DirStateFactory.Result;
 import javax.swing.*;
-import java.util.*;
 
 import item.*;
-import user.System;
+import item.armors.*;
+import item.processedFoods.*;
+import item.unprocessedFoods.*;
+import item.weapons.*;
+import user.*;
+import user.Menu;
+import world.resource.Twigs;
 
 
 public class Cooking {
@@ -14,155 +24,253 @@ public class Cooking {
 	 * 재료 선택 - 요리 결과 출력 - 인벤토리에 수납
 	 */
 	
-	//솥 패널 생성
-	JPanel potPanel = new JPanel();
-	
-	//솥 결과 패널
-	JPanel resultPanel = new JPanel();
-
-	//솥 버튼 객체 배열 생성
-	JButton[] potButton = new JButton[4];
-	
-	//솥 결과 버튼 객체 배열 생성
-	JButton resultButton = new JButton();
-	
-	//요리 재료 객체들을 저장할 벡터 생성
-	Vector<Item> potItem = new Vector<Item>();
-	
-	//요리 결과 객체를 저장할 벡터 생성
-	Vector<Item> resultItem = new Vector<Item>();
-	
-	Object[] objs;
-	
-	//결과창에 출력할 텍스트 필드
-	String result;
-	
-	
-	//요리하기 메소드
-	
-	//선택아이템 객체를 요리 재료 아이템 객체로 넣기
-	//Item potItem = user.Inventory.vector.get(i);	//Inventory import 필요
-	
-	//솥에 선택된 아이템을 집어넣기
-	void inputItem(Item item) {
-		
-		//아이템을 넣기 전, 인벤토리에 들어있는 아이템의 갯수
-		int vectorSize = potItem.size();
-		
-		//인벤토리 용량을 초과할 경우
-		if (vectorSize >= 4) {
-			 result = "솥이 꽉 찼습니다.";
-		}
-		else {
-			potItem.add(item);
-			
-			//벡터에서 방금 저장한 아이템 객체의 인덱스 값
-			int index = item.size()-1;
-			
-			//벡터 인덱스 값과 동일한 인덱스의 버튼에 이미지 삽입
-			potButton[index].setIcon(item.imageIcon);
-			potButton[index].setText(item.name);
-		}
-	}
-	
-	//아이템 객체를 사전 순으로 정렬
-	void sort(Vector<Item> item) {
-		objs = item.toArray();
-
-		Arrays.sort(objs);
-	}
-	
-	//재료들을 분별하여 요리 제작
-	void cook () {
-		//우선순위 1: 괴물라자냐
-		if(objs[0] == "MonsterMeat", objs[1] == "MonsterMeat", objs[2] != "Twigs", objs[3] != "Twigs") {
-			resultItem.add(MonsterLasagna);
-			
-			resultButton.setIcon(item.MonsterLasagna.imageIcon);
-			resultButton.setText(item.MonsterLasagna.name);
-		}
-		
-		//우선순위 2: 미트스튜
-		else if(objs[0] == "Meat", objs[1] == "Meat", objs[2] != "Twigs", objs[3] != "Twigs") {
-			resultItem.add(MeatStew);
-
-			resultButton.setIcon(item.MeatStew.imageIcon);
-			resultButton.setText(item.MeatStew.name);
-		}
-		
-		//우선순위 3: 
-		else if(objs[0] == "Meat", objs[2] != "Twigs", objs[2] !="Twigs", objs[3] != "Twigs") {
-			resultItem.add(Meatball);
-
-			resultButton.setIcon(item.Meatball.imageIcon);
-			resultButton.setText(item.Meatball.name);
-		}
-		
-		//재료가 겹치지 않은 가공식품. (가공식품 오름차순 우선순위. 곤죽 제외)
-		else {
-			//잼 한 줌
-			if(objs[0] == "Berry", obj[1] == "Berry", obj[2] == "Berry", obj[3] == "Berry") {
-				resultItem.add(BerryJam);
-
-				resultButton.setIcon(item.BerryJam.imageIcon);
-				resultButton.setText(item.BerryJam.name);
-			}
-			
-			//생선튀김
-			else if(objs[0] == "Fish", obj[1] != "Twigs", obj[2] == "Twigs", obj[3] == "Twigs" || obj[0] != "Twigs", obj[1] == "Fish", obj[2] == "Twigs", obj[3] == "Twigs") {
-				resultItem.add(Fishsticks);
-
-				resultButton.setIcon(item.Fishsticks.imageIcon);
-				resultButton.setText(item.Fishsticks.name);
-			}
-			
-			//라따뚜이
-			else if(objs[0] == "Carrot", obj[1] != "Carrot", obj[2] == "Carrot", obj[3] == "Carrot" || objs[0] == "Carrot", obj[1] != "Carrot", obj[2] == "Carrot", obj[3] == "Mushroom" || objs[0] == "Carrot", obj[1] != "Carrot", obj[2] == "Mushroom", obj[3] == "Mushroom" || objs[0] == "Carrot", obj[1] != "Mushroom", obj[2] == "Mushroom", obj[3] == "Mushroom" || objs[0] == "Mushroom", obj[1] != "Mushroom", obj[2] == "Mushroom", obj[3] == "Mushroom") {
-				resultItem.add(Ratatouille);
-
-				resultButton.setIcon(item.Ratatouille.imageIcon);
-				resultButton.setText(item.Ratatouille.name);
-			}
-			
-			//샌드위치
-			else if(objs[0] == "Carrot", obj[1] != "Carrot", obj[2] == "Carrot", obj[3] == "FrogLeg" || objs[0] == "Carrot", obj[1] != "Carrot", obj[2] == "FrogLeg", obj[3] == "Mushroom" || objs[0] == "Carrot", obj[1] != "FrogLeg", obj[2] == "Mushroom", obj[3] == "Mushroom" || objs[0] == "FrogLeg", obj[1] != "Mushroom", obj[2] == "Mushroom", obj[3] == "Mushroom") {
-				resultItem.add(Sandwich);
-
-				resultButton.setIcon(item.Sandwich.imageIcon);
-				resultButton.setText(item.Sandwich.name);
-			}
-			
-			//곤죽
-			else {
-				resultItem.add(WetGoop);
-
-				resultButton.setIcon(item.WetGoop.imageIcon);
-				resultButton.setText(item.WetGoop.name);
-			}
-		}
-		
-		//가공식품을 인벤토리에 추가
-		void inputResultItem() {
-			inputItem(resultItem);
-		}
-		
-	}
-	
+	//요리하기 생성자
 	public Cooking() {
+		//솥 패널 생성
 		
-		//솥 패널 배치 관리자
-		//potPanel.setLayout(new //?(4, 1));
-		//솥 결과 패널 배치 관리자 
-		//resultPanel.setLayout(new //?(1, 1));
+		JPanel potPanel = new JPanel();
+		
+		//솥 버튼 객체 배열 생성
+		JButton[] potButton = new JButton[4];
+		
+		ImageIcon slot0Img = new ImageIcon("./images/slot0.png");
+		
+		ImageIcon slot1Img = new ImageIcon("./images/slot1.png");
+		
+		ImageIcon slot2Img = new ImageIcon("./images/slot2.png");
+		
+		ImageIcon slot3Img = new ImageIcon("./images/slot3.png");
+
+		//메뉴 패널 배치 관리자 - 그리드레이아웃
+		potPanel.setLayout(new GridLayout(6, 1));
 		
 		//인벤토리 버튼 초기화 및 배치
-		for(int i = 0; i <= 4; i++) {
-			potPanel.add(potButton[i] = new JButton("Empty"));
-			potButton[i].addActionListener(System.userListener);
+		potPanel.add(potButton[0] = new JButton("슬롯 1" ,slot0Img));
+		potButton[0].addActionListener(GameSystem.userListener);
+		System.out.println("슬롯 1 이미지 초기화");
+		
+		potPanel.add(potButton[1] = new JButton("슬롯 2" ,slot1Img));
+		potButton[1].addActionListener(GameSystem.userListener);
+		System.out.println("슬롯 2 이미지 초기화");
+		
+		potPanel.add(potButton[2] = new JButton("슬롯 3" ,slot2Img));
+		potButton[2].addActionListener(GameSystem.userListener);
+		System.out.println("슬롯 3 이미지 초기화");
+		
+		potPanel.add(potButton[3] = new JButton("슬롯 4" ,slot3Img));
+		potButton[3].addActionListener(GameSystem.userListener);
+		System.out.println("슬롯 4 이미지 초기화");
+
+		
+		//요리시작 버튼 생성 및 배치
+		JButton start = new JButton("요리시작");
+		potPanel.add(start);
+		start.addActionListener(GameSystem.userListener);
+		
+		//활동 끝내기 버튼 생성 및 배치
+		JButton goBack = new JButton("활동 끝내기");
+		potPanel.add(goBack);
+		goBack.addActionListener(GameSystem.userListener);
+
+		//메뉴 패널 배치하기
+				GameSystem.playPanel.removeAll();
+				GameSystem.playPanel.add(potPanel);
+				
+				//중앙 패널 다시 그리기
+				GameSystem.playPanel.revalidate();
+				GameSystem.playPanel.repaint();
+	}
+	
+}
+	
+class CookingEventCheck {
+	public CookingEventCheck(JButton clickButton) {
+		
+		ImageIcon slot0 = new ImageIcon("./images/slot0.png");
+		ImageIcon slot1 = new ImageIcon("./images/slot1.png");
+		ImageIcon slot2 = new ImageIcon("./images/slot2.png");
+		ImageIcon slot3 = new ImageIcon("./images/slot3.png");
+
+		//빈 공간 아이템 객체 생성
+		Empty empty = new Empty();
+		
+		//슬롯 아이템 객체 배열 생성
+		Item[] potSlot = {empty, empty, empty, empty};
+		
+		//아이템 결과 객체 생성
+		Item resultSlot = empty;
+		
+		//재료 수량
+		int br = 0, cr = 0, fs = 0, fl = 0, mt = 0, mm = 0, mr = 0, tg = 0;
+		
+		//활동 끝내기 버튼을 누른 경우
+		if(clickButton.getText().equals("활동 끝내기") ) {
+
+			//메뉴 생성
+			Menu menu = new Menu();
+			System.out.println("활동 끝내기");
+		}
+		
+		//요리 시작 버튼인 경우
+		else if(clickButton.getText().equals("요리시작") ) {
+			
+			//potSlot의 재료를 갯수로 변환.
+			for(int i = 0; i < 4; i++) {
+				//베리
+				if(potSlot[i] instanceof Berry)
+					br++;
+				//당근
+				else if(potSlot[i] instanceof Carrot)
+					cr++;
+				//물고기
+				else if(potSlot[i] instanceof Fish)
+					fs++;
+				//개구리다리
+				else if(potSlot[i] instanceof FrogLeg)
+					fl++;
+				//고기
+				else if(potSlot[i] instanceof Meat)
+					mt++;
+				//괴물고기
+				else if(potSlot[i] instanceof MonsterMeat)
+					mm++;
+				//버섯
+				else if(potSlot[i] instanceof Mushroom)
+					mr++;
+				//잔가지
+				else if(potSlot[i] instanceof Twigs)
+					tg++;
+			}
+			
+			//potSlot중 빈 곳이 있다면 출력
+			if(potSlot[0] == empty || potSlot[1] == empty || potSlot[2] == empty || potSlot[3] == empty) {
+				
+				GameSystem.result.changeResultArea("\n" + "재료가 부족하다.");
+			}
+			//괴물라자냐 요리
+			else if(mm >= 2 && tg == 0) {
+				MonsterLasagna result = new MonsterLasagna();
+				for(int i = 0; i < 4; i++)
+					GameSystem.inventory.consumeItem(potSlot[i]);
+				GameSystem.inventory.inputItem(result);
+				
+				GameSystem.result.changeResultArea("\n" + "괴물라자냐를 만들었다.");
+				Cooking start = new Cooking();
+				GameSystem.player.changeStarvePoint(-5);
+			}
+			//미트스튜 요리
+			else if(mt >= 2 && tg == 0) {
+				MeatStew result = new MeatStew();
+				for(int i = 0; i < 4; i++)
+					GameSystem.inventory.consumeItem(potSlot[i]);
+				GameSystem.inventory.inputItem(result);
+				
+				GameSystem.result.changeResultArea("\n" + "미트스튜를 만들었다.");
+				Cooking start = new Cooking();
+				GameSystem.player.changeStarvePoint(-5);
+			}
+			//샌드위치 요리
+			else if(fl == 1 && cr == 0 && mr == 3 || fl == 1 && cr == 1 && mr == 2 || fl == 1 && cr == 2 && mr == 1 || fl == 1 && cr == 3 && mr == 0) {
+				Sandwich result = new Sandwich();
+				for(int i = 0; i < 4; i++)
+					GameSystem.inventory.consumeItem(potSlot[i]);
+				GameSystem.inventory.inputItem(result);
+				
+				GameSystem.result.changeResultArea("\n" + "샌드위치를 만들었다.");
+				Cooking start = new Cooking();
+				GameSystem.player.changeStarvePoint(-5);
+			}
+			//라따뚜이 요리
+			else if(cr == 0 && mr == 4 || cr == 1 && mr == 3 || cr == 2 && mr == 2 || cr == 3 && mr == 1 || cr == 4 && mr == 0) {
+				Ratatouille result = new Ratatouille();
+				for(int i = 0; i < 4; i++)
+					GameSystem.inventory.consumeItem(potSlot[i]);
+				GameSystem.inventory.inputItem(result);
+				
+				GameSystem.result.changeResultArea("\n" + "라따뚜이를 만들었다.");
+				Cooking start = new Cooking();
+				GameSystem.player.changeStarvePoint(-5);
+			}
+			//미트볼 요리
+			else if(mt == 1 && tg == 0) {
+				MeatBall result = new MeatBall();
+				for(int i = 0; i < 4; i++)
+					GameSystem.inventory.consumeItem(potSlot[i]);
+				GameSystem.inventory.inputItem(result);
+				
+				GameSystem.result.changeResultArea("\n" + "미트볼을 만들었다.");
+				Cooking start = new Cooking();
+				GameSystem.player.changeStarvePoint(-5);
+			}
+			//생선튀김 요리
+			else if(fs == 1 && tg == 2) {
+				Fishsticks result = new Fishsticks();
+				for(int i = 0; i < 4; i++)
+					GameSystem.inventory.consumeItem(potSlot[i]);
+				GameSystem.inventory.inputItem(result);
+				
+				GameSystem.result.changeResultArea("\n" + "생선튀김을 만들었다.");
+				Cooking start = new Cooking();
+				GameSystem.player.changeStarvePoint(-5);
+			}
+			//과일잼 요리
+			else if(br == 4) {
+				BerryJam result = new BerryJam();
+				for(int i = 0; i < 4; i++)
+					GameSystem.inventory.consumeItem(potSlot[i]);
+				GameSystem.inventory.inputItem(result);
+				
+				GameSystem.result.changeResultArea("\n" + "과일잼을 만들었다.");
+				Cooking start = new Cooking();
+				GameSystem.player.changeStarvePoint(-5);
+			}
+			//곤죽 요리
+			else {
+				WetGoop result = new WetGoop();
+				for(int i = 0; i < 4; i++)
+					GameSystem.inventory.consumeItem(potSlot[i]);
+				GameSystem.inventory.inputItem(result);
+				
+				GameSystem.result.changeResultArea("\n" + "곤죽을 만들었다.");
+				Cooking start = new Cooking();
+				GameSystem.player.changeStarvePoint(-5);
+			}
+		}
+		
+		//슬롯 1 버튼을 누른 경우
+		else if(clickButton.getText().equals("슬롯 1")) {
+			clickButton.setIcon(slot0);
+			System.out.println("슬롯 1");
+			
+			GameSystem.result.changeResultArea("\n" + "1 슬롯에 아이템을 뺐다.");
 		}
 
-		resultPanel.add(resultButton[0] = new JButton("Empty"));
-		resultButton[0].addActionListener(System.userListener);
-	}
+		//슬롯 2 버튼을 누른 경우
+		else if(clickButton.getText().equals("슬롯 2")) {
+			clickButton.setIcon(slot1);
+			System.out.println("슬롯 2");
+			
+			GameSystem.result.changeResultArea("\n" + "2 슬롯에 아이템을 뺐다.");
+		}
 
+		//슬롯 3 버튼을 누른 경우
+		else if(clickButton.getText().equals("슬롯 3") ) {
+			clickButton.setIcon(slot2);
+			System.out.println("슬롯 3");
+			
+			GameSystem.result.changeResultArea("\n" + "3 슬롯에 아이템을 뺐다.");
+		}
+
+		//슬롯 4 버튼을 누른 경우
+		else if(clickButton.getText().equals("슬롯 4") ) {
+			clickButton.setIcon(slot3);
+			System.out.println("슬롯 4");
+
+			GameSystem.result.changeResultArea("\n" + "4 슬롯에 아이템을 뺐다.");
+		}
+		
+		else
+			;
+	}
+	
 }

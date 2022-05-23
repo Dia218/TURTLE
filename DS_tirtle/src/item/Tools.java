@@ -5,12 +5,11 @@ public class Tools extends Item {
 	private int durability;
 	
 	//내구도 return
-<<<<<<< HEAD
-	public abstract int returnDurability();
-
-=======
 	public int returnDurability() {
 		return durability;
 	}
->>>>>>> item
+	//내구도 손상
+	public void returnDurDec(int i) {
+		durability -= i;
+	}
 }

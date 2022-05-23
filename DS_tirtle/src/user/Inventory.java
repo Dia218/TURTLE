@@ -23,12 +23,15 @@ public class Inventory {
 	//결과창에 출력할 텍스트 필드
 	String result;
 	
+	//선택한 아이템을 담을 필드
+	Item chooseItem = new Empty();
+	
 	
 	/*
 	 * 인벤토리 클래스 메소드
 	 * */
 	//인벤토리에 아이템을 집어넣기
-	void inputItem(Item item) {
+	public void inputItem(Item item) {
 		
 		//아이템을 넣기 전, 인벤토리에 들어있는 아이템의 갯수
 		int vectorSize = vector.size();
@@ -44,45 +47,45 @@ public class Inventory {
 			int index = vector.size()-1;
 			
 			//벡터 인덱스 값과 동일한 인덱스의 버튼에 이미지 삽입
-			inventoryButton[index].setIcon(item.returnIcon());
+			inventoryButton[index].setIcon(item.returnImg());
 			inventoryButton[index].setText(item.returnName());
 		}
 	}
 	
-	//수정해야함 - 아이템 타입 검사를 해야함
-	//인벤토리에서 아이템이 있는 지 확인하기
-	int checkItem(Item item) {
+
+	//인벤토리에서 아이템이 있는 지 확인하기 - 제작하기용
+	public Boolean checkItem(String itemName) {
+		//현재 백터에 들어있는 아이템의 갯수
+		int vectorSize = vector.size();
 		
-		//벡터에서 해당 아이템이 저장된 첫번째 인덱스 값 찾기
-		int index = vector.indexOf(item);
-		
-		//해당하는 아이템이 없을 경우
-		if (index == -1) {
-			
-			 //아이템이 없으면 0 리턴
-			 return 0;
+		//인벤토리 버튼 중에서 같은 이름을 가진 아이템 찾기
+		for(int i = 0; i < vectorSize; i++) {
+			//찾으려는 아이템 이름과 같은 이름의 버튼을 찾았을 경우
+			if(inventoryButton[i].getText().equals(itemName)) {
+				//true 리턴
+				return true;
+			}
 		}
-		
-		//해당하는 아이템이 있을 경우
-		else {
-				
-			//아이템이 있으면 1 리턴
-			return 1;
-		}
+		//없을 경우 false 리턴
+		return false;
 	}
 	
 	
 	//인벤토리에서 아이템을 소비하기
-	void consumeItem(Item item) {
+	public void consumeItem(Item item) {
 		
-		//해당 아이템이 저장된 백터 인덱스 값 찾기
-		int index = vector.indexOf(item);
+		//현재 백터에 들어있는 아이템의 갯수
+		int vectorSize = vector.size();
 		
-		//벡터에서 해당 객체 삭제
-		vector.remove(index);
-		
-		//현재 인벤토리에 저장된 아이템의 갯수
-		int vectorSize = vector.size();	
+		//벡터에 저장된 아이템 중에서 소비할 아이템과 같은 이름 찾기
+		for(int i = 0; i < vectorSize; i++) {
+			//같은 이름을 찾았을 경우
+			if(vector.get(i).returnName().equals(item.returnName())) {
+				//벡터에서 해당 객체 삭제
+				vector.remove(i);
+				break;
+			}
+		}
 	}
 	
 	
@@ -93,8 +96,8 @@ public class Inventory {
 		int vectorSize = vector.size();
 		
 		//인벤토리 버튼 다시 그리기
-		for(int i = 1; i < vectorSize; i++) {
-			inventoryButton[i].setIcon(vector.get(i).returnIcon());
+		for(int i = 0; i < vectorSize; i++) {
+			inventoryButton[i].setIcon(vector.get(i).returnImg());
 			inventoryButton[i].setText(vector.get(i).returnName());
 		}
 		
@@ -116,19 +119,39 @@ public class Inventory {
 	}
 	
 	
-	//인벤토리에서 아이템을 선택하기
-	void choose(Item chooseItem) {
-		
-		//요리하기인 경우
-		
-		
-		//아이템이 도구인 경우
-		
-		//아이템이 음식인 경우
-				
-		
+	//인벤토리에서 선택된 아이템을 리턴하기
+	Item returnChoose() {
+		return this.chooseItem;
 	}
 	
+	
+	//인벤토리의 음식 섭취
+	public void eatFood(Foods food) {
+		//허기 값 적용
+		GameSystem.player.changeStarvePoint(food.returnStarvePoint());
+		
+		//체력 값 적용
+		GameSystem.player.changeHealPoint(food.returnHealPoint());
+		
+		//음식 소비 호출
+		this.consumeItem(food);
+	}
+	
+	
+	//인벤토리의 도구 장착
+	public void equipTool(Tools tool) {
+		//무기일 경우
+		if(tool instanceof Weapons) {
+			//무기 장착 호출
+			GameSystem.player.changeEquipWeapon((Weapons) tool);
+		}
+		
+		//방어구일 경우
+		else if(tool instanceof Armors) {
+			//방어구 장착 호출
+			GameSystem.player.changeEquipArmor((Armors) tool);
+		}
+	}
 	
 	
 	/*
@@ -158,13 +181,17 @@ class InventoryEventCheck {
 			; //아무 일도 일어나지 않음
 		}
 		
+		//객체가 들어있는 버튼을 클릭한 경우
 		else {
-			//클릭한 버튼에 들어있는 아이템을 선택하기
+			
+			//클릭한 버튼에 들어있는 아이템 객체를 가져오기
 			for(int index = 0; index <= 20; index++) {
-				if (GameSystem.inventory.inventoryButton[index].equals(clickButton)) {
-					Item chooseItem = GameSystem.inventory.vector.get(index);
-					//인벤토리의 선택하기 메소드 호출
-					GameSystem.inventory.choose(chooseItem);
+				//클릭한 버튼에 들어있는 아이템 객체를 인벤토리에서 순차적으로 검색 -> 이터레이터가 되나?
+				if (GameSystem.inventory.inventoryButton[index].getText().equals(clickButton.getText())) {
+					//클릭한 아이템 객체 저장
+					Item clickItem = GameSystem.inventory.vector.get(index);
+					//아이템 타입에 따라 이벤트 처리하는 메소드 호출
+					this.itemTypeCheck(clickItem);
 					break;
 				}
 				else
@@ -173,5 +200,28 @@ class InventoryEventCheck {
 		}
 		
 	}
+	
+	void itemTypeCheck(Item clickItem) {
+		//요리 모드일 경우
+		if(GameSystem.state.returnMode().equals("요리모드")) {
+			GameSystem.inventory.chooseItem = clickItem;
+		}
+		//요리 모드가 아닐 경우
+		else {
+			//클릭한 아이템이 장비인 경우
+			if (clickItem instanceof Tools) {
+				GameSystem.inventory.equipTool((Tools) clickItem);
+			}
+			//클릭한 아이템이 음식인 경우
+			else if (clickItem instanceof Foods) {
+				GameSystem.inventory.eatFood((Foods) clickItem);
+			}
+			
+			//아무 것도 아닌 경우
+			else
+				;
+		}
+	}
+	
 }
 

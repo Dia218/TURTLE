@@ -12,7 +12,8 @@ public class Item {
 	public String returnName() {
 		return name;
 	}
-	public ImageIcon returmImg() {
+	//ÀÌ¹ÌÁö return
+	public ImageIcon returnImg() {
 		return img;
 	}
 }
