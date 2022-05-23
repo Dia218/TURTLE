@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 
 import user.GameSystem;
 
-public class Moving {
+public class Moving extends Acting {
 	
 	
 	

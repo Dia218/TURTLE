@@ -16,7 +16,7 @@ import user.GameFrame;
 import user.Inventory;
 
 ////채집하기 클래스////
-public class Collecting {
+public class Collecting extends Acting {
 	
 	/*
 	 * 채집하기 클래스 필드

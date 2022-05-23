@@ -13,7 +13,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 
 ////사냥하기 클래스////
-public class Hunting {
+public class Hunting extends Acting{
 	
 	int rNum;
 	Random rnd = new Random();
@@ -22,20 +22,14 @@ public class Hunting {
 	 * 사냥하기 클래스 생성자
 	 * */
 	public Hunting() {
-		
-
+		Monster randomMonster = Random_mon();
+		HuntPanel huntPanel = new HuntPanel(randomMonster);
 	}
 	
 	
 	/*
 	 * 사냥하기 클래스 메소드
 	 * */
-	//사냥 초기 메소드
-	public void startHuntMenu() {
-		final Monster randomMonster = Random_mon();
-		HuntPanel huntPanel = new HuntPanel(randomMonster);
-	}
-	
 	
 	//몬스터 랜덤발생 메소드
 	Monster Random_mon() {
@@ -161,10 +155,8 @@ class HuntingEventCheck {
  * */
 	public HuntingEventCheck(JButton clickButton) {
 	
-		//new Hunting().Hunt(new Hunting().randomMonster);
+		
+		
 	
 	}
-
-
-
 }

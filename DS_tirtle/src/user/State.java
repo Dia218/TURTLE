@@ -5,8 +5,9 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import world.*;
-import world.map.*;
+import action.Acting;
+import world.Biome;
+import world.map.Grassland;
 
 
 public class State {
@@ -24,6 +25,8 @@ public class State {
 	//현재 모드를 저장하는 필드 생성
 	private String stateMode = "시작";
 	
+	//현재 활동 객체를 저장하는 레퍼런스 생성
+	Acting stateActing = null;
 	
 	/*
 	 * 상태 클래스 메소드
@@ -38,14 +41,19 @@ public class State {
 		return this.stateBiome;
 	}
 	
+	//현재 활동 객체의 레퍼런스를 리턴하는 메소드
+	public Acting returnActing() {
+		return this.stateActing;
+	}
+	
 	//모드를 바꾸는 메소드
-	void changeMode(String changeStateMode) {
+	public void changeMode(String changeStateMode) {
 		//현재 모드 바꾸기
 		this.stateMode = changeStateMode;
 	}
 	
 	//위치를 바꾸는 메소드
-	void changeBiome(Biome changeStateBiome) {
+	public void changeBiome(Biome changeStateBiome) {
 		//현재 위치 바꾸기
 		this.stateBiome = changeStateBiome;
 		
@@ -55,6 +63,12 @@ public class State {
 		//상태 패널 갱신
 		statePanel.revalidate();
 		statePanel.repaint();
+	}
+	
+	//활동 레퍼런스의 객체를 바꿔주는 메소드
+	public void changeActing(Acting changeStateActing) {
+		//활동 객체 바꾸기
+		this.stateActing = changeStateActing;
 	}
 	
 	
