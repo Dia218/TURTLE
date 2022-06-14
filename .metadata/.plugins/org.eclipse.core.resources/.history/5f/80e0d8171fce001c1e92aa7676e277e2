@@ -1,8 +1,0 @@
-package elements;
-
-public abstract class UnprocessedFoods extends Foods {
-}
-
-public static class FrogLeg extends UnprocessedFoods {
-	
-}
