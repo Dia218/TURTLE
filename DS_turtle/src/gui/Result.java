@@ -1,11 +1,6 @@
 package gui;
 
-import java.awt.BorderLayout;
-import java.awt.Font;
-
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
+import javax.swing.*;
 
 public class Result {
 

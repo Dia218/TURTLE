@@ -33,8 +33,7 @@ public class Inventory {
 	 * 인벤토리 클래스 생성자
 	 * */
 	//인벤토리 클래스 기본 생성자
-	public Inventory() {
-		
+	public Inventory() {	
 		//인벤토리 패널 배치 관리자 - 그리드레이아웃
 		inventoryPanel.setLayout(new GridLayout(7, 3));
 		
@@ -174,14 +173,14 @@ public class Inventory {
 			GameSystem.player.changeEquipArmor((Armors) tool);
 		}
 	}
-	
 }
 
 class InventoryEventCheck {
 
 	//인벤토리 패널 버튼 체크 생성자
 	public InventoryEventCheck(JButton clickButton) {
-		
+		System.out.println("인벤토리 이벤트 발생");
+
 		//비어있는 버튼을 클릭한 경우
 		if(clickButton.getText().equals("Empty")) {
 			; //아무 일도 일어나지 않음
@@ -192,7 +191,7 @@ class InventoryEventCheck {
 			
 			//클릭한 버튼에 들어있는 아이템 객체를 가져오기
 			for(int index = 0; index <= 20; index++) {
-				//클릭한 버튼에 들어있는 아이템 객체를 인벤토리에서 순차적으로 검색 -> 이터레이터가 되나?
+				//클릭한 버튼에 들어있는 아이템 객체를 인벤토리에서 순차적으로 검색 
 				if (GameSystem.inventory.inventoryButton[index].getText().equals(clickButton.getText())) {
 					//클릭한 아이템 객체 저장
 					Item clickItem = GameSystem.inventory.vector.get(index);

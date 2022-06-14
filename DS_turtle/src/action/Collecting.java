@@ -1,25 +1,39 @@
 package action;
 
-import java.awt.*;
 import javax.swing.*;
-
-import gui.GameFrame;
-import gui.Inventory;
 import gui.Menu;
-import item.Item;
+import item.*;
 import item.unprocessedFoods.*;
-import item.unprocessedFoods.Mushroom;
 import manage.GameSystem;
-import world.Map;
+import world.*;
 import world.object.*;
 import world.object.Object;
 import world.resource.*;
 
-public class Collecting {
+////채집하기 클래스////
+public class Collecting extends Acting {
+	
+	/*
+	 * 채집하기 클래스 필드
+	 * */
+	
+	//아이템 객체 생성
 	Item item = new Item();
+	
+	
+	/*
+	 * 채집하기 클래스 생성자
+	 * */
+	
+	//기본 생성자
 	public Collecting(){
-		JPanel collectPanel = new JPanel();
+		CollectPanel collectPanel = new CollectPanel();
 	}
+	
+	
+	/*
+	 * 채집하기 클래스 메소드
+	 * */
 	
 	void getResource(Object object){
 		//오브젝트에 따라 자원을 생성하여 인벤토리 저장 메소드에 전달
@@ -38,8 +52,11 @@ public class Collecting {
 	
 }
 
+////채집하기 패널 클래스////
 class CollectPanel extends JPanel {
-	CollectPanel(){
+	
+	//채집하기 패널 생성자
+	CollectPanel() {
 		//지역에 따른 오브젝트 종류 별로 각각 이미지가 들어있는 체크박스들 생성 및 패널에 넣기
 		
 		//이미지 아이콘 만들기
@@ -60,14 +77,14 @@ class CollectPanel extends JPanel {
 		JCheckBox mushroom = new JCheckBox("버섯뿌리",mushroomIcon);
 		JCheckBox rock = new JCheckBox("바위",rockIcon);
 		
-		
+		Biome biome = new Biome();
 		//맵에 따라서 체크박스 패널에 넣기
-		if(Map.Map_Num==1) {this.add(sapling);this.add(grass);this.add(berry);this.add(carrot);this.add(mushroom);this.add(rock);}
-		else if(Map.Map_Num==2) {this.add(tree);this.add(sapling);}
-		else if(Map.Map_Num==3) {this.add(tree);this.add(mushroom);}
-		else if(Map.Map_Num==4) {this.add(grass);this.add(carrot);}
-		else if(Map.Map_Num==5) {this.add(berry);}
-		else if(Map.Map_Num==6) {this.add(rock);}
+		if(biome.returnName()=="초원") {this.add(sapling);this.add(grass);this.add(berry);this.add(carrot);this.add(mushroom);this.add(rock);}
+		else if(biome.returnName()=="숲") {this.add(tree);this.add(sapling);}
+		else if(biome.returnName()=="버치넛") {this.add(tree);this.add(mushroom);}
+		else if(biome.returnName()=="사바나") {this.add(grass);this.add(carrot);}
+		else if(biome.returnName()=="늪") {this.add(berry);}
+		else if(biome.returnName()=="암석지대") {this.add(rock);}
 		else ;
 
 		//채집종료 버튼 만들기
@@ -86,11 +103,9 @@ class CollectPanel extends JPanel {
 		GameSystem.playPanel.revalidate();
 		GameSystem.playPanel.repaint();
 	}
-	
-	
-	
 }
 
+////채집하기 이벤트 클래스////
 class CollectEvent  {
 	public CollectEvent(JButton button){
 		//채집 종료 이벤트?

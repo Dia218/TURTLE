@@ -47,6 +47,10 @@ public class Menu {
 		//중앙 패널 다시 그리기
 		GameSystem.playPanel.revalidate();
 		GameSystem.playPanel.repaint();
+		
+		//상태 초기화
+		GameSystem.state.changeMode(null);
+		GameSystem.state.changeActing(null);
 	}
 	
 }
@@ -78,33 +82,34 @@ class MenuEventCheck {
 	public MenuEventCheck(JButton clickButton) {
 		//이동하기 버튼인 경우
 		if(clickButton.getText().equals("이동하기") ) {
+			
 				/*Moving 클래스를 발생시켜서 지역이동*/
-				/*
-				 * Moving moving = new Moving();
-				 * */;
-				 
-			//모드 바꾸는 메소드를 호출하여 이동 모드로 전환
-			GameSystem.state.changeMode(movingMode);	
+				 Moving moving = new Moving();
+
+			//상태 변환
+			GameSystem.state.changeMode(movingMode);
+			GameSystem.state.changeActing(moving);
 		}
 		//사냥하기 버튼인 경우
 		else if(clickButton.getText().equals("사냥하기") ) {
-				/*Hunting 클래스를 발생시켜서 몬스터 사냥*/
-				/*
-				 * Hunting hunting = new Hunting(); 
-				 * */;
+			
+			/*Hunting 클래스를 발생시켜서 몬스터 사냥*/
+			Hunting hunting = new Hunting(); 
 				 
-			//모드 바꾸는 메소드를 호출하여 사냥 모드로 전환
+			//상태 변환
 			GameSystem.state.changeMode(huntingMode);
+			GameSystem.state.changeActing(hunting);
 		}
 		//채집하기 버튼인 경우
 		else if(clickButton.getText().equals("채집하기") ) {
+			
 				/*Collecting 클래스를 발생시켜서 오브젝트에서 자원 채집*/
-				/*
-				 * Collecting collecting = new Collecting();
-				 * */;
+				Collecting collecting = new Collecting();
 				 
-			//모드 바꾸는 메소드를 호출하여 채집 모드로 전환
+				//상태 변환
 			GameSystem.state.changeMode(collectingMode);
+			GameSystem.state.changeActing(collecting);
+
 		}
 		//제작하기 버튼인 경우
 		else if(clickButton.getText().equals("제작하기") ) {
@@ -112,8 +117,10 @@ class MenuEventCheck {
 			//Making 클래스를 발생시켜서 도구 제작
 			Making making = new Making();
 			
-			//모드 바꾸는 메소드를 호출하여 제작 모드로 전환
+			//상태 변환
 			GameSystem.state.changeMode(makingMode);
+			GameSystem.state.changeActing(making);
+
 		}
 		//요리하기 버튼인 경우
 		else if(clickButton.getText().equals("요리하기") ) {
@@ -121,8 +128,9 @@ class MenuEventCheck {
 			//Cooking 클래스를 발생시켜서 요리하기
 			Cooking cooking = new Cooking();
 			
-			//모드 바꾸는 메소드를 호출하여 요리 모드로 전환
+			//상태 변환
 			GameSystem.state.changeMode(cookingMode);
+			GameSystem.state.changeActing(cooking);
 		}
 		else
 			;

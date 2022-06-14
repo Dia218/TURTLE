@@ -7,7 +7,7 @@ import action.*;
 import action.Cooking;
 import gui.CheckEvent;
 
-public class UserListener implements ActionListener, ItemListener {
+public class UserListener extends MouseAdapter implements ActionListener, ItemListener {
 	
 	/*
 	 * 유저리스너 클래스의 필드
@@ -34,6 +34,16 @@ public class UserListener implements ActionListener, ItemListener {
 		//동작 확인
 		System.out.println("버튼 이벤트 발생");
 		
+		//이벤트가 발생한 버튼 저장하기
+		clickButton = (JButton)e.getSource();
+		
+		//버튼을 체크하는 메소드 호출하기
+		checkevent.checkbutton(clickButton);
+		actioncheckevent.checkbutton(clickButton);
+	}
+	
+	@Override
+	public void mousePressed(MouseEvent e) {
 		//이벤트가 발생한 버튼 저장하기
 		clickButton = (JButton)e.getSource();
 		

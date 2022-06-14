@@ -1,16 +1,34 @@
 package action;
 
 import javax.swing.JButton;
-
-import gui.*;
+import manage.GameSystem;
 
 public class ActionEventCheck{
 	
-	//이벤트가 발생한 버튼을 확인하는 메소드
+
 		public void checkbutton(JButton clickButton) {
 			
-			new MakingEventCheck(clickButton);
-			new CookingEventCheck(clickButton);
-			//버튼을 체크하는 클래스들을 발생시킴
+			System.out.println("엑션 이벤트 발생");
+			
+			if(GameSystem.state.returnActing() instanceof Hunting) {
+				new HuntingEventCheck(clickButton, (Hunting)GameSystem.state.returnActing());
+			}
+			else if (GameSystem.state.returnActing() instanceof Collecting) {
+				;//new CollectingEventCheck(clickButton, (Collecting) GameSystem.state.returnActing());
+			}
+			else if (GameSystem.state.returnActing() instanceof Moving) {
+				;//new MovingEventCheck(clickButton, (Moving) GameSystem.state.returnActing());
+			}
+			else if (GameSystem.state.returnActing() instanceof Making) {
+				;//new MakingEventCheck(clickButton, (Making) GameSystem.state.returnActing());
+			}
+			else if (GameSystem.state.returnActing() instanceof Cooking) {
+				;//new CookingEventCheck(clickButton, (Cooking) GameSystem.state.returnActing());
+			}
+			else
+				;
+			
 		}
-}
+
+}	
+

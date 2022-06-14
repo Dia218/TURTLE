@@ -19,7 +19,7 @@ import manage.GameSystem;
 import world.resource.Twigs;
 
 
-public class Cooking {
+public class Cooking extends Acting {
 
 	/*
 	 * 재료 선택 - 요리 결과 출력 - 인벤토리에 수납

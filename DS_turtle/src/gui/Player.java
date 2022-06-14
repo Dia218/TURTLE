@@ -285,5 +285,9 @@ class Gameover {
 		//중앙패널 다시 그리기
 		GameSystem.playPanel.revalidate();
 		GameSystem.playPanel.repaint();
+		
+		//결과 출력하기
+		String gameOver = "플레이어가 죽었습니다 8ㅁ8";
+		GameSystem.result.changeResultArea(gameOver);
 	}
 }
