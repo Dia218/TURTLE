@@ -6,6 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import user.GameSystem;
+import user.Menu;
 
 public class Moving extends Acting {
 	
@@ -51,3 +52,17 @@ class MovingPanel {
 		GameSystem.playPanel.repaint();
 	}
 }
+class MovingEventCheck {
+	MovingEventCheck(JButton clickButton, Moving moving) {
+		if(clickButton.getText().equals("공격하기")) {
+		}
+		else if(clickButton.getText().equals("도망가기")) {
+			//메뉴로 이동
+			Menu menu = new Menu();
+		}
+		else
+			;
+	}
+	
+}
+

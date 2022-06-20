@@ -103,7 +103,7 @@ class MenuEventCheck {
 		else if(clickButton.getText().equals("채집하기") ) {
 			
 				/*Collecting 클래스를 발생시켜서 오브젝트에서 자원 채집*/
-				Collecting collecting = new Collecting();
+			Collecting collecting = new Collecting();
 				 
 				//상태 변환
 			GameSystem.state.changeMode(collectingMode);

@@ -64,57 +64,18 @@ class CollectPanel extends JPanel {
 	CollectPanel() {
 		//지역에 따른 오브젝트 종류 별로 각각 이미지가 들어있는 체크박스들 생성 및 패널에 넣기
 		
-		//이미지 아이콘 만들기
-		ImageIcon treeIcon = new ImageIcon("./images/Tree.png");
-		ImageIcon saplingIcon = new ImageIcon("./images/Sapling.png");
-		ImageIcon grassIcon = new ImageIcon("./images/GrassTuft.png");
-		ImageIcon berryIcon = new ImageIcon("./images/BerryBush.png");
-		ImageIcon carrotIcon = new ImageIcon("./images/CarrotPlant.png");
-		ImageIcon mushroomIcon = new ImageIcon("./images/Mushroom.png");
-		ImageIcon rockIcon = new ImageIcon("./images/Rock.png");
 		
-		//자원별 체크박스 만들기
-		JCheckBox tree = new JCheckBox("나무",treeIcon);
-		JCheckBox sapling = new JCheckBox("묘목",saplingIcon);
-		JCheckBox grass = new JCheckBox("풀뿌리",grassIcon);
-		JCheckBox berry = new JCheckBox("베리덤불",berryIcon);
-		JCheckBox carrot = new JCheckBox("당근뿌리",carrotIcon);
-		JCheckBox mushroom = new JCheckBox("버섯뿌리",mushroomIcon);
-		JCheckBox rock = new JCheckBox("바위",rockIcon);
 		
-		Biome biome = new Biome();
-		//맵에 따라서 체크박스 패널에 넣기
-		if(biome.returnName()=="초원") {this.add(sapling);this.add(grass);this.add(berry);this.add(carrot);this.add(mushroom);this.add(rock);}
-		else if(biome.returnName()=="숲") {this.add(tree);this.add(sapling);}
-		else if(biome.returnName()=="버치넛") {this.add(tree);this.add(mushroom);}
-		else if(biome.returnName()=="사바나") {this.add(grass);this.add(carrot);}
-		else if(biome.returnName()=="늪") {this.add(berry);}
-		else if(biome.returnName()=="암석지대") {this.add(rock);}
-		else ;
-
-		//채집종료 버튼 만들기
-		JButton colEnd = new JButton("채집종료");
-		
-		//채집종료 버튼 넣기
-		this.add(colEnd);
-		
-		//플레이 패널 요소 전체삭제
-		GameSystem.playPanel.removeAll();
-
-		//채집하기 패널을 플레이패널에 넣기
-		GameSystem.playPanel.add(this);
-		
-		//플레이 패널 다시 그리기
-		GameSystem.playPanel.revalidate();
-		GameSystem.playPanel.repaint();
 	}
 }
 
 ////채집하기 이벤트 클래스////
 class CollectEvent  {
-	public CollectEvent(JButton button){
+	public CollectEvent(JButton clickButton, Collecting collecting){
 		//채집 종료 이벤트?
-		if(button.getText().equals("채집종료")){Menu menu = new Menu();}
+		if(clickButton.getText().equals("채집종료")){
+			Menu menu = new Menu();
+			}
 	}
 	
 	public CollectEvent(JCheckBox checkbox){

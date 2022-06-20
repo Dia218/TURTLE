@@ -84,7 +84,8 @@ public class Cooking extends Acting {
 }
 	
 class CookingEventCheck {
-	public CookingEventCheck(JButton clickButton) {
+	public CookingEventCheck(JButton clickButton, Cooking cooking) {
+		
 		
 		ImageIcon slot0 = new ImageIcon("./images/slot0.png");
 		ImageIcon slot1 = new ImageIcon("./images/slot1.png");
@@ -263,6 +264,14 @@ class CookingEventCheck {
 
 		//슬롯 4 버튼을 누른 경우
 		else if(clickButton.getText().equals("슬롯 4") ) {
+			clickButton.setIcon(slot3);
+			System.out.println("슬롯 4");
+
+			GameSystem.result.changeResultArea("\n" + "4 슬롯에 아이템을 뺐다.");
+		}
+
+		//슬롯 4 버튼을 누른 경우
+		else if(clickButton.getText().equals("고기") ) {
 			clickButton.setIcon(slot3);
 			System.out.println("슬롯 4");
 

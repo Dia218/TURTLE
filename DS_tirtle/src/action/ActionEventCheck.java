@@ -15,21 +15,20 @@ public class ActionEventCheck{
 				new HuntingEventCheck(clickButton, (Hunting)GameSystem.state.returnActing());
 			}
 			else if (GameSystem.state.returnActing() instanceof Collecting) {
-				;//new CollectingEventCheck(clickButton, (Collecting) GameSystem.state.returnActing());
+				new CollectEvent(clickButton, (Collecting) GameSystem.state.returnActing());
 			}
 			else if (GameSystem.state.returnActing() instanceof Moving) {
-				;//new MovingEventCheck(clickButton, (Moving) GameSystem.state.returnActing());
+				new MovingEventCheck(clickButton, (Moving) GameSystem.state.returnActing());
 			}
 			else if (GameSystem.state.returnActing() instanceof Making) {
-				;//new MakingEventCheck(clickButton, (Making) GameSystem.state.returnActing());
+				new MakingEventCheck(clickButton, (Making) GameSystem.state.returnActing());
 			}
 			else if (GameSystem.state.returnActing() instanceof Cooking) {
-				;//new CookingEventCheck(clickButton, (Cooking) GameSystem.state.returnActing());
+				new CookingEventCheck(clickButton, (Cooking) GameSystem.state.returnActing());
 			}
 			else
 				;
 			
->>>>>>> 70e0f4d2a160cfba2bb89bd83ff4569181d22da4
 		}
 
 }	
