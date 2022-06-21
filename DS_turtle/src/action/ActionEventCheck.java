@@ -20,10 +20,10 @@ public class ActionEventCheck{
 				;//new MovingEventCheck(clickButton, (Moving) GameSystem.state.returnActing());
 			}
 			else if (GameSystem.state.returnActing() instanceof Making) {
-				;//new MakingEventCheck(clickButton, (Making) GameSystem.state.returnActing());
+				new MakingEventCheck(clickButton);
 			}
 			else if (GameSystem.state.returnActing() instanceof Cooking) {
-				;//new CookingEventCheck(clickButton, (Cooking) GameSystem.state.returnActing());
+				new CookingEventCheck(clickButton);
 			}
 			else
 				;
