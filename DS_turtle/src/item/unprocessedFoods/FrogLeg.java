@@ -8,7 +8,7 @@ public class FrogLeg extends UnprocessedFoods {
 	private static int starvePoint = 10;
 	private static int healPoint = -10;
 	
-	static private ImageIcon img = new ImageIcon("./images/Frog_Leg.png");
+	static private ImageIcon img = new ImageIcon("./images/Frog_Legs.png");
 	
 	public String returnName() {
 		return name;

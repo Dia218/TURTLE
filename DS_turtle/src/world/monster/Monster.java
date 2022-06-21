@@ -3,7 +3,7 @@ package world.monster;
 import item.*;
 import item.unprocessedFoods.*;
 
-public class Monster {
+public abstract class Monster {
 	private static String monName;
 	int Mon_HP;
 	int Mon_ATK;
@@ -13,5 +13,5 @@ public class Monster {
 	public int getHP() {return Mon_HP;}
 	public int getATK() {return Mon_ATK;}
 	
-	public Item returnItem() {return new Meat();}
+	public abstract Item returnItem();
 }
