@@ -91,7 +91,7 @@ public class Cooking extends Acting {
 }
 	
 class CookingEventCheck {
-	public CookingEventCheck(JButton clickButton) {
+	public CookingEventCheck(JButton clickButton, Cooking cooking) {
 		
 		
 		ImageIcon slot0 = new ImageIcon("./images/slot0.png");

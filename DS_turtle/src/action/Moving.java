@@ -61,7 +61,7 @@ class MovingPanel extends JPanel{
 
 //이벤트체크//
 class MovingEventCheck {
-	public MovingEventCheck(JButton clickButton) {
+	public MovingEventCheck(JButton clickButton, Moving moving) {
 		if(clickButton.getText().equals("Grassland") ) {
 			Biome grassland;
 			Grassland gl = new Grassland();

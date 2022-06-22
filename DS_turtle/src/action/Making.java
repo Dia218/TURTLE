@@ -121,7 +121,7 @@ class MakingWeapons {
 }
 
 class MakingEventCheck {
-	public MakingEventCheck(JButton clickButton) {
+	public MakingEventCheck(JButton clickButton, Making making) {
 	
 		if(clickButton.getText().equals("활동 끝내기") ) {
 			/*MakingArmors 클래스를 발생시켜서 방어구 만들기*/
