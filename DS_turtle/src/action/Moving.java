@@ -29,7 +29,7 @@ class MovingPanel extends JPanel{
 		grasslandButton.addActionListener(GameSystem.userListener);
 		JButton forestButton = new JButton("숲");
 		forestButton.addActionListener(GameSystem.userListener);
-		JButton birchnutButton = new JButton("버치넛지형");
+		JButton birchnutButton = new JButton("버치넛");
 		birchnutButton.addActionListener(GameSystem.userListener);
 		JButton savannahButton = new JButton("사바나");
 		savannahButton.addActionListener(GameSystem.userListener);
@@ -60,58 +60,70 @@ class MovingPanel extends JPanel{
 //이벤트체크//
 class MovingEventCheck {
 	public MovingEventCheck(JButton clickButton, Moving moving) {
-		if(clickButton.getText().equals("Grassland") ) {
+		if(clickButton.getText().equals("초원") ) {
 			Biome grassland;
 			Grassland gl = new Grassland();
 			grassland = gl;
 			
 			GameSystem.state.changeBiome(grassland);
 
+			GameSystem.result.changeResultArea("\n" + "초원으로 이동했다.");
+
 			Menu menu = new Menu();
 		}
-		else if(clickButton.getText().equals("Forest") ) {
+		else if(clickButton.getText().equals("숲") ) {
 			Biome forest;
 			Forest fr = new Forest();
 			forest = fr;
 			
 			GameSystem.state.changeBiome(forest);
 
+			GameSystem.result.changeResultArea("\n" + "숲으로 이동했다.");
+
 			Menu menu = new Menu();
 		}
-		else if(clickButton.getText().equals("Birchnut") ) {
+		else if(clickButton.getText().equals("버치넛") ) {
 			Biome birchnut;
 			Birchnut bc = new Birchnut();
 			birchnut = bc;
 			
 			GameSystem.state.changeBiome(birchnut);
 
+			GameSystem.result.changeResultArea("\n" + "버치넛으로 이동했다.");
+
 			Menu menu = new Menu();
 		}
-		else if(clickButton.getText().equals("Savannah") ) {
+		else if(clickButton.getText().equals("사바나") ) {
 			Biome savannah;
 			Savannah sv = new Savannah();
 			savannah = sv;
 			
 			GameSystem.state.changeBiome(savannah);
 
+			GameSystem.result.changeResultArea("\n" + "사바나로 이동했다.");
+
 			Menu menu = new Menu();
 		}
-		else if(clickButton.getText().equals("Swamp") ) {
+		else if(clickButton.getText().equals("늪지대") ) {
 			Biome swamp;
 			Swamp sw = new Swamp();
 			swamp = sw;
 			
 			GameSystem.state.changeBiome(swamp);
 
+			GameSystem.result.changeResultArea("\n" + "늪지대로 이동했다.");
+
 			Menu menu = new Menu();
 		}
-		else if(clickButton.getText().equals("RockySpace") ) {
+		else if(clickButton.getText().equals("암석지대") ) {
 			Biome rockySpace;
 			RockySpace rs = new RockySpace();
 			rockySpace = rs;
 			
 			GameSystem.state.changeBiome(rockySpace);
 
+			GameSystem.result.changeResultArea("\n" + "암석지대로 이동했다.");
+			
 			Menu menu = new Menu();
 		}
 	}
