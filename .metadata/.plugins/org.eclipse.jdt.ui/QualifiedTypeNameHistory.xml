@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="manage.GameSystem"/>
-    <fullyQualifiedTypeName name="item.unprocessedFoods.Fish"/>
-    <fullyQualifiedTypeName name="item.unprocessedFoods.Meat"/>
-    <fullyQualifiedTypeName name="item.unprocessedFoods.MonsterMeat"/>
+    <fullyQualifiedTypeName name="world.Biome"/>
 </qualifiedTypeNameHistroy>

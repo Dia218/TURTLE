@@ -7,4 +7,7 @@ public class Biome {
 	//¿Ã∏ß return
 	public String returnName() {return name;}
 	public int returnStavePoint() {return stavePoint;}
+	public void setStarvePoint(String name) {
+		this.name = name;
+	}
 }

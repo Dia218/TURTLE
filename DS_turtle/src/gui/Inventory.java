@@ -1,7 +1,6 @@
 package gui;
 import java.awt.*;
 import javax.swing.*;
-
 import java.util.*;
 import item.*;
 import manage.GameSystem;
@@ -66,7 +65,6 @@ public class Inventory {
 		}
 	}
 	
-
 	//인벤토리에서 해당 아이템이 있는 지 확인하기 - 제작하기용
 	public boolean checkItem(Item item) {
 		
@@ -78,10 +76,8 @@ public class Inventory {
 		}
 	}
 	
-	
 	//인벤토리에서 아이템을 소비하기
 	public void consumeItem(Item item) {
-		
 		//아이템 백터에서 해당 인덱스 찾기 
 		int index = itemVector.indexOf(item);
 		
@@ -124,7 +120,6 @@ public class Inventory {
 		//음식 소비 호출
 		this.consumeItem(foodBox);
 	}
-	
 	
 	//인벤토리의 도구 장착
 	public void equipTool(InventoryBox toolBox) {
@@ -189,7 +184,6 @@ class InventoryEventCheck {
 			else if (clickItem instanceof Foods) {
 				GameSystem.inventory.eatFood(clickBox);
 			}
-			
 			//아무 것도 아닌 경우
 			else
 				;
@@ -205,6 +199,7 @@ class InventoryBox extends JPanel {
 	/*인벤토리 박스 필드*/
 	private Item boxItem;
 	private int boxNumber;
+	JButton itemButton = new JButton(new Empty().returnImg());
 	
 	/*인벤토리 박스 생성자*/
 	InventoryBox(int index) {
@@ -218,14 +213,13 @@ class InventoryBox extends JPanel {
 
 	@Override
 	public void paintComponent(Graphics g) {
-		if(GameSystem.inventory.itemVector.get(boxNumber) == null) {
+		if(boxNumber >= GameSystem.inventory.itemVector.size()) {
 			this.boxItem = new Empty();
 		}
 		else {
 			this.boxItem = GameSystem.inventory.itemVector.get(boxNumber);
+			itemButton.setIcon(boxItem.returnImg());
 		}
-		
-		JButton itemButton = new JButton(boxItem.returnImg());
 		itemButton.addActionListener(GameSystem.userListener);
 		this.add(itemButton);
 	}

@@ -25,6 +25,10 @@ public class Cooking extends Acting {
 	 * 재료 선택 - 요리 결과 출력 - 인벤토리에 수납
 	 */
 	
+
+	
+	
+	
 	//요리하기 생성자
 	public Cooking() {
 		//솥 패널 생성
@@ -82,10 +86,13 @@ public class Cooking extends Acting {
 				GameSystem.playPanel.repaint();
 	}
 	
+	
+	
 }
 	
 class CookingEventCheck {
-	public CookingEventCheck(JButton clickButton) {
+	public CookingEventCheck(JButton clickButton, Cooking cooking) {
+		
 		
 		ImageIcon slot0 = new ImageIcon("./images/slot0.png");
 		ImageIcon slot1 = new ImageIcon("./images/slot1.png");
@@ -269,6 +276,11 @@ class CookingEventCheck {
 
 			GameSystem.result.changeResultArea("\n" + "4 슬롯에 들어있는 아이템을 뺐다.");
 		}
+		else if(clickButton.getText().equals("Empty") ) {
+			System.out.println("empty");
+
+		}
+		
 		
 		else
 			;

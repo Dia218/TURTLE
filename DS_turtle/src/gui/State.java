@@ -4,8 +4,8 @@ import java.awt.Font;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import manage.Biome;
 import action.Acting;
+import world.Biome;
 import world.map.*;
 
 
@@ -55,7 +55,7 @@ public class State {
 	public void changeBiome(Biome changeStateBiome) {
 		//현재 위치 바꾸기
 		this.stateBiome = changeStateBiome;
-		
+		System.out.println(stateBiome);
 		//상태 라벨 갱신
 		statePanel.biomeLabel.setText("현재 위치: " + this.stateBiome.returnName());
 		
