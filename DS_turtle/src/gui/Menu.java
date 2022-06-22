@@ -49,7 +49,7 @@ public class Menu {
 		GameSystem.playPanel.repaint();
 		
 		//상태 초기화
-		GameSystem.state.changeMode(null);
+		GameSystem.state.changeMode("메뉴");
 		GameSystem.state.changeActing(null);
 	}
 	

@@ -153,7 +153,7 @@ class MakingEventCheck {
 			//풀, 잔가지 인벤토리 확인
 			CutGrass cutGrass = new CutGrass();
 			Twigs twigs = new Twigs();
-			if(GameSystem.inventory.checkItem(cutGrass.returnName()) && GameSystem.inventory.checkItem(twigs.returnName())) {
+			if(GameSystem.inventory.checkItem(cutGrass) && GameSystem.inventory.checkItem(twigs)) {
 				//인벤토리 제거
 				GameSystem.inventory.consumeItem(cutGrass);
 				GameSystem.inventory.consumeItem(twigs);
@@ -176,7 +176,7 @@ class MakingEventCheck {
 			//풀, 통나무 인벤토리 확인
 			CutGrass cutGrass = new CutGrass();
 			Log log = new Log();
-			if(GameSystem.inventory.checkItem(cutGrass.returnName()) && GameSystem.inventory.checkItem(log.returnName())) {
+			if(GameSystem.inventory.checkItem(cutGrass) && GameSystem.inventory.checkItem(log)) {
 				//인벤토리 제거
 				GameSystem.inventory.consumeItem(cutGrass);
 				GameSystem.inventory.consumeItem(log);
@@ -199,7 +199,7 @@ class MakingEventCheck {
 			//잔가지, 돌 인벤토리 확인
 			Twigs twigs = new Twigs();
 			Rock rock = new Rock();
-			if(GameSystem.inventory.checkItem(twigs.returnName()) && GameSystem.inventory.checkItem(rock.returnName())) {
+			if(GameSystem.inventory.checkItem(twigs) && GameSystem.inventory.checkItem(rock)) {
 				//인벤토리 제거
 				GameSystem.inventory.consumeItem(twigs);
 				GameSystem.inventory.consumeItem(rock);
