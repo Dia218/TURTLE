@@ -1,8 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.awt.Font"/>
-    <fullyQualifiedTypeName name="world.resource.CutGrass"/>
-    <fullyQualifiedTypeName name="action.Cooking"/>
-    <fullyQualifiedTypeName name="action.Cooking.CookingEventCheck"/>
-    <fullyQualifiedTypeName name="action.CookingEventCheck"/>
-</qualifiedTypeNameHistroy>
+<qualifiedTypeNameHistroy/>
